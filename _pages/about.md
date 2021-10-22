@@ -26,4 +26,5 @@ I'm a Ph.D student at the [Department of Computer Science and Technology](http:/
 
 
 ### Research
-My research spans the areas of natural language processing and machine learning, especially for information extraction, few-shot learning, and language models. A [statement](assets/pdf/Statement.pdf).
+My research spans the areas of natural language processing and machine learning.
+
