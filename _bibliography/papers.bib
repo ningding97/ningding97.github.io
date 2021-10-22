@@ -45,8 +45,8 @@
   booktitle={Annual Meeting of the Association for Computational Linguistics, <br> ACL},
   abstract={Recently, considerable literature has grown up around the theme of few-shot named entity recognition (NER), but little published benchmark data specifically focused on the practical and challenging task. Current approaches collect existing supervised NER datasets and re-organize them to the few-shot setting for empirical study. These strategies conventionally aim to recognize coarse-grained entity types with few examples, while in practice, most unseen entity types are fine-grained. In this paper, we present \textsc{Few-NERD}, a large-scale human-annotated few-shot NER dataset with a hierarchy of 8 coarse-grained and 66 fine-grained entity types. \textsc{Few-NERD} consists of 188,238 sentences from Wikipedia, 4,601,160 words are included and each is annotated as context or a part of a two-level entity type.  To the best of our knowledge, this is the first few-shot NER dataset and the largest human-crafted NER dataset.  We construct benchmark tasks with different emphases to comprehensively assess the generalization capability of models. Extensive empirical results and analysis show that\textsc{Few-NERD} is challenging and the problem requires further research. We make \textsc{Few-NERD} public at https://ningding97.github.io/fewnerd/ },
   html={https://ningding97.github.io/fewnerd/},
+  pdf={https://arxiv.org/pdf/2105.07464.pdf},
   code={https://github.com/thunlp/Few-NERD},
-  pdf={ACL2021-fewnerd.pdf},
   year={2021}
 }
 
@@ -55,6 +55,9 @@
   title={CLINE: Contrastive Learning with Semantic Negative Examples for Natural Language Understanding},
   author={Wang, Dong and Ding, Ning* and Li, Piji and Zheng, Hai-Tao},
   booktitle={Annual Meeting of the Association for Computational Linguistics, <br> ACL},
+  html={https://arxiv.org/abs/2107.00440},
+  pdf={https://arxiv.org/pdf/2107.00440.pdf},
+  code={https://github.com/kandorm/CLINE},
   year={2021}
 }
 
@@ -81,7 +84,7 @@
   year={2021},
   abstract={Recognizing relations between entities is a pivotal task of relational learning. Learning relation representations from distantly-labeled datasets is difficult because of the abundant label noise and complicated expressions in human language. This paper aims to learn predictive, interpretable, and robust relation representations from distantly-labeled data that are effective in different settings, including supervised, distantly supervised, and few-shot learning. Instead of solely relying on the supervision from noisy labels, we propose to learn prototypes for each relation from contextual information to best explore the intrinsic semantics of relations. Prototypes are representations in the feature space abstracting the essential semantics of relations between entities in sentences. We learn prototypes based on objectives with clear geometric interpretation, where the prototypes are unit vectors uniformly dispersed in a unit ball, and statement embeddings are centered at the end of their corresponding prototype vectors on the surface of the ball. This approach allows us to learn meaningful, interpretable prototypes for the final classification. Results on several relation learning tasks show that our model significantly outperforms the previous state-of-the-art models. We further demonstrate the robustness of the encoder and the interpretability of prototypes with extensive experiments.},
   html={https://openreview.net/forum?id=aCgLmfhIy_f},
-  pdf={ICLR2021-proto.pdf},
+  pdf={https://openreview.net/forum?id=aCgLmfhIy_f},
   code={https://github.com/Alibaba-NLP/ProtoRE}
 }
 
@@ -95,7 +98,7 @@
   html = {https://www.aclweb.org/anthology/2020.acl-main.595/},
   abstract = {Fully supervised neural approaches have achieved significant progress in the task of Chinese word segmentation (CWS). Nevertheless, the performance of supervised models always drops gravely if the domain shifts due to the distribution gap across domains and the out of vocabulary (OOV) problem. In order to simultaneously alleviate the issues, this paper intuitively couples distant annotation and adversarial training for cross-domain CWS. 1) We rethink the essence of “Chinese words” and design an automatic distant annotation mechanism, which does not need any supervision or pre-defined dictionaries on the target domain. The method could effectively explore domain-specific words and distantly annotate the raw texts for the target domain. 2) We further develop a sentence-level adversarial training procedure to perform noise reduction and maximum utilization of the source domain information. Experiments on multiple real-world datasets across various domains show the superiority and robustness of our model, significantly outperforming previous state-of-the-arts cross-domain CWS methods.},
   code = {https://github.com/Alibaba-NLP/DAAT-CWS},
-  pdf = {ACL2020-coupling.pdf}
+  pdf = {https://www.aclweb.org/anthology/2020.acl-main.595/}
 }
 
 @inproceedings{zhou-etal-2020-hierarchy,
@@ -119,7 +122,7 @@
     pages = "1106--1117",
     abstract = "Hierarchical text classification is an essential yet challenging subtask of multi-label text classification with a taxonomic hierarchy. Existing methods have difficulties in modeling the hierarchical label structure in a global view. Furthermore, they cannot make full use of the mutual interactions between the text feature space and the label space. In this paper, we formulate the hierarchy as a directed graph and introduce hierarchy-aware structure encoders for modeling label dependencies. Based on the hierarchy encoder, we propose a novel end-to-end hierarchy-aware global model (HiAGM) with two variants. A multi-label attention variant (HiAGM-LA) learns hierarchy-aware label embeddings through the hierarchy encoder and conducts inductive fusion of label-aware text features. A text feature propagation model (HiAGM-TP) is proposed as the deductive variant that directly feeds text features into hierarchy encoders. Compared with previous works, both HiAGM-LA and HiAGM-TP achieve significant and consistent improvements on three benchmark datasets.",
     code = "https://github.com/Alibaba-NLP/HiAGM",
-    pdf = "ACL2020-tc.pdf"
+    pdf = "https://www.aclweb.org/anthology/2020.acl-main.104"
 }
 
 
@@ -133,7 +136,7 @@ abbr={TKDE},
  year = {2020},
  html = {https://ieeexplore.ieee.org/abstract/document/8974254},
  abstract = {Knowledge graphs (KG) often encounter knowledge incompleteness. The path reasoning that predicts the unknown path relation between pairwise entities based on existing facts is one of the most promising approaches to the knowledge graph completion. However, most conventional path reasoning methods exclusively consider the entity description included in fact triples, ignoring both the type information of entities and the interaction between different semantic representations. In this study, we propose a novel method, Type-aware Attentive Path Reasoning (TAPR), to complete the knowledge graph by simultaneously considering KG structural information, textual information, and type information. More specifically, we first leverage types to enrich the representational learning of entities and relationships. Next, we describe a type-level attention to select the most relevant type of given entity in a specific triple without any predefined rules or patterns to reduce the impact of noisy types. After learning the distributed representation of all paths, path-level attention assigns different weights to paths, from which relations among entity pairs are calculated. We conduct a series of experiments on a real-world dataset to demonstrate the effectiveness of TAPR. Experimental results show that our method significantly outperforms all baselines on link prediction and entity prediction tasks.},
- pdf = {TKDE-kg.pdf},
+ pdf = {https://ieeexplore.ieee.org/abstract/document/8974254},
 }
 
 @inproceedings{lin2020integrating,
@@ -193,7 +196,7 @@ Zheng, Hai-Tao},
  title = {Event Detection with Trigger-Aware Lattice Neural Network},
  year = {2019},
  abstract = {Event detection (ED) aims to locate trigger words in raw text and then classify them into correct event types. In this task, neural net- work based models became mainstream in re- cent years. However, two problems arise when it comes to languages without natural delim- iters, such as Chinese. First, word-based mod- els severely suffer from the problem of word- trigger mismatch, limiting the performance of the methods. In addition, even if trigger words could be accurately located, the ambi- guity of polysemy of triggers could still af- fect the trigger classification stage. To ad- dress the two issues simultaneously, we pro- pose the Trigger-aware Lattice Neural Net- work (TLNN). (1) The framework dynami- cally incorporates word and character informa- tion so that the trigger-word mismatch issue can be avoided. (2) Moreover, for polysemous characters and words, we model all senses of them with the help of an external linguistic knowledge base, so as to alleviate the prob- lem of ambiguous triggers. Experiments on two benchmark datasets show that our model could effectively tackle the two issues and outperforms previous state-of-the-art methods significantly, giving the best results. The source code of this paper can be obtained from https://github.com/thunlp/TLNN.},
- pdf = {EMNLP2019-ED.pdf},
+ pdf = {https://www.aclweb.org/anthology/D19-1033/},
  html = {https://www.aclweb.org/anthology/D19-1033/},
  code = {https://github.com/thunlp/TLNN},
 }
@@ -215,6 +218,6 @@ abbr={ACL},
     pages = "4377--4386",
     abstract = "Chinese relation extraction is conducted using neural networks with either character-based or word-based inputs, and most existing methods typically suffer from segmentation errors and ambiguity of polysemy. To address the issues, we propose a multi-grained lattice framework (MG lattice) for Chinese relation extraction to take advantage of multi-grained language information and external linguistic knowledge. In this framework, (1) we incorporate word-level information into character sequence inputs so that segmentation errors can be avoided. (2) We also model multiple senses of polysemous words with the help of external linguistic knowledge, so as to alleviate polysemy ambiguity. Experiments on three real-world datasets in distinct domains show consistent and significant superiority and robustness of our model, as compared with other baselines. We will release the source code of this paper in the future.",
     data = "https://github.com/thunlp/Chinese_NRE/tree/master/data/FinRE",
-    pdf = "ACL2019-NRE.pdf",
+    pdf = "https://www.aclweb.org/anthology/P19-1430",
     code = "https://github.com/thunlp/Chinese_NRE",
 }

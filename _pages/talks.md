@@ -5,7 +5,8 @@ title: talks
 nav: true
 ---
 
-
+- Oct 2021 &nbsp;&nbsp;&nbsp; BigModel Meetup No.1. *OpenPrompt: A Unified Prompt-learning Framework.*
+- Oct 2021 &nbsp;&nbsp;&nbsp; Tsinghua University. *Prompt-learning.*
 - Jun 2021 &nbsp;&nbsp;&nbsp; AI-TIME. *Few-NERD: Not Only A Few-shot NER dataset.*
 - May 2021 &nbsp;&nbsp;&nbsp; AIS Pre-conference. *Few-NERD: Not Only A Few-shot NER dataset.*
 - May 2021 &nbsp;&nbsp;&nbsp; AI TIME. *Prototypical Representation Learning for Relation Extraction.*
