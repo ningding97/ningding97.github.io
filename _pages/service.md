@@ -7,8 +7,8 @@ nav: true
 
 #### Program Committee/Reviewer
 - NeurIPS 2020~2021
-- ICML 2021
-- ACL 2020~2021
+- ICML 2021~2022
+- ACL 2020~2022
 - EMNLP 2020~2021
 - AAAI 2020~2022
 - IJCAI 2020

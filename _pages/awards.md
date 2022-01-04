@@ -4,7 +4,7 @@ permalink: /awards/
 title: awards
 nav: true
 ---
-
+- *Baidu Ph.D Fellowship* (10 recipients worldwide), 2021.
 - *National Scholarship* for Ph.D student, 2021.
 - *National Scholarship* for Ph.D student, 2020.
 - *Tsingfeng Scholarship*, Tsinghua University, 2019.
