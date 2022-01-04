@@ -1,0 +1,236 @@
+---
+---
+
+@inproceedings{ding2021openprompt,
+      abbr={arXiv},
+      title={OpenPrompt: An Open-source Framework for Prompt-learning}, 
+      author={Ding, Ning and Hu, Shengding and Zhao, Weilin and Chen, Yulin and Liu, Zhiyuan and Zheng, Hai-Tao and Sun, Maosong},
+      year={Preprint},
+      booktitle={arXiv},
+      html={https://arxiv.org/abs/2111.01998},
+      pdf={https://arxiv.org/pdf/2111.01998.pdf},
+      code={https://github.com/thunlp/OpenPrompt},
+      abstract={Prompt-learning has become a new paradigm in modern natural language processing, which directly adapts pre-trained language models (PLMs) to cloze-style prediction, autoregressive modeling, or sequence to sequence generation, resulting in promising performances on various tasks. However, no standard implementation framework of prompt-learning is proposed yet, and most existing prompt-learning codebases, often unregulated, only provide limited implementations for specific scenarios. Since there are many details such as templating strategy, initializing strategy, and verbalizing strategy, etc. need to be considered in prompt-learning, practitioners face impediments to quickly adapting the desired prompt learning methods to their applications. In this paper, we present {OpenPrompt}, a unified easy-to-use toolkit to conduct prompt-learning over PLMs. OpenPrompt is a research-friendly framework that is equipped with efficiency, modularity, and extendibility, and its combinability allows the freedom to combine different PLMs, task formats, and prompting modules in a unified paradigm. Users could expediently deploy prompt-learning frameworks and evaluate the generalization of them on different NLP tasks without constraints.}
+}
+
+
+@inproceedings{ding2021prompt,
+      abbr={arXiv},
+      title={Prompt-Learning for Fine-Grained Entity Typing}, 
+      author={Ding, Ning and Chen, Yulin and Han, Xu and Xu, Guangwei and Xie, Pengjun and Zheng, Hai-Tao and Liu, Zhiyuan and Li, Juanzi and Kim Hong-Gee},
+      year={Preprint},
+      booktitle={arXiv},
+      html={https://arxiv.org/pdf/2108.10604v1.pdf},
+      pdf={https://arxiv.org/pdf/2108.10604v1.pdf},
+      abstract={As an effective approach to tune pre-trained language models (PLMs) for specific tasks, prompt-learning has recently attracted much attention from researchers. By using \textit{cloze}-style language prompts to stimulate the versatile knowledge of PLMs, prompt-learning can achieve promising results on a series of NLP tasks, such as natural language inference, sentiment classification, and knowledge probing. In this work, we investigate the application of prompt-learning on fine-grained entity typing in fully supervised, few-shot and zero-shot scenarios. We first develop a simple and effective prompt-learning pipeline by constructing entity-oriented verbalizers and templates and conducting masked language modeling. Further, to tackle the zero-shot regime, we propose a self-supervised strategy that carries out distribution-level optimization in prompt-learning to automatically summarize the information of entity types. Extensive experiments on three fine-grained entity typing benchmarks (with up to 86 classes) under fully supervised, few-shot and zero-shot settings show that prompt-learning methods significantly outperform fine-tuning baselines, especially when the training data is insufficient. }
+}
+
+@inproceedings{hu2021knowledgeable,
+      abbr={arXiv},
+      title={Knowledgeable Prompt-tuning: Incorporating Knowledge into Prompt Verbalizer for Text Classification}, 
+      author={Hu, Shengding and Ding, Ning and Wang, Huadong and Liu, Zhiyuan and Li, Juanzi and Sun, Maosong},
+      year={Preprint},
+      booktitle={arXiv},
+      html={https://arxiv.org/abs/2108.02035},
+      pdf={https://arxiv.org/pdf/2108.02035.pdf},
+      abstract={Tuning pre-trained language models (PLMs) with task-specific prompts has been a promising approach for text classification. Particularly, previous studies suggest that prompt-tuning has remarkable superiority in the low-data scenario over the generic fine-tuning methods with extra classifiers. The core idea of prompt-tuning is to insert text pieces, i.e., template, to the input and transform a classification problem into a masked language modeling problem, where a crucial step is to construct a projection, i.e., verbalizer, between a label space and a label word space. A verbalizer is usually handcrafted or searched by gradient descent, which may lack coverage and bring considerable bias and high variances to the results. In this work, we focus on incorporating external knowledge into the verbalizer, forming a knowledgeable prompt-tuning (KPT), to improve and stabilize prompt-tuning. Specifically, we expand the label word space of the verbalizer using external knowledge bases (KBs) and refine the expanded label word space with the PLM itself before predicting with the expanded label word space. Extensive experiments on zero and few-shot text classification tasks demonstrate the effectiveness of knowledgeable prompt-tuning.}
+}
+
+
+
+
+
+@inproceedings{han2021ptr,
+  abbr={arXiv},
+  title={PTR: Prompt Tuning with Rules for Text Classification},
+  author={Han, Xu and Zhao, Weilin and Ding, Ning and Liu, Zhiyuan and Sun, Maosong},
+  booktitle={arXiv},
+  abstract={Fine-tuned pre-trained language models (PLMs) have achieved awesome performance on almost all NLP tasks. By using additional prompts to fine-tune PLMs, we can further stimulate the rich knowledge distributed in PLMs to better serve downstream task. Prompt tuning has achieved promising results on some few-class classification tasks such as sentiment classification and natural language inference. However, manually designing lots of language prompts is cumbersome and fallible. For those auto-generated prompts, it is also expensive and time-consuming to verify their effectiveness in non-few-shot scenarios. Hence, it is challenging for prompt tuning to address many-class classification tasks. To this end, we propose prompt tuning with rules (PTR) for many-class text classi- fication, and apply logic rules to construct prompts with several sub-prompts. In this way, PTR is able to encode prior knowledge of each class into prompt tuning. We conduct experiments on relation classification, a typical many-class classification task, and the results on benchmarks show that PTR can significantly and consistently outperform existing state-of-the-art baselines. This indicates that PTR is a promising approach to take advantage of PLMs for those complicated classification tasks.},
+  html={https://arxiv.org/abs/2105.11259},
+  pdf={https://arxiv.org/pdf/2105.11259.pdf},
+  year={Preprint}
+}
+
+@inproceedings{ding2021few,
+  abbr={ACL},
+  title={Few-NERD: A Few-shot Named Entity Recognition Dataset},
+  author={Ding, Ning and Xu, Guangwei and Chen, Yulin and Wang, Xiaobin and Han, Xu and Xie, Pengjun and Zheng, Hai-Tao and Liu, Zhiyuan},
+  booktitle={Annual Meeting of the Association for Computational Linguistics, <br> ACL},
+  abstract={Recently, considerable literature has grown up around the theme of few-shot named entity recognition (NER), but little published benchmark data specifically focused on the practical and challenging task. Current approaches collect existing supervised NER datasets and re-organize them to the few-shot setting for empirical study. These strategies conventionally aim to recognize coarse-grained entity types with few examples, while in practice, most unseen entity types are fine-grained. In this paper, we present \textsc{Few-NERD}, a large-scale human-annotated few-shot NER dataset with a hierarchy of 8 coarse-grained and 66 fine-grained entity types. \textsc{Few-NERD} consists of 188,238 sentences from Wikipedia, 4,601,160 words are included and each is annotated as context or a part of a two-level entity type.  To the best of our knowledge, this is the first few-shot NER dataset and the largest human-crafted NER dataset.  We construct benchmark tasks with different emphases to comprehensively assess the generalization capability of models. Extensive empirical results and analysis show that\textsc{Few-NERD} is challenging and the problem requires further research. We make \textsc{Few-NERD} public at https://ningding97.github.io/fewnerd/ },
+  html={https://ningding97.github.io/fewnerd/},
+  pdf={https://arxiv.org/pdf/2105.07464.pdf},
+  code={https://github.com/thunlp/Few-NERD},
+  year={2021}
+}
+
+@inproceedings{wang2021cline,
+  abbr={ACL},
+  title={CLINE: Contrastive Learning with Semantic Negative Examples for Natural Language Understanding},
+  author={Wang, Dong and Ding, Ning* and Li, Piji and Zheng, Hai-Tao},
+  booktitle={Annual Meeting of the Association for Computational Linguistics, <br> ACL},
+  html={https://arxiv.org/abs/2107.00440},
+  pdf={https://arxiv.org/pdf/2107.00440.pdf},
+  code={https://github.com/kandorm/CLINE},
+  year={2021}
+}
+
+@inproceedings{han2021pre,
+  abbr={AI Open},
+  title={Pre-Trained Models: Past, Present and Future},
+  author={Han, Xu* and Zhang, Zhengyan* and Ding, Ning* and Gu, Yuxian* and Liu, Xiao* and Huo, Yuqi* and Qiu, Jiezhong and Zhang, Liang and Han, Wentao and Huang, Minlie and Jin, Qin and Lan, Yanyan and Liu, Yang and Liu, Zhiyuan and Lu, Zhiwu and Qiu, Xipeng and Song, Ruihua and Tang, Jie and Wen, Ji-Rong and Yuan, Jinhui and Zhao, Wayne Xin and Zhu Jun},
+  booktitle={AI Open},
+  abstract={Large-scale pre-trained models (PTMs) such as BERT and GPT have recently achieved great success and become a milestone in the field of artificial intelligence (AI). Owing to sophisticated pre-training objectives and huge model parameters, large-scale PTMs can ef- fectively capture knowledge from massive la- beled and unlabeled data. By storing knowl- edge into huge parameters and fine-tuning on specific tasks, the rich knowledge implicitly encoded in huge parameters can benefit a vari- ety of downstream tasks, which has been exten- sively demonstrated via experimental verifica- tion and empirical analysis. It is now the con- sensus of the AI community to adopt PTMs as backbone for downstream tasks rather than learning models from scratch. In this paper, we take a deep look into the history of pre- training, especially its special relation with transfer learning and self-supervised learning, to reveal the crucial position of PTMs in the AI development spectrum. Further, we compre- hensively review the latest breakthroughs of PTMs. These breakthroughs are driven by the surge of computational power and the increas- ing availability of data, towards four impor- tant directions: designing effective architec- tures, utilizing rich contexts, improving com- putational efficiency, and conducting interpre- tation and theoretical analysis. Finally, we dis- cuss a series of open problems and research directions of PTMs, and hope our view can in- spire and advance the future study of PTMs.},
+  html={https://arxiv.org/abs/2106.07139},
+  pdf={https://arxiv.org/pdf/2106.07139.pdf},
+  year={2021}
+}
+
+
+
+
+@inproceedings{
+  ding2021prototypical,
+  abbr={ICLR},
+  title={Prototypical Representation Learning for Relation Extraction},
+  author={Ning Ding and Xiaobin Wang and Yao Fu and Guangwei Xu and Rui Wang and Pengjun Xie and Ying Shen and Fei Huang and Hai-Tao Zheng and Rui Zhang},
+  booktitle={International Conference on Learning Representations, <br>  ICLR},
+  year={2021},
+  abstract={Recognizing relations between entities is a pivotal task of relational learning. Learning relation representations from distantly-labeled datasets is difficult because of the abundant label noise and complicated expressions in human language. This paper aims to learn predictive, interpretable, and robust relation representations from distantly-labeled data that are effective in different settings, including supervised, distantly supervised, and few-shot learning. Instead of solely relying on the supervision from noisy labels, we propose to learn prototypes for each relation from contextual information to best explore the intrinsic semantics of relations. Prototypes are representations in the feature space abstracting the essential semantics of relations between entities in sentences. We learn prototypes based on objectives with clear geometric interpretation, where the prototypes are unit vectors uniformly dispersed in a unit ball, and statement embeddings are centered at the end of their corresponding prototype vectors on the surface of the ball. This approach allows us to learn meaningful, interpretable prototypes for the final classification. Results on several relation learning tasks show that our model significantly outperforms the previous state-of-the-art models. We further demonstrate the robustness of the encoder and the interpretability of prototypes with extensive experiments.},
+  html={https://openreview.net/forum?id=aCgLmfhIy_f},
+  pdf={https://openreview.net/forum?id=aCgLmfhIy_f},
+  code={https://github.com/Alibaba-NLP/ProtoRE}
+}
+
+@inproceedings{ding2020coupling,
+  abbr={ACL},
+  title={Coupling Distant Annotation and Adversarial Training for Cross-Domain Chinese Word Segmentation},
+  author={Ding, Ning and Long, Dingkun and Xu, Guangwei and Zhu, Muhua and Xie, Pengjun and Wang, Xiaobin and Zheng, Hai-Tao},
+  booktitle={Annual Meeting of the Association for Computational Linguistics, <br> ACL},
+  pages={6662--6671},
+  year={2020},
+  html = {https://www.aclweb.org/anthology/2020.acl-main.595/},
+  abstract = {Fully supervised neural approaches have achieved significant progress in the task of Chinese word segmentation (CWS). Nevertheless, the performance of supervised models always drops gravely if the domain shifts due to the distribution gap across domains and the out of vocabulary (OOV) problem. In order to simultaneously alleviate the issues, this paper intuitively couples distant annotation and adversarial training for cross-domain CWS. 1) We rethink the essence of “Chinese words” and design an automatic distant annotation mechanism, which does not need any supervision or pre-defined dictionaries on the target domain. The method could effectively explore domain-specific words and distantly annotate the raw texts for the target domain. 2) We further develop a sentence-level adversarial training procedure to perform noise reduction and maximum utilization of the source domain information. Experiments on multiple real-world datasets across various domains show the superiority and robustness of our model, significantly outperforming previous state-of-the-arts cross-domain CWS methods.},
+  code = {https://github.com/Alibaba-NLP/DAAT-CWS},
+  pdf = {https://www.aclweb.org/anthology/2020.acl-main.595/}
+}
+
+@inproceedings{zhou-etal-2020-hierarchy,
+    abbr={ACL},
+    title = "Hierarchy-Aware Global Model for Hierarchical Text Classification",
+    author = "Zhou, Jie  and
+      Ma, Chunping  and
+      Long, Dingkun  and
+      Xu, Guangwei  and
+      Ding, Ning  and
+      Zhang, Haoyu  and
+      Xie, Pengjun  and
+      Liu, Gongshen",
+    booktitle = "Annual Meeting of the Association for Computational Linguistics, <br> ACL",
+    month = jul,
+    year = "2020",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    html = "https://www.aclweb.org/anthology/2020.acl-main.104",
+    doi = "10.18653/v1/2020.acl-main.104",
+    pages = "1106--1117",
+    abstract = "Hierarchical text classification is an essential yet challenging subtask of multi-label text classification with a taxonomic hierarchy. Existing methods have difficulties in modeling the hierarchical label structure in a global view. Furthermore, they cannot make full use of the mutual interactions between the text feature space and the label space. In this paper, we formulate the hierarchy as a directed graph and introduce hierarchy-aware structure encoders for modeling label dependencies. Based on the hierarchy encoder, we propose a novel end-to-end hierarchy-aware global model (HiAGM) with two variants. A multi-label attention variant (HiAGM-LA) learns hierarchy-aware label embeddings through the hierarchy encoder and conducts inductive fusion of label-aware text features. A text feature propagation model (HiAGM-TP) is proposed as the deductive variant that directly feeds text features into hierarchy encoders. Compared with previous works, both HiAGM-LA and HiAGM-TP achieve significant and consistent improvements on three benchmark datasets.",
+    code = "https://github.com/Alibaba-NLP/HiAGM",
+    pdf = "https://www.aclweb.org/anthology/2020.acl-main.104"
+}
+
+
+
+@article{shen2020modeling,
+abbr={TKDE},
+ author = {Shen, Ying and Ding, Ning and Zheng, Hai-Tao and Li, Yaliang and Yang, Min},
+ journal = {IEEE Transactions on Knowledge and Data Engineering (TKDE),},
+ publisher = {IEEE},
+ title = {Modeling Relation Paths for Knowledge Graph Completion},
+ year = {2020},
+ html = {https://ieeexplore.ieee.org/abstract/document/8974254},
+ abstract = {Knowledge graphs (KG) often encounter knowledge incompleteness. The path reasoning that predicts the unknown path relation between pairwise entities based on existing facts is one of the most promising approaches to the knowledge graph completion. However, most conventional path reasoning methods exclusively consider the entity description included in fact triples, ignoring both the type information of entities and the interaction between different semantic representations. In this study, we propose a novel method, Type-aware Attentive Path Reasoning (TAPR), to complete the knowledge graph by simultaneously considering KG structural information, textual information, and type information. More specifically, we first leverage types to enrich the representational learning of entities and relationships. Next, we describe a type-level attention to select the most relevant type of given entity in a specific triple without any predefined rules or patterns to reduce the impact of noisy types. After learning the distributed representation of all paths, path-level attention assigns different weights to paths, from which relations among entity pairs are calculated. We conduct a series of experiments on a real-world dataset to demonstrate the effectiveness of TAPR. Experimental results show that our method significantly outperforms all baselines on link prediction and entity prediction tasks.},
+ pdf = {https://ieeexplore.ieee.org/abstract/document/8974254},
+}
+
+@inproceedings{lin2020integrating,
+abbr={AAAI},
+  title={Integrating Linguistic Knowledge to Sentence Paraphrase Generation},
+  author={Lin, Zibo and Li, Ziran and Ding, Ning and Zheng, Hai-Tao and Shen, Ying and Zhao, Xiaobin and Zheng, Cong-Zhi},
+  booktitle={AAAI Conference on Artificial Intelligence, <br> AAAI},
+  year={2020},
+  pdf = {AAAI2020-para.pdf},
+  code={https://github.com/LINMouMouZiBo/KEPN},
+  html={https://ojs.aaai.org/index.php/AAAI/article/view/6354},
+  abstract={Paraphrase generation aims to rewrite a text with different words while keeping the same meaning. Previous work performs the task based solely on the given dataset while ignoring the availability of external linguistic knowledge. However, it is intuitive that a model can generate more expressive and diverse paraphrase with the help of such knowledge. To fill this gap, we propose Knowledge-Enhanced Paraphrase Network (KEPN), a transformer-based framework that can leverage external linguistic knowledge to facilitate paraphrase generation. (1) The model integrates synonym information from the external linguistic knowledge into the paraphrase generator, which is used to guide the decision on whether to generate a new word or replace it with a synonym. (2) To locate the synonym pairs more accurately, we adopt an incremental encoding scheme to incorporate position information of each synonym. Besides, a multi-task architecture is designed to help the framework jointly learn the selection of synonym pairs and the generation of expressive paraphrase. Experimental results on both English and Chinese datasets show that our method significantly outperforms the state-of-the-art approaches in terms of both automatic and human evaluation.}
+}
+
+@inproceedings{ijcai2020-522,
+abbr={IJCAI},
+  title     = {Infobox-to-text Generation with Tree-like Planning based Attention Network},
+  author    = {Bai, Yang and Li, Ziran and Ding, Ning and Shen, Ying and Zheng, Hai-Tao},
+  booktitle = {International Joint Conference on
+               Artificial Intelligence, <br> IJCAI},
+  publisher = {International Joint Conferences on Artificial Intelligence Organization},
+  editor    = {Christian Bessiere},
+  year      = {2020},
+  html       = {https://doi.org/10.24963/ijcai.2020/522},
+  abstract = {We study the problem of infobox-to-text generation that aims to generate a textual description from a key-value table. Representing the input infobox as a sequence, previous neural methods using end-to-end models without order-planning suffer from the problems of incoherence and inadaptability to disordered input. Recent planning-based models only implement static order-planning to guide the generation, which may cause error propagation between planning and generation. To address these issues, we propose a Tree-like PLanning based Attention Network (Tree-PLAN) which leverages both static order-planning and dynamic tuning to guide the generation. A novel tree-like tuning encoder is designed to dynamically tune the static order-plan for better planning by merging the most relevant attributes together layer by layer. Experiments conducted on two datasets show that our model outperforms previous methods on both automatic and human evaluation, and demonstrate that our model has better adaptability to disordered input.},
+  pdf = {IJCAI2020-infobox.pdf}
+}
+
+@inproceedings{ijcai2020-523,
+abbr={IJCAI},
+  title     = {Triple-to-Text Generation with an Anchor-to-Prototype Framework},
+  author    = {Li, Ziran and Lin, Zibo and Ding, Ning and Zheng, Hai-Tao and Shen, Ying},
+  booktitle = {International Joint Conference on
+               Artificial Intelligence, <br> IJCAI},
+  publisher = {International Joint Conferences on Artificial Intelligence Organization},
+  year      = {2020},
+  doi       = {10.24963/ijcai.2020/523},
+  abstract       = {Generating a textual description from a set of RDF triplets is a challenging task in natural language generation. Recent neural methods have become the mainstream for this task, which often generate sentences from scratch. However, due to the huge gap between the structured input and the unstructured output, the input triples alone are insufficient to decide an expressive and specific description. In this paper, we propose a novel anchor-to-prototype framework to bridge the gap between structured RDF triples and natural text. The model retrieves a set of prototype descriptions from the training data and extracts writing patterns from them to guide the generation process. Furthermore, to make a more precise use of the retrieved prototypes, we employ a triple anchor that aligns the input triples into groups so as to better match the prototypes. Experimental results on both English and Chinese datasets show that our method significantly outperforms the state-of-the-art baselines in terms of both automatic and manual evaluation, demonstrating the benefit of learning guidance from retrieved prototypes to facilitate triple-to-text generation.},
+  html       = {https://doi.org/10.24963/ijcai.2020/523},
+  pdf = {IJCAI2020-triple.pdf}
+
+}
+
+
+
+
+@inproceedings{ding-2019-event,
+abbr={EMNLP},
+ address = {HongKong, China},
+ author = {Ding, Ning  and
+Li, Ziran  and
+Liu, Zhiyuan  and
+Zheng, Hai-Tao},
+ booktitle = {The Conference on Empirical Methods in Natural Language Processing, <br> EMNLP},
+ month = {October},
+ publisher = {Association for Computational Linguistics},
+ title = {Event Detection with Trigger-Aware Lattice Neural Network},
+ year = {2019},
+ abstract = {Event detection (ED) aims to locate trigger words in raw text and then classify them into correct event types. In this task, neural net- work based models became mainstream in re- cent years. However, two problems arise when it comes to languages without natural delim- iters, such as Chinese. First, word-based mod- els severely suffer from the problem of word- trigger mismatch, limiting the performance of the methods. In addition, even if trigger words could be accurately located, the ambi- guity of polysemy of triggers could still af- fect the trigger classification stage. To ad- dress the two issues simultaneously, we pro- pose the Trigger-aware Lattice Neural Net- work (TLNN). (1) The framework dynami- cally incorporates word and character informa- tion so that the trigger-word mismatch issue can be avoided. (2) Moreover, for polysemous characters and words, we model all senses of them with the help of an external linguistic knowledge base, so as to alleviate the prob- lem of ambiguous triggers. Experiments on two benchmark datasets show that our model could effectively tackle the two issues and outperforms previous state-of-the-art methods significantly, giving the best results. The source code of this paper can be obtained from https://github.com/thunlp/TLNN.},
+ pdf = {https://www.aclweb.org/anthology/D19-1033/},
+ html = {https://www.aclweb.org/anthology/D19-1033/},
+ code = {https://github.com/thunlp/TLNN},
+}
+
+@inproceedings{li-etal-2019-chinese,
+abbr={ACL},
+    title = "{C}hinese Relation Extraction with Multi-Grained Information and External Linguistic Knowledge",
+    author = "Li, Ziran*  and
+      Ding, Ning*  and
+      Liu, Zhiyuan  and
+      Zheng, Hai-Tao  and
+      Shen, Ying",
+    booktitle = "Annual Meeting of the Association for Computational Linguistics, <br> ACL",
+    month = jul,
+    year = "2019",
+    publisher = "Association for Computational Linguistics",
+    html = "https://www.aclweb.org/anthology/P19-1430",
+    doi = "10.18653/v1/P19-1430",
+    pages = "4377--4386",
+    abstract = "Chinese relation extraction is conducted using neural networks with either character-based or word-based inputs, and most existing methods typically suffer from segmentation errors and ambiguity of polysemy. To address the issues, we propose a multi-grained lattice framework (MG lattice) for Chinese relation extraction to take advantage of multi-grained language information and external linguistic knowledge. In this framework, (1) we incorporate word-level information into character sequence inputs so that segmentation errors can be avoided. (2) We also model multiple senses of polysemous words with the help of external linguistic knowledge, so as to alleviate polysemy ambiguity. Experiments on three real-world datasets in distinct domains show consistent and significant superiority and robustness of our model, as compared with other baselines. We will release the source code of this paper in the future.",
+    data = "https://github.com/thunlp/Chinese_NRE/tree/master/data/FinRE",
+    pdf = "https://www.aclweb.org/anthology/P19-1430",
+    code = "https://github.com/thunlp/Chinese_NRE",
+}
