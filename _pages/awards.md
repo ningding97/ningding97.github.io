@@ -4,6 +4,7 @@ permalink: /awards/
 title: awards
 nav: true
 ---
+- *ACL Best System Demonstration Paper Award*, 2022.
 - *Baidu Ph.D Fellowship* (10 recipients worldwide), 2021.
 - *National Scholarship* for Ph.D student, 2021.
 - *National Scholarship* for Ph.D student, 2020.
