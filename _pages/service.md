@@ -6,10 +6,11 @@ nav: true
 ---
 
 #### Program Committee/Reviewer
-- NeurIPS 2020~2021
+- NeurIPS 2020~2022
 - ICML 2021~2022
 - ACL 2020~2022
-- EMNLP 2020~2021
+- EMNLP 2020~2022
+- COLING 2020, 2022
 - AAAI 2020~2022
 - IJCAI 2020
 - Neural Networks
