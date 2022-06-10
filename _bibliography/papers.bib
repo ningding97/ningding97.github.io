@@ -12,6 +12,7 @@
   code={https://github.com/thunlp/OpenDelta},
   author={Ding, Ning and Qin, Yujia and Yang, Guang and Wei, Fuchao and Yang, Zonghan and Su, Yusheng and Hu, Shengding and Chen, Yulin and Chan, Chi-Min and Chen, Weize and Yi, Jing and Zhao, Weilin and Liu, Zhiyuan and Zheng, Hai-Tao and Chen, Jianfei and Liu, Yang and Tang, Jie and Li, Juanzi and Sun, Maosong},
   booktitle={arXiv},
+  selected={true},
   abstract={As pre-trained language models (PLMs) have become the fundamental infrastructure for various NLP tasks and researchers have readily enjoyed themselves in the pretrainingfinetuning paradigm, evidence from emerging research has continuously proven that larger models tend to yield better performance. However, despite the welcome outcome, the process of fine-tuning large-scale PLMs brings prohibitive adaptation costs. In fact, finetuning all the parameters of a colossal model and retaining separate instances for different tasks are practically infeasible. This necessitates a new branch of research focusing on the parameter-efficient adaptation of PLMs. In order to unleash the imagination of the possible advantages of such methods, not limited to parameter efficiency, we coined a new term delta tuning from a morphological point of view to refer to the original “parameter efficient tuning”. In contrast with the standard fine-tuning, delta tuning only fine-tunes a small portion of the model parameters while keeping the rest untouched, largely reducing both the computation and storage costs. Recent studies have demonstrated that a series of delta tuning methods with distinct tuned parameter selection could achieve performance on a par with full-parameter fine-tuning, suggesting a new promising way of stimulating large-scale PLMs. In this paper, we first formally describe the problem of delta tuning and then comprehensively review recent delta tuning approaches. We also propose a unified categorization criterion that divides existing delta tuning methods into three groups: addition-based, specification-based, and reparameterization-based methods. Though initially proposed as an efficient method to steer large models, we believe that some of the fascinating evidence discovered along with delta tuning could help further reveal the mechanisms of PLMs and even deep neural networks. To this end, we discuss the theoretical principles underlying the effectiveness of delta tuning and propose frameworks to interpret delta tuning from the perspective of optimization and optimal control, respectively. Furthermore, we provide a holistic empirical study of representative methods, where results on over 100 NLP tasks demonstrate a comprehensive performance comparison of different approaches. The experimental results also cover the analysis of combinatorial, scaling and transferable properties of delta tuning. To facilitate the research of delta tuning, we are also developing an open-source toolkit, OpenDelta , that enables practitioners to efficiently and flexibly implement delta tuning on PLMs. At last, we discuss a series of real-world applications of delta tuning.},
   html={https://arxiv.org/abs/2203.06904},
   pdf={https://arxiv.org/pdf/2203.06904.pdf},
@@ -26,6 +27,7 @@
       author={Ding, Ning and Hu, Shengding and Zhao, Weilin and Chen, Yulin and Liu, Zhiyuan and Zheng, Hai-Tao and Sun, Maosong},
       year={2022},
       bibtex_show={true},
+      selected={true},
       booktitle={ACL System Demonstration},
       html={https://arxiv.org/abs/2111.01998},
       pdf={https://arxiv.org/pdf/2111.01998.pdf},
@@ -46,6 +48,18 @@
       pdf={https://arxiv.org/pdf/2108.10604v1.pdf},
       abstract={As an effective approach to tune pre-trained language models (PLMs) for specific tasks, prompt-learning has recently attracted much attention from researchers. By using \textit{cloze}-style language prompts to stimulate the versatile knowledge of PLMs, prompt-learning can achieve promising results on a series of NLP tasks, such as natural language inference, sentiment classification, and knowledge probing. In this work, we investigate the application of prompt-learning on fine-grained entity typing in fully supervised, few-shot and zero-shot scenarios. We first develop a simple and effective prompt-learning pipeline by constructing entity-oriented verbalizers and templates and conducting masked language modeling. Further, to tackle the zero-shot regime, we propose a self-supervised strategy that carries out distribution-level optimization in prompt-learning to automatically summarize the information of entity types. Extensive experiments on three fine-grained entity typing benchmarks (with up to 86 classes) under fully supervised, few-shot and zero-shot settings show that prompt-learning methods significantly outperform fine-tuning baselines, especially when the training data is insufficient. }
 }
+
+@inproceedings{qin2021exploring,
+  title={Exploring low-dimensional intrinsic task subspace via prompt tuning},
+  author={Qin, Yujia and Wang, Xiaozhi and Su, Yusheng and Lin, Yankai and Ding, Ning and Liu, Zhiyuan and Li, Juanzi and Hou, Lei and Li, Peng and Sun, Maosong and others},
+  year={Preprint},
+  booktitle={arXiv},
+  bibtex_show={true},
+  pdf={https://arxiv.org/abs/2110.07867},
+  code={https://github.com/thunlp/Intrinsic-Prompt-Tuning},
+  abstract={Why can pre-trained language models (PLMs) learn universal representations and effectively adapt to broad NLP tasks differing a lot superficially? In this work, we empirically find evidence indicating that the adaptations of PLMs to various few-shot tasks can be reparameterized as optimizing only a few free parameters in a unified low-dimensional intrinsic task subspace, which may help us understand why PLMs could easily adapt to various NLP tasks with small-scale data. To find such a subspace and examine its universality, we propose an analysis pipeline called intrinsic prompt tuning (IPT). Specifically, we resort to the recent success of prompt tuning and decompose the soft prompts of multiple NLP tasks into the same low-dimensional nonlinear subspace, then we learn to adapt the PLM to unseen data or tasks by only tuning parameters in this subspace. In the experiments, we study diverse few-shot NLP tasks and surprisingly find that in a 250-dimensional subspace found with 100 tasks, by only tuning 250 free parameters, we can recover 97% and 83% of the full prompt tuning performance for 100 seen tasks (using different training data) and 20 unseen tasks, respectively, showing great generalization ability of the found intrinsic task subspace. Besides being an analysis tool, IPT could further bring practical benefits, such as improving the prompt tuning stability.}
+}
+
 
 
 @inproceedings{hu2021knowledgeable,
@@ -116,6 +130,7 @@
   author={Ding, Ning and Xu, Guangwei and Chen, Yulin and Wang, Xiaobin and Han, Xu and Xie, Pengjun and Zheng, Hai-Tao and Liu, Zhiyuan},
   booktitle={Annual Meeting of the Association for Computational Linguistics, <br> ACL},
   bibtex_show={true},
+  selected={true},
   abstract={Recently, considerable literature has grown up around the theme of few-shot named entity recognition (NER), but little published benchmark data specifically focused on the practical and challenging task. Current approaches collect existing supervised NER datasets and re-organize them to the few-shot setting for empirical study. These strategies conventionally aim to recognize coarse-grained entity types with few examples, while in practice, most unseen entity types are fine-grained. In this paper, we present \textsc{Few-NERD}, a large-scale human-annotated few-shot NER dataset with a hierarchy of 8 coarse-grained and 66 fine-grained entity types. \textsc{Few-NERD} consists of 188,238 sentences from Wikipedia, 4,601,160 words are included and each is annotated as context or a part of a two-level entity type.  To the best of our knowledge, this is the first few-shot NER dataset and the largest human-crafted NER dataset.  We construct benchmark tasks with different emphases to comprehensively assess the generalization capability of models. Extensive empirical results and analysis show that\textsc{Few-NERD} is challenging and the problem requires further research. We make \textsc{Few-NERD} public at https://ningding97.github.io/fewnerd/ },
   html={https://ningding97.github.io/fewnerd/},
   pdf={https://arxiv.org/pdf/2105.07464.pdf},
@@ -158,6 +173,7 @@
   booktitle={International Conference on Learning Representations, <br>  ICLR},
   year={2021},
   bibtex_show={true},
+  selected={true},
   abstract={Recognizing relations between entities is a pivotal task of relational learning. Learning relation representations from distantly-labeled datasets is difficult because of the abundant label noise and complicated expressions in human language. This paper aims to learn predictive, interpretable, and robust relation representations from distantly-labeled data that are effective in different settings, including supervised, distantly supervised, and few-shot learning. Instead of solely relying on the supervision from noisy labels, we propose to learn prototypes for each relation from contextual information to best explore the intrinsic semantics of relations. Prototypes are representations in the feature space abstracting the essential semantics of relations between entities in sentences. We learn prototypes based on objectives with clear geometric interpretation, where the prototypes are unit vectors uniformly dispersed in a unit ball, and statement embeddings are centered at the end of their corresponding prototype vectors on the surface of the ball. This approach allows us to learn meaningful, interpretable prototypes for the final classification. Results on several relation learning tasks show that our model significantly outperforms the previous state-of-the-art models. We further demonstrate the robustness of the encoder and the interpretability of prototypes with extensive experiments.},
   html={https://openreview.net/forum?id=aCgLmfhIy_f},
   pdf={https://openreview.net/forum?id=aCgLmfhIy_f},
