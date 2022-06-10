@@ -181,7 +181,9 @@ a, table.table a {
 
 .social {
   text-align: right;
+  padding-right: 5rem;
   .contact-icons {
+    margin-top: -1rem;
     font-size: 1.5rem;
     a {
       i::before {

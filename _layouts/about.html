@@ -37,15 +37,6 @@ layout: default
       {{ content }}
     </div>
 
-
-
-    {% if page.selected_papers %}
-      {% include selected_papers.html %}
-    {% endif %}
-    {% if page.news %}
-      {% include news.html %}
-    {% endif %}
-
     {% if page.social %}
     <div class="social">
       <div class="contact-icons">
@@ -55,6 +46,14 @@ layout: default
     </div>
     {% endif %}
   </article>
+
+    {% if page.selected_papers %}
+      {% include selected_papers.html %}
+    {% endif %}
+    {% if page.news %}
+      {% include news.html %}
+    {% endif %}
+
 
 
 <br><br><br><br>

@@ -25,5 +25,5 @@ social: true  # includes social icons at the bottom of the page
 I'm a Ph.D student at the [Department of Computer Science and Technology](http://www.cs.tsinghua.edu.cn/publish/csen/index.html/), [Tsinghua Univeristy](https://www.tsinghua.edu.cn/en/). I'm advised by Prof. [Hai-Tao Zheng](https://dblp.org/pid/20/134.html) and also co-advised by Prof. [Zhiyuan Liu](http://nlp.csai.tsinghua.edu.cn/~lzy/).
 
 ### Research
-My research spans the areas of natural language processing and machine learning. At the current stage, I am particurlarly interested effective stimulation of language models. My research aims to develop theory, tools and algorithms to effectively and efficiently drive language models (especially the larrge ones), and also establish deeper understanding by observing behaviors of models.
+My research spans the areas of natural language processing and machine learning. At the current stage, I am particularly interested effective stimulation of language models. My research aims to develop theory, tools, and algorithms to effectively and efficiently drive language models (especially the large ones), and also establish a deeper understanding by observing the behaviors of models.
 
