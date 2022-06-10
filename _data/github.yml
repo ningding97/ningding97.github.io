@@ -1,0 +1,9 @@
+- username: thunlp
+  repositories:
+    - OpenPrompt
+    - OpenDelta
+    - PromptPapers
+    - Few-NERD
+    - Chinese_NRE
+    - DeltaPapers
+    - TLNN

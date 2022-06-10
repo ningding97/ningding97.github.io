@@ -4,12 +4,12 @@ permalink: /talks/
 title: talks
 nav: true
 ---
-
 - Oct 2021: BigModel Meetup No.1. *OpenPrompt: A Unified Prompt-learning Framework.*
 - Oct 2021: Tsinghua University. *An Overview of Prompt-learning.*
 - Jun 2021: AI-TIME. *Few-NERD: Not Only A Few-shot NER dataset.*
 - May 2021: AIS Pre-conference. *Few-NERD: Not Only A Few-shot NER dataset.*
-- May 2021: AI TIME. *Prototypical Representation Learning for Relation Extraction.*
+- May 2021: AI TIME. *Prototypical Representation Learning for Relation 
+Extraction.*
 - May 2021: Tsinghua University. *Advances of Noisy Label Learning.*
 - Apr 2021: Alibaba DAMO Academy. *Sentence Embeddings of PLMs.*
 - Mar 2021: Alibaba DAMO Academy. *Prototypical Representation Learning for Relation Extraction.*
