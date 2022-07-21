@@ -1,10 +1,6 @@
 ---
 ---
 
-
-
-
-
 @inproceedings{ding2022delta,
   abbr={arXiv},
   title={Delta Tuning: A Comprehensive Study of Parameter Efficient Methods for Pre-trained Language Models},
@@ -61,6 +57,20 @@
   pdf={https://arxiv.org/pdf/2105.11259.pdf},
   year={Preprint}
 }
+
+@article{hu2022sparse,
+  abbr={arXiv},
+  title={Sparse Structure Search for Parameter-Efficient Tuning},
+  author={Hu, Shengding and Zhang, Zhen and Ding, Ning and Wang, Yadao and Wang, Yasheng and Liu, Zhiyuan and Sun, Maosong},
+  journal={arXiv},
+  bibtex_show={true},
+  abstract={Adapting large pre-trained models (PTMs) through fine-tuning imposes prohibitive computational and storage burdens. Recent studies of parameter-efficient tuning (PET) find that only optimizing a small portion of parameters conditioned on PTMs could yield on-par performance compared to conventional fine-tuning. Generally, PET methods exquisitely design parameter-efficient modules (PET modules) which could be applied to arbitrary fine-grained positions inside PTMs. However, the effectiveness of these fine-grained positions largely relies on sophisticated manual designation, thereby usually producing sub-optimal results. In contrast to the manual designation, we explore constructing PET modules in an automatic manner. We automatically \textbf{S}earch for the \textbf{S}parse \textbf{S}tructure of \textbf{P}arameter-\textbf{E}fficient \textbf{T}uning (S3PET). Based on a unified framework of various PET methods, S3PET conducts the differentiable PET structure search through bi-level optimization and proposes shifted global sigmoid method to explicitly control the number of trainable parameters. Extensive experiments show that S3PET surpasses manual and random structures with less trainable parameters. The searched structures preserve more than 99\% fine-tuning performance with 0.01\% trainable parameters. Moreover, the advantage of S3PET is amplified with extremely low trainable parameters budgets (0.0009\%∼0.01\%). The searched structures are transferable and explainable, providing suggestions and guidance for the future design of PET methods.},
+  html={https://arxiv.org/abs/2206.07382},
+  pdf={https://arxiv.org/abs/2206.07382},
+  year={Preprint}
+}
+
+
 
 @inproceedings{qin2021exploring,
   title={Exploring low-dimensional intrinsic task subspace via prompt tuning},
