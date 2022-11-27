@@ -16,10 +16,22 @@
 }
 
 
+@inproceedings{ding2022few,
+  abbr={arXiv},
+  title={Few-shot Classification with Hypersphere Modeling of Prototypes},
+  bibtex_show={true},
+  author={Ding,Ning, and Chen,Yulin and Cui,Ganqu and Wang,Xiaobin and Zheng,Hai-Tao and Liu,Zhiyuan and Xie, Pengjun},
+  booktitle={arXiv},
+  selected={false},
+  abstract={Metric-based meta-learning is one of the de facto standards in few-shot learning. It composes of representation learning and metrics calculation designs. Previous works construct class representations in different ways, varying from mean output embedding to covariance and distributions. However, using embeddings in space lacks expressivity and cannot capture class information robustly, while statistical complex modeling poses difﬁculty to metric designs. In this work, we use tensor ﬁelds (“areas”) to model classes from the geometrical perspective for few-shot learning. We present a simple and effective method, dubbed as hypersphere prototypes ( HyperProto ), where class information is represented by hyperspheres with dynamic sizes with two sets of learnable parameters: the hypersphere’s center and the radius. Extending from points to areas, hyperspheres are much more expressive than embeddings. Moreover, it is more convenient to perform metric-based classiﬁcation with hypersphere prototypes than statistical modeling, as we only need to calculate the distance from a data point to the surface of the hypersphere. Following this idea, we also develop two variants of prototypes under other measurements. Extensive experiments and analysis on few-shot learning tasks across NLP and CV and comparison with 20+ competitive baselines demonstrate the effectiveness of our approach.},
+  pdf={https://arxiv.org/pdf/2211.05319.pdf},
+  year={Preprint}
+}
+
 @inproceedings{ding2021openprompt,
       abbr={ACL},
       bibtex_show={true},
-      title={OpenPrompt: An Open-source Framework for Prompt-learning <br>  🏆 <b> <font color="red">  Best Demo Paper Award  </font></b> }, 
+      title={ OpenPrompt: An Open-source Framework for Prompt-learning}, 
       author={Ding, Ning and Hu, Shengding and Zhao, Weilin and Chen, Yulin and Liu, Zhiyuan and Zheng, Hai-Tao and Sun, Maosong},
       year={2022},
       bibtex_show={true},
@@ -28,6 +40,7 @@
       html={https://arxiv.org/abs/2111.01998},
       pdf={https://arxiv.org/pdf/2111.01998.pdf},
       code={https://github.com/thunlp/OpenPrompt},
+      award={ <br> <img src="/assets/img/award.png" width="15px">  <b> <font color="B71C1C">  Best Demo Paper Award  </font></b>},
       abstract={Prompt-learning has become a new paradigm in modern natural language processing, which directly adapts pre-trained language models (PLMs) to cloze-style prediction, autoregressive modeling, or sequence to sequence generation, resulting in promising performances on various tasks. However, no standard implementation framework of prompt-learning is proposed yet, and most existing prompt-learning codebases, often unregulated, only provide limited implementations for specific scenarios. Since there are many details such as templating strategy, initializing strategy, and verbalizing strategy, etc. need to be considered in prompt-learning, practitioners face impediments to quickly adapting the desired prompt learning methods to their applications. In this paper, we present {OpenPrompt}, a unified easy-to-use toolkit to conduct prompt-learning over PLMs. OpenPrompt is a research-friendly framework that is equipped with efficiency, modularity, and extendibility, and its combinability allows the freedom to combine different PLMs, task formats, and prompting modules in a unified paradigm. Users could expediently deploy prompt-learning frameworks and evaluate the generalization of them on different NLP tasks without constraints.}
 }
 

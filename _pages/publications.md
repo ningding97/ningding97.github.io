@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /publications/
-title: publications
+title: papers
 description: \* means equal contribution 
 years: [Preprint, 2022, 2021, 2020, 2019]
 nav: true

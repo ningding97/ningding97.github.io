@@ -16,7 +16,8 @@
     {% if entry.type == "thesis" %}
       {{reference}}
     {% else %}
-      <div class="title">{{entry.title}}</div>
+  
+      <div class="title"> <img src="/assets/img/paper.png" width="15px">  <font color="B71C1C"> {{entry.title}} </font></div>
       <div class="author">
         {% for author in entry.author_array %}
           {% assign author_is_self = false %}
@@ -76,6 +77,9 @@
       {% if entry.year %}
         {{entry.year}}
       {% endif %}
+      {% if entry.award %}
+      {{entry.award}}
+    {% endif %}
       </div>
     {% endif %}
 
@@ -83,36 +87,36 @@
 
 
     {% if entry.abstract %}
-      <a class="abstract btn-abs btn-sm z-depth-0" role="button">Abs</a>
+      <a class="abstract btn btn-sm z-depth-0" role="button">ABSTRACT</a>
     {% endif %}
     {% if entry.arxiv %}
-      <a href="http://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm z-depth-0" role="button" target="_blank">arXiv</a>
+      <a href="http://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm z-depth-0" role="button" target="_blank">ArXiv</a>
     {% endif %}
     {% if entry.html %}
-      <a href="{{ entry.html }}" class="btn-html btn-sm z-depth-0" role="button" target="_blank">Link</a>
+      <a href="{{ entry.html }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Link</a>
     {% endif %}
     {% if entry.pdf %}
       {% if entry.pdf contains '://' %}
-      <a href="{{ entry.pdf }}" class="btn-pdf btn-sm z-depth-0" role="button" target="_blank">PDF</a>
+      <a href="{{ entry.pdf }}" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
       {% else %}
-      <a href="{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}" class="btn-pdf btn-sm z-depth-0" role="button" target="_blank">PDF</a>
+      <a href="{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
       {% endif %}
     {% endif %}
     {% if entry.supp %}
       {% if entry.supp contains '://' %}
-      <a href="{{ entry.supp }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Supp</a>
+      <a href="{{ entry.supp }}" class="btn btn-sm z-depth-0" role="button" target="_blank">SUPP</a>
       {% else %}
       <a href="{{ entry.supp | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Supp</a>
       {% endif %}
     {% endif %}
     {% if entry.blog %}
-      <a href="{{ entry.blog }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Blog</a>
+      <a href="{{ entry.blog }}" class="btn btn-sm z-depth-0" role="button" target="_blank">BLOG</a>
     {% endif %}
     {% if entry.code %}
-      <a href="{{ entry.code }}" class="btn-code btn-sm z-depth-0" role="button" target="_blank">Code</a>
+      <a href="{{ entry.code }}" class="btn btn-sm z-depth-0" role="button" target="_blank">CODE</a>
     {% endif %}
     {% if entry.data %}
-    <a href="{{ entry.data }}" class="btn-data btn-sm z-depth-0" role="button" target="_blank">Data</a>
+    <a href="{{ entry.data }}" class="btn btn-sm z-depth-0" role="button" target="_blank">DATA</a>
   {% endif %}
     {% if entry.poster %}
       {% if entry.poster contains '://' %}
@@ -132,7 +136,7 @@
       <a href="{{ entry.website }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Website</a>
     {% endif %}
     {%- if entry.bibtex_show %}
-    <a class="bibtex btn-bib btn-sm z-depth-0" role="button">Bib</a>
+    <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
     {% endif %}
     </div>
 

@@ -1,4 +1,5 @@
 - username: thunlp
+  username0: ningding97
   repositories:
     - OpenPrompt
     - OpenDelta
@@ -7,3 +8,4 @@
     - Chinese_NRE
     - DeltaPapers
     - TLNN
+

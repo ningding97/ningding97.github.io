@@ -19,6 +19,8 @@ description: A quick look at the projects I have been working on.
 
 
 
+
+
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         <img class="img-fluid rounded z-depth-1" align="center" src="{{ '/assets/img/OPOD.png' | relative_url }}" alt="" title="example image"/>
@@ -31,7 +33,19 @@ description: A quick look at the projects I have been working on.
 </div>
 
 
-## Repositories
+
+<h2>GitHub</h2>
+
+ <div class="repocards">
+
+<div class="repocard-single">
+<a href="https://github.com/{{ user.username0 }}"><img class="repocard-img" alt="{{ user.username0 }} GitHub Stats" src="https://github-readme-stats-zo3i-j2dpdlhxc-ningding97.vercel.app/api?username=ningding97&include_orgs=true&include_all_commits=true&show_icons=true&hide_border=true&show_issues=false&theme=swift&hide=prs,issues"></a>
+</div></div>
+
+<!-- <h2>Repositories</h2> -->
+<hr>
+<h2 id="github-repositories">Repositories</h2>
+
 
 <div class="repocards">
 
@@ -40,7 +54,7 @@ description: A quick look at the projects I have been working on.
 <div class="repocard-single">
 
 <a href="https://github.com/{{ user.username }}/{{ repository}}">
-  <img class="repocard-img" alt="{{ user.username }} repository - {{ repository}}" src="https://github-readme-stats.vercel.app/api/pin/?username={{ user.username }}&repo={{ repository}}{{style}}">
+  <img class="repocard-img" alt="{{ user.username }} repository - {{ repository}}" src="https://github-readme-stats.vercel.app/api/pin/?username={{ user.username }}&repo={{ repository}}&hide_border=true&line_height=28&theme=swift">
 </a>
   
 </div>
