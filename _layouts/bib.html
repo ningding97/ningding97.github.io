@@ -75,7 +75,9 @@
         <em>{{entry.booktitle}}</em>
       {% endif %}
       {% if entry.year %}
-        {{entry.year}}
+        {% if entry.type == "inproceedings" %}
+          {{entry.year}}
+        {% endif %}
       {% endif %}
       {% if entry.award %}
       {{entry.award}}
