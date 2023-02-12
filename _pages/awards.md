@@ -3,7 +3,9 @@ layout: page
 permalink: /awards/
 title: awards
 nav: true
+nav_order: 6
 ---
+
 - [ACL Best System Demonstration Paper Award](https://www.2022.aclweb.org/best-demo-paper-award), 2022.
 - [Baidu Ph.D Fellowship](http://scholarship.baidu.com/) (10 recipients worldwide), 2021.
 - National Scholarship for Ph.D student, 2021.

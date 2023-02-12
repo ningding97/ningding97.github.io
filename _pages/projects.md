@@ -4,6 +4,7 @@ permalink: /projects/
 title: projects
 nav: projects
 description: A quick look at the projects I have been working on. 
+nav_order: 3
 ---
 
 <!-- STYLE -->

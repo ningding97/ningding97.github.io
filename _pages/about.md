@@ -15,7 +15,6 @@ profile:
  
 
 
-
 news: true  # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
@@ -31,4 +30,7 @@ I'm a final-year Ph.D student at the [Department of Computer Science and Technol
 
 ### Research
 My research spans the areas of natural language processing and machine learning. At the current stage, I am particularly interested advanced stimulation of language models. My research aims to develop theory, tools, and algorithms to effectively and efficiently drive language models (especially the large ones), and also establish a deeper understanding by observing the behaviors of models.
+
+
+
 

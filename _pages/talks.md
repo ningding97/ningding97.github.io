@@ -3,7 +3,10 @@ layout: page
 permalink: /talks/
 title: talks
 nav: true
+nav_order: 6
+
 ---
+- Oct 2022: CCF. *Delta Tuning for Large Language Models.*
 - Oct 2021: BigModel Meetup No.1. *OpenPrompt: A Unified Prompt-learning Framework.*
 - Oct 2021: Tsinghua University. *An Overview of Prompt-learning.*
 - Jun 2021: AI-TIME. *Few-NERD: Not Only A Few-shot NER dataset.*
