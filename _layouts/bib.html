@@ -17,7 +17,8 @@
       {{reference}}
     {% else %}
   
-      <div class="title"> <img src="/assets/img/paper.png" width="15px">  <font color="B71C1C"> {{entry.title}} </font></div>
+      <div class="title"> <img src="/assets/img/paper.png" width="15px">  
+        <font color="B71C1C"> {{entry.title}}  </font></div>    
       <div class="author">
         {% for author in entry.author_array %}
           {% assign author_is_self = false %}
