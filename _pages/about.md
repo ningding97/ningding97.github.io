@@ -2,7 +2,9 @@
 layout: about
 title: Ning Ding
 permalink: /
-description: Ph.D. student, <a href="http://www.cs.tsinghua.edu.cn/publish/csen/index.html/">Computer Science</a>, <a href="https://www.tsinghua.edu.cn/en/">Tsinghua University</a>. 
+description: <a href="http://www.cs.tsinghua.edu.cn/publish/csen/index.html/"><font color = "#3E3E3E">Department of Computer Science and Technology · </font></a> <a href="https://www.tsinghua.edu.cn/en/"><font color = "#3E3E3E">Tsinghua University</font></a> <br> <a href="https://www.google.com/maps/place/%E6%B8%85%E5%8D%8E%E5%A4%A7%E5%AD%A6/@39.9996715,116.3242552,17z/data=!3m1!4b1!4m6!3m5!1s0x35f0541fa61e3c8f:0xd95a50fee0e0e2c9!8m2!3d39.9996674!4d116.3264439!16zL20vMGprc20"><font color = "#3E3E3E">FIT, No 1 Qinghuayuan Street, Haidian District 100084, Beijing China </font></a>
+
+
 
 profile:
   align: right
@@ -10,7 +12,7 @@ profile:
   address: 
     <p>Tsinghua University</p>
     <p>Beijing, China</p>
-    <p>dingn18@mails.tsinghua.edu.cn</p>
+    
 
  
 
@@ -25,7 +27,7 @@ social: true  # includes social icons at the bottom of the page
 ### Bio
 I'm a final-year Ph.D student at the [Department of Computer Science and Technology](http://www.cs.tsinghua.edu.cn/publish/csen/index.html/), [Tsinghua Univeristy](https://www.tsinghua.edu.cn/en/). I'm advised by Prof. [Hai-Tao Zheng](https://dblp.org/pid/20/134.html) and also co-advised by Prof. [Zhiyuan Liu](http://nlp.csai.tsinghua.edu.cn/~lzy/).
 
- 
+Contact: dingn18@mails.tsinghua.edu.cn
 
 
 ### Research

@@ -48,6 +48,7 @@ a, table.table a {
   .address {
     margin-bottom: 5px;
     margin-top: 5px;
+    margin-left: -60px;
     font-family: monospace;
     font-size: 0.8rem;
     p {
@@ -184,6 +185,7 @@ a, table.table a {
   padding-right: 5rem;
   .contact-icons {
     margin-top: -1rem;
+    margin-left: -32px;
     font-size: 1.5rem;
     a {
       i::before {
@@ -355,6 +357,7 @@ footer.sticky-bottom {
 // Publications
 
 .publications {
+
   margin-top: 2rem;
   h1 {
     color: var(--global-theme-color);
@@ -407,9 +410,12 @@ footer.sticky-bottom {
         }
       }
       .title {
-        font-weight: bolder;
+        color: #3E4857;
+        font-weight: 450;
       }
       .author {
+        font-size: 1rem;
+        font-weight: 10;
         a {
           border-bottom: 1px dashed var(--global-theme-color);
           &:hover {
