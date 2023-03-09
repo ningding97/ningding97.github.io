@@ -189,7 +189,6 @@ a, table.table a {
     font-size: 1.5rem;
     a {
       i::before {
-        color: var(--global-text-color);
         -webkit-transition: all 0.2s ease-in-out;
       }
       &:hover {
