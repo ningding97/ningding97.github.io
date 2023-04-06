@@ -1,6 +1,7 @@
 - username: thunlp
   username0: ningding97
   repositories:
+    - UltraChat
     - OpenPrompt
     - OpenDelta
     - PromptPapers
