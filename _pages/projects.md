@@ -22,19 +22,6 @@ nav_order: 3
 
 
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" align="center" src="{{ '/assets/img/OPOD.png' | relative_url }}" alt="" title="example image"/>
-    </div>
-</div>
-
-<div class="caption" width=700rem>
-    <b>OpenPrompt</b> organizes the training process and the task formats, and <b>OpenDelta</b> conduct particular parameter-efficient optimizations.
-    They can collaboratively work together to effectively and efficiently stimulate large-scale language models.
-</div>
-
-
-
 <h2>GitHub</h2>
 
  <div class="repocards">
@@ -65,3 +52,15 @@ nav_order: 3
 </div>
 
 {% endfor %}
+
+<br>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" align="center" src="{{ '/assets/img/OPOD.png' | relative_url }}" alt="" title="example image"/>
+    </div>
+</div>
+
+<div class="caption" width=700rem>
+    <b>OpenPrompt</b> organizes the training process and the task formats, and <b>OpenDelta</b> conduct particular parameter-efficient optimizations.
+    They can collaboratively work together to effectively and efficiently stimulate large-scale language models.
+</div>
