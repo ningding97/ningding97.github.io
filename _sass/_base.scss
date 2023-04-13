@@ -5,9 +5,180 @@
 // Typography
 
 p, h1, h2, h3, h4, h5, h6, em, div, span, strong {
-  color: var(--global-text-color);
-  
+  color: var(--global-text-color); 
 }
+
+body {
+  margin-left: 15%;
+}
+
+body.no-margin {
+  margin-left: 0;
+}
+
+h5 {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+}
+
+h5::before {
+  content: "";
+  position: absolute;
+  bottom: -0.2em;
+  right: 0;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  z-index: -1;
+}
+
+
+
+
+.widget-title-cover {
+  line-height: 1;
+  margin-bottom: 10px;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+h6 {
+  margin-left: 10px;
+  font-size:x-small;
+  text-transform: uppercase;
+  font-weight:100;
+}
+
+
+
+
+/* To change the font of p, add the following code: */
+
+pp {
+  margin-left: 10px;
+  font-family:'Courier New', Courier, monospace;
+}
+
+.sidebar {
+  position: fixed;
+  top: 1rem;
+  margin-left: -22rem;
+  width: 18%;
+  font-family: 'Montserrat', sans-serif;
+  height: 100%;
+  background-color: white;
+  z-index: 1;
+  border-right: 1px solid rgba(0, 0, 0, 0.143);
+  border-radius: 5px;
+  overflow: auto; /* Add this line */
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+aside.sidebar {
+  //background-color: #f8f9fa;
+  background-color: white;
+  padding: 20px;
+
+}
+
+/* To create a list of items in the sidebar, each with a title, content, and date, add the following code: */
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 20px;
+}
+
+.sidebar h6 {
+  margin-top: 0;
+}
+
+.sidebar p {
+  margin-bottom: 10px;
+  font-size: 0.875rem;
+  color: var(--global-text-color);
+}
+
+.sidebar span {
+  font-size: 0.75rem;
+  margin-left: 20px;
+  color: var(--global-text-color);
+} 
+
+.sidebar a {
+  color: var(--global-theme-color);
+  font-weight: 400;
+  &:hover {
+    color: var(--global-theme-color);
+    text-decoration: underline;
+    font-weight: 400;
+  }
+  &:hover:after {
+    width: 100%;
+  }
+} 
+
+.sidebar .item-title {
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-left: 20px;
+  color: var(--global-text-color);
+}
+
+.sidebar .item-date {
+  font-size: 0.75rem;
+  margin-bottom: 5px;
+  color: var(--global-text-color);
+}
+
+.sidebar .item-content {
+  font-size: 0.875rem;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  color: var(--global-text-color);
+}
+
+
+.fadeInUpFast {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+.animated-fast {
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+
+spanfade{
+  color: var(--global-text-color); 
+}
+
+@keyframes fadeInUpFast {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.p, h1, h2, h3, h4, h5, sidebar li {
+  animation: fadeInUpFast 0.6s ease-out;
+}
+
 
 a, table.table a {
   color: var(--global-theme-color);
@@ -21,6 +192,7 @@ a, table.table a {
     width: 100%;
   }
 }
+
 
 // Math
 
@@ -90,6 +262,8 @@ a, table.table a {
   border-bottom: 1px solid $grey-color-light;
   background-color: var(--global-bg-color);
   opacity: 0.95;
+  margin-left: 9.5%;
+  //margin-right: 15%;
 }
 .navbar.navbar-light {
   a {
@@ -300,7 +474,20 @@ footer.sticky-bottom {
   }
 }
 
+.profile-image {
+}
 
+.profile-text {
+  display: flex;
+  justify-content: center;
+  border-right: 1px solid rgba(114, 23, 23, 0.483);
+}
+
+.profile-text .clearfix {
+  margin-left: -105px;
+  width: 100%;
+  max-width: 520px;
+}
 // Projects
 
 .projects {
@@ -395,7 +582,7 @@ footer.sticky-bottom {
       margin-bottom: 1rem;
       .preview {
         width: 100%;
-        min-width: 160px;
+        min-width: 150px;
         max-width: 200px;
         margin-right: 2.4rem;
       }
