@@ -21,15 +21,6 @@ nav_order: 3
 
 
 
-
-<h2>GitHub</h2>
-
- <div class="repocards">
-
-<div class="repocard-single">
-<a href="https://github.com/{{ user.username0 }}"><img class="repocard-img" alt="{{ user.username0 }} GitHub Stats" src="https://github-readme-stats-zo3i-j2dpdlhxc-ningding97.vercel.app/api?username=ningding97&include_orgs=true&include_all_commits=true&show_icons=true&hide_border=true&show_issues=false&theme=swift&hide=prs,issues"></a>
-</div></div>
-
 <!-- <h2>Repositories</h2> -->
 <hr>
 <h2 id="github-repositories">Repositories</h2>
@@ -42,7 +33,7 @@ nav_order: 3
 <div class="repocard-single">
 
 <a href="https://github.com/{{ user.username }}/{{ repository}}">
-  <img class="repocard-img" alt="{{ user.username }} repository - {{ repository}}" src="https://github-readme-stats-zo3i-j2dpdlhxc-ningding97.vercel.app/api/pin/?username={{ user.username }}&repo={{ repository}}&hide_border=true&line_height=28&theme=swift">
+  <img class="repocard-img" alt="{{ user.username }} repository - {{ repository}}" src="https://github-readme-stats-1isq-6joamo805-ningding97.vercel.app/api/pin/?username={{ user.username }}&repo={{ repository}}&hide_border=true&line_height=28&theme=swift">
 </a>
   
 </div>
@@ -52,6 +43,16 @@ nav_order: 3
 </div>
 
 {% endfor %}
+
+<br>
+<h2>GitHub</h2>
+
+ <div class="repocards">
+
+<div class="repocard-single">
+<a href="https://github.com/{{ user.username0 }}"><img class="repocard-img" alt="{{ user.username0 }} GitHub Stats" src="https://github-readme-stats-1isq-6joamo805-ningding97.vercel.app/api?username=ningding97&include_orgs=true&include_all_commits=true&show_icons=true&hide_border=true&show_issues=false&theme=swift&hide=prs,issues"></a>
+</div></div>
+
 
 <br>
 <div class="row">
