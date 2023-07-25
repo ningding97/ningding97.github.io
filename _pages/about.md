@@ -25,7 +25,8 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 ### Bio
-I'm a final-year Ph.D student at the [Department of Computer Science and Technology](http://www.cs.tsinghua.edu.cn/publish/csen/index.html/),  [Tsinghua Univeristy](https://www.tsinghua.edu.cn/en/). I'm advised by Prof. [Hai-Tao Zheng](https://dblp.org/pid/20/134.html) and also co-advised by Prof. [Zhiyuan Liu](http://nlp.csai.tsinghua.edu.cn/~lzy/).
+
+I received my Ph.D. at the [Department of Computer Science and Technology](http://www.cs.tsinghua.edu.cn/publish/csen/index.html/),  [Tsinghua Univeristy](https://www.tsinghua.edu.cn/en/) in 2023, advised by Prof. [Hai-Tao Zheng](https://dblp.org/pid/20/134.html) and also co-advised by Prof. [Zhiyuan Liu](http://nlp.csai.tsinghua.edu.cn/~lzy/).
 
 
 ### Research

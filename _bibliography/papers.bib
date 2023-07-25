@@ -1,7 +1,33 @@
 ---
 ---
 
-@article{ding2022delta,
+@article{preprint:ultra,
+  title={Enhancing Chat Language Models by Scaling High-quality Instructional Conversations},
+  bibtex_show={true},
+  author={Ding, Ning and Chen, Yulin and Xu, Bokai and Qin, Yujia and Hu, Shengding and Liu, Zhiyuan and Sun, Maosong and Zhou, Bowen},
+  journal={Preprint},
+  selected={false},
+  pdf={https://arxiv.org/abs/2305.14233},
+  code={https://github.com/thunlp/UltraChat},
+  series = {\newlin arXiv},
+  year={Preprint}
+}
+
+@article{preprint:tool_learning,
+  title={Tool Learning with Foundation Models},
+  bibtex_show={true},
+  author={Qin,Yujia and Hu, Shengding and Lin,Yankai and  Chen,Weize and  Ding,Ning and Cui,Ganqu and  Zeng,Zheni and  Huang,Yufei and Xiao,Chaojun and  Han,Chi and  Fung,Yi Ren and  Su,Yusheng and  Wang, Huadong and {et al.}},
+  journal={Preprint},
+  selected={false},
+  pdf={https://arxiv.org/abs/2304.08354},
+  series = {\newlin arXiv},
+  code={https://github.com/OpenBMB/BMTools/tree/main/bmtools},
+  year={Preprint}
+}
+
+
+
+@article{2023:delta,
   title={Parameter-efficient Fine-tuning of Large-scale Pre-trained Language Models},
   titleb={Delta Tuning: A Comprehensive Study of Parameter Efficient Methods for Pre-trained Language Models},
   preview={NMI.jpg},
@@ -15,25 +41,64 @@
   arxiv={2203.06904},
   html={https://www.nature.com/articles/s42256-023-00626-4},
   pdf={https://www.nature.com/articles/s42256-023-00626-4},
-  award={ <br>  <strong> <font color="BB0A21">  Cover Article of Nature Machine Intelligence's March Issue  </font></strong>},
+  award={ <br>  <strong> <font color="BB0A21">  Cover Article of Nature Machine Intelligence's March Issue  </font></strong> <br>  <strong> <font color="BB0A21">  World Artificial Intelligence Conference Youth Outstanding Paper Award  </font></strong>},
+  series = {\newlin Nature Machine Intelligence},
+  year={2023}
+}
+
+@inproceedings{2023:lottery,
+  title={Exploring Lottery Prompts for Pre-trained Language Models},
+  author={Chen,Yulin* and Ding, Ning* and Wang,Xiaobin and Hu,Shengding and Zheng, Hai-Tao and Liu, Zhiyuan and Xie,Pengjun},
+  booktitle={ACL},
+  selected={false},
+  series = {\newlin ACL},
+  pdf={https://arxiv.org/pdf/2305.19500.pdf},
+  bibtex_show={true},
+  year={2023}
+}
+
+@inproceedings{2023:opendelta,
+  title={OpenDelta: A Plug-and-play Library for Parameter-efficient Adaptation of Pre-trained Models},
+  author={Hu,Shengding and Ding, Ning and Zhao,Weilin and Lv,Xingtai and Zhang, Zhen and Liu, Zhiyuan and Sun, Maosong},
+  booktitle={ACL System Demonstration},
+  selected={false},
+  series = {\newlin ACL System Demonstration},
+  pdf={https://arxiv.org/abs/2307.03084},
+  code={https://github.com/thunlp/OpenDelta},
+  bibtex_show={true},
   year={2023}
 }
 
 
-@inproceedings{ding2022few,
-  abbr={arXiv},
+@inproceedings{2023:hyper,
   title={Few-shot Classification with Hypersphere Modeling of Prototypes},
   bibtex_show={true},
   author={Ding,Ning, and Chen,Yulin and Cui,Ganqu and Wang,Xiaobin and Zheng,Hai-Tao and Liu,Zhiyuan and Xie, Pengjun},
-  booktitle={arXiv},
+  booktitle={ACL Findings},
   selected={false},
   abstract={Metric-based meta-learning is one of the de facto standards in few-shot learning. It composes of representation learning and metrics calculation designs. Previous works construct class representations in different ways, varying from mean output embedding to covariance and distributions. However, using embeddings in space lacks expressivity and cannot capture class information robustly, while statistical complex modeling poses difﬁculty to metric designs. In this work, we use tensor ﬁelds (“areas”) to model classes from the geometrical perspective for few-shot learning. We present a simple and effective method, dubbed as hypersphere prototypes ( HyperProto ), where class information is represented by hyperspheres with dynamic sizes with two sets of learnable parameters: the hypersphere’s center and the radius. Extending from points to areas, hyperspheres are much more expressive than embeddings. Moreover, it is more convenient to perform metric-based classiﬁcation with hypersphere prototypes than statistical modeling, as we only need to calculate the distance from a data point to the surface of the hypersphere. Following this idea, we also develop two variants of prototypes under other measurements. Extensive experiments and analysis on few-shot learning tasks across NLP and CV and comparison with 20+ competitive baselines demonstrate the effectiveness of our approach.},
   pdf={https://arxiv.org/pdf/2211.05319.pdf},
-  year={Preprint}
+  series = {\newlin ACL Findings},
+  year={2023}
 }
 
+
+@inproceedings{2023:deltasearch,
+  title={Parameter-efficient Weight Ensembling Facilitates Task-level Knowledge TransferCCF none},
+  author={Lv*,Xingtai and Ding*, Ning and Qin,Yujia and Liu,Zhiyuan and Sun, Maosong},
+  booktitle={ACL Short},
+  selected={false},
+  series = {\newlin ACL Short},
+  pdf={https://aclanthology.org/2023.acl-short.24.pdf},
+  bibtex_show={true},
+  year={2023}
+}
+
+
+
+
+
 @inproceedings{ding2021openprompt,
-      abbr={ACL},
       preview={op.png},
       bibtex_show={true},
       title={ OpenPrompt: An Open-source Framework for Prompt-learning}, 
@@ -42,6 +107,7 @@
       bibtex_show={true},
       selected={true},
       booktitle={ACL System Demonstration},
+      series = {\newlin ACL System Demonstration},
       html={https://arxiv.org/abs/2111.01998},
       pdf={https://arxiv.org/pdf/2111.01998.pdf},
       code={https://github.com/thunlp/OpenPrompt},
@@ -51,12 +117,12 @@
 
 
 @inproceedings{ding2021prompt,
-      abbr={arXiv},
       title={Prompt-Learning for Fine-Grained Entity Typing}, 
       author={Ding, Ning and Chen, Yulin and Han, Xu and Xu, Guangwei and Xie, Pengjun and Zheng, Hai-Tao and Liu, Zhiyuan and Li, Juanzi and Kim Hong-Gee},
       year={2022},
       booktitle={EMNLP Findings},
       bibtex_show={true},
+      series = {\newlin EMNLP Findings},
       code={https://github.com/thunlp/OpenPrompt},
       html={https://arxiv.org/pdf/2108.10604v1.pdf},
       pdf={https://arxiv.org/pdf/2108.10604v1.pdf},
@@ -64,24 +130,24 @@
 }
 
 @inproceedings{han2021ptr,
-  abbr={arXiv},
   title={PTR: Prompt Tuning with Rules for Text Classification},
   author={Han, Xu and Zhao, Weilin and Ding, Ning and Liu, Zhiyuan and Sun, Maosong},
-  booktitle={arXiv},
+  booktitle={AI Open},
   code={https://github.com/thunlp/PTR},
+  series = {\newlin AI Open},
   bibtex_show={true},
   abstract={Fine-tuned pre-trained language models (PLMs) have achieved awesome performance on almost all NLP tasks. By using additional prompts to fine-tune PLMs, we can further stimulate the rich knowledge distributed in PLMs to better serve downstream task. Prompt tuning has achieved promising results on some few-class classification tasks such as sentiment classification and natural language inference. However, manually designing lots of language prompts is cumbersome and fallible. For those auto-generated prompts, it is also expensive and time-consuming to verify their effectiveness in non-few-shot scenarios. Hence, it is challenging for prompt tuning to address many-class classification tasks. To this end, we propose prompt tuning with rules (PTR) for many-class text classi- fication, and apply logic rules to construct prompts with several sub-prompts. In this way, PTR is able to encode prior knowledge of each class into prompt tuning. We conduct experiments on relation classification, a typical many-class classification task, and the results on benchmarks show that PTR can significantly and consistently outperform existing state-of-the-art baselines. This indicates that PTR is a promising approach to take advantage of PLMs for those complicated classification tasks.},
   html={https://arxiv.org/abs/2105.11259},
   pdf={https://arxiv.org/pdf/2105.11259.pdf},
-  year={Preprint}
+  year={2022}
 }
 
 @inproceedings{hu2022sparse,
-  abbr={NeurIPS},
   title={Sparse Structure Search for Parameter-Efficient Tuning},
   author={Hu, Shengding and Zhang, Zhen and Ding, Ning and Wang, Yadao and Wang, Yasheng and Liu, Zhiyuan and Sun, Maosong},
   booktitle={NeurIPS},
   bibtex_show={true},
+  series = {\newlin NeurIPS},
   abstract={Adapting large pre-trained models (PTMs) through fine-tuning imposes prohibitive computational and storage burdens. Recent studies of parameter-efficient tuning (PET) find that only optimizing a small portion of parameters conditioned on PTMs could yield on-par performance compared to conventional fine-tuning. Generally, PET methods exquisitely design parameter-efficient modules (PET modules) which could be applied to arbitrary fine-grained positions inside PTMs. However, the effectiveness of these fine-grained positions largely relies on sophisticated manual designation, thereby usually producing sub-optimal results. In contrast to the manual designation, we explore constructing PET modules in an automatic manner. We automatically \textbf{S}earch for the \textbf{S}parse \textbf{S}tructure of \textbf{P}arameter-\textbf{E}fficient \textbf{T}uning (S3PET). Based on a unified framework of various PET methods, S3PET conducts the differentiable PET structure search through bi-level optimization and proposes shifted global sigmoid method to explicitly control the number of trainable parameters. Extensive experiments show that S3PET surpasses manual and random structures with less trainable parameters. The searched structures preserve more than 99\% fine-tuning performance with 0.01\% trainable parameters. Moreover, the advantage of S3PET is amplified with extremely low trainable parameters budgets (0.0009\%∼0.01\%). The searched structures are transferable and explainable, providing suggestions and guidance for the future design of PET methods.},
   html={https://arxiv.org/abs/2206.07382},
   pdf={https://arxiv.org/abs/2206.07382},
@@ -90,12 +156,12 @@
 
 
 
-@inproceedings{qin2021exploring,
+@article{qin2021exploring,
   title={Exploring Low-dimensional Intrinsic Task Subspace via Prompt Tuning},
   author={Qin, Yujia and Wang, Xiaozhi and Su, Yusheng and Lin, Yankai and Ding, Ning and Liu, Zhiyuan and Li, Juanzi and Hou, Lei and Li, Peng and Sun, Maosong and others},
   year={Preprint},
-  abbr={arXiv},
-  booktitle={arXiv},
+  journal={Preprint},
+  series = {\newlin arXiv},
   bibtex_show={true},
   pdf={https://arxiv.org/abs/2110.07867},
   code={https://github.com/thunlp/Intrinsic-Prompt-Tuning},
@@ -103,13 +169,12 @@
 }
 
 
-
 @inproceedings{hu2021knowledgeable,
-      abbr={ACL},
       title={Knowledgeable Prompt-tuning: Incorporating Knowledge into Prompt Verbalizer for Text Classification}, 
       author={Hu, Shengding and Ding, Ning and Wang, Huadong and Liu, Zhiyuan and Li, Juanzi and Sun, Maosong},
       year={2022},
-      booktitle={Annual Meeting of the Association for Computational Linguistics, <br> ACL},
+      booktitle={ACL},
+      series = {\newlin ACL},
       bibtex_show={true},
       award={ <br> <strong> <font color="BB0A21">  Oral Presentation  </font></strong>},
       code={https://github.com/thunlp/KnowledgeablePromptTuning},
@@ -125,11 +190,11 @@
       Ding, Ning  and
       Huang, Longtao  and
       Liu, Zhiyuan",
-    booktitle = "Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics <br> ACL",
+    booktitle = " ACL",
     code={https://github.com/thunlp/OpenPrompt},
     month = may,
+    series = {\newlin ACL},
     bibtex_show={true},
-    abbr={ACL},
     year = "2022",
     address = "Dublin, Ireland",
     publisher = "Association for Computational Linguistics",
@@ -142,11 +207,11 @@
 
 
 @inproceedings{zhong2022proqa,
-  abbr={NAACL},
   title={ProQA: Structural Prompt-based Pre-training for Unified Question Answering},
   author={Zhong, Wanjun and  Gao, Yifan and Ding, Ning and  Qin, Yujia and  Liu, Zhiyuan and  Zhou, Ming and  Wang, Jiahai and  Yin, Jian and  Duan, Nan},
-  booktitle={Annual Conference of the North American Chapter of the Association for Computational Linguistics, <br> NAACL},
+  booktitle={NAACL},
   year={2022},
+  series = {\newlin NAACL},
   bibtex_show={true},
   code={https://github.com/zhongwanjun/ProQA},
   pdf={https://arxiv.org/abs/2205.04040},
@@ -157,11 +222,11 @@
 
 
 @inproceedings{ding2021few,
-  abbr={ACL},
   preview={few-nerd-heat.png},
   title={Few-NERD: A Few-shot Named Entity Recognition Dataset},
   author={Ding, Ning and Xu, Guangwei and Chen, Yulin and Wang, Xiaobin and Han, Xu and Xie, Pengjun and Zheng, Hai-Tao and Liu, Zhiyuan},
-  booktitle={Annual Meeting of the Association for Computational Linguistics, <br> ACL},
+  booktitle={ACL},
+  series = {\newlin ACL},
   bibtex_show={true},
   award={ <br>  <strong> <font color="BB0A21">  Oral Presentation  </font></strong>},
   selected={true},
@@ -173,11 +238,11 @@
 }
 
 @inproceedings{wang2021cline,
-  abbr={ACL},
   title={CLINE: Contrastive Learning with Semantic Negative Examples for Natural Language Understanding},
   bibtex_show={true},
   author={Wang, Dong and Ding, Ning* and Li, Piji and Zheng, Hai-Tao},
-  booktitle={Annual Meeting of the Association for Computational Linguistics, <br> ACL},
+  booktitle={ ACL},
+  series = {\newlin ACL},
   award={ <br>  <strong> <font color="BB0A21">  Oral Presentation  </font></strong>},
   html={https://arxiv.org/abs/2107.00440},
   pdf={https://arxiv.org/pdf/2107.00440.pdf},
@@ -186,11 +251,11 @@
 }
 
 @inproceedings{han2021pre,
-  abbr={AI Open},
   title={Pre-Trained Models: Past, Present and Future},
   author={Han, Xu* and Zhang, Zhengyan* and Ding, Ning* and Gu, Yuxian* and Liu, Xiao* and Huo, Yuqi* and Qiu, Jiezhong and Zhang, Liang and Han, Wentao and Huang, Minlie and Jin, Qin and Lan, Yanyan and Liu, Yang and Liu, Zhiyuan and Lu, Zhiwu and Qiu, Xipeng and Song, Ruihua and Tang, Jie and Wen, Ji-Rong and Yuan, Jinhui and Zhao, Wayne Xin and Zhu Jun},
   booktitle={AI Open},
   bibtex_show={true},
+  series = {\newlin AI Open},
   abstract={Large-scale pre-trained models (PTMs) such as BERT and GPT have recently achieved great success and become a milestone in the field of artificial intelligence (AI). Owing to sophisticated pre-training objectives and huge model parameters, large-scale PTMs can ef- fectively capture knowledge from massive la- beled and unlabeled data. By storing knowl- edge into huge parameters and fine-tuning on specific tasks, the rich knowledge implicitly encoded in huge parameters can benefit a vari- ety of downstream tasks, which has been exten- sively demonstrated via experimental verifica- tion and empirical analysis. It is now the con- sensus of the AI community to adopt PTMs as backbone for downstream tasks rather than learning models from scratch. In this paper, we take a deep look into the history of pre- training, especially its special relation with transfer learning and self-supervised learning, to reveal the crucial position of PTMs in the AI development spectrum. Further, we compre- hensively review the latest breakthroughs of PTMs. These breakthroughs are driven by the surge of computational power and the increas- ing availability of data, towards four impor- tant directions: designing effective architec- tures, utilizing rich contexts, improving com- putational efficiency, and conducting interpre- tation and theoretical analysis. Finally, we dis- cuss a series of open problems and research directions of PTMs, and hope our view can in- spire and advance the future study of PTMs.},
   html={https://arxiv.org/abs/2106.07139},
   pdf={https://arxiv.org/pdf/2106.07139.pdf},
@@ -202,13 +267,13 @@
 
 @inproceedings{
   ding2021prototypical,
-  abbr={ICLR},
   preview={proto.png},
   title={Prototypical Representation Learning for Relation Extraction},
   author={Ning Ding and Xiaobin Wang and Yao Fu and Guangwei Xu and Rui Wang and Pengjun Xie and Ying Shen and Fei Huang and Hai-Tao Zheng and Rui Zhang},
   booktitle={International Conference on Learning Representations, <br>  ICLR},
   year={2021},
   bibtex_show={true},
+  series = {\newlin ICLR},
   selected={true},
   abstract={Recognizing relations between entities is a pivotal task of relational learning. Learning relation representations from distantly-labeled datasets is difficult because of the abundant label noise and complicated expressions in human language. This paper aims to learn predictive, interpretable, and robust relation representations from distantly-labeled data that are effective in different settings, including supervised, distantly supervised, and few-shot learning. Instead of solely relying on the supervision from noisy labels, we propose to learn prototypes for each relation from contextual information to best explore the intrinsic semantics of relations. Prototypes are representations in the feature space abstracting the essential semantics of relations between entities in sentences. We learn prototypes based on objectives with clear geometric interpretation, where the prototypes are unit vectors uniformly dispersed in a unit ball, and statement embeddings are centered at the end of their corresponding prototype vectors on the surface of the ball. This approach allows us to learn meaningful, interpretable prototypes for the final classification. Results on several relation learning tasks show that our model significantly outperforms the previous state-of-the-art models. We further demonstrate the robustness of the encoder and the interpretability of prototypes with extensive experiments.},
   html={https://openreview.net/forum?id=aCgLmfhIy_f},
@@ -217,11 +282,11 @@
 }
 
 @inproceedings{ding2020coupling,
-  abbr={ACL},
   title={Coupling Distant Annotation and Adversarial Training for Cross-Domain Chinese Word Segmentation},
   author={Ding, Ning and Long, Dingkun and Xu, Guangwei and Zhu, Muhua and Xie, Pengjun and Wang, Xiaobin and Zheng, Hai-Tao},
-  booktitle={Annual Meeting of the Association for Computational Linguistics, <br> ACL},
+  booktitle={ ACL},
   pages={6662--6671},
+  series = {\newlin ACL},
   year={2020},
   bibtex_show={true},
   award={ <br>  <strong> <font color="BB0A21">  Oral Presentation  </font></strong>},
@@ -232,7 +297,6 @@
 }
 
 @inproceedings{zhou-etal-2020-hierarchy,
-    abbr={ACL},
     title = "Hierarchy-Aware Global Model for Hierarchical Text Classification",
     author = "Zhou, Jie  and
       Ma, Chunping  and
@@ -242,10 +306,11 @@
       Zhang, Haoyu  and
       Xie, Pengjun  and
       Liu, Gongshen",
-    booktitle = "Annual Meeting of the Association for Computational Linguistics, <br> ACL",
+    booktitle = "ACL",
     month = jul,
     year = "2020",
     bibtex_show={true},
+    series = {\newlin ACL},
     address = "Online",
     publisher = "Association for Computational Linguistics",
     html = "https://www.aclweb.org/anthology/2020.acl-main.104",
@@ -259,38 +324,36 @@
 
 
 @article{shen2020modeling,
-abbr={TKDE},
  author = {Shen, Ying and Ding, Ning and Zheng, Hai-Tao and Li, Yaliang and Yang, Min},
  journal = {IEEE Transactions on Knowledge and Data Engineering (TKDE),},
  publisher = {IEEE},
  title = {Modeling Relation Paths for Knowledge Graph Completion},
  year = {2020},
+ series = {\newlin TKDE},
  bibtex_show={true},
  html = {https://ieeexplore.ieee.org/abstract/document/8974254},
  abstract = {Knowledge graphs (KG) often encounter knowledge incompleteness. The path reasoning that predicts the unknown path relation between pairwise entities based on existing facts is one of the most promising approaches to the knowledge graph completion. However, most conventional path reasoning methods exclusively consider the entity description included in fact triples, ignoring both the type information of entities and the interaction between different semantic representations. In this study, we propose a novel method, Type-aware Attentive Path Reasoning (TAPR), to complete the knowledge graph by simultaneously considering KG structural information, textual information, and type information. More specifically, we first leverage types to enrich the representational learning of entities and relationships. Next, we describe a type-level attention to select the most relevant type of given entity in a specific triple without any predefined rules or patterns to reduce the impact of noisy types. After learning the distributed representation of all paths, path-level attention assigns different weights to paths, from which relations among entity pairs are calculated. We conduct a series of experiments on a real-world dataset to demonstrate the effectiveness of TAPR. Experimental results show that our method significantly outperforms all baselines on link prediction and entity prediction tasks.},
  pdf = {https://ieeexplore.ieee.org/abstract/document/8974254},
 }
 
-@inproceedings{lin2020integrating,
-abbr={AAAI},
+@inproceedings{2020-paraphrase,
   title={Integrating Linguistic Knowledge to Sentence Paraphrase Generation},
   author={Lin, Zibo and Li, Ziran and Ding, Ning and Zheng, Hai-Tao and Shen, Ying and Zhao, Xiaobin and Zheng, Cong-Zhi},
-  booktitle={AAAI Conference on Artificial Intelligence, <br> AAAI},
+  booktitle={AAAI},
   year={2020},
+  series = {\newlin AAAI},
   bibtex_show={true},
   pdf = {AAAI2020-para.pdf},
-  bibtex_show={true},
   code={https://github.com/LINMouMouZiBo/KEPN},
   html={https://ojs.aaai.org/index.php/AAAI/article/view/6354},
   abstract={Paraphrase generation aims to rewrite a text with different words while keeping the same meaning. Previous work performs the task based solely on the given dataset while ignoring the availability of external linguistic knowledge. However, it is intuitive that a model can generate more expressive and diverse paraphrase with the help of such knowledge. To fill this gap, we propose Knowledge-Enhanced Paraphrase Network (KEPN), a transformer-based framework that can leverage external linguistic knowledge to facilitate paraphrase generation. (1) The model integrates synonym information from the external linguistic knowledge into the paraphrase generator, which is used to guide the decision on whether to generate a new word or replace it with a synonym. (2) To locate the synonym pairs more accurately, we adopt an incremental encoding scheme to incorporate position information of each synonym. Besides, a multi-task architecture is designed to help the framework jointly learn the selection of synonym pairs and the generation of expressive paraphrase. Experimental results on both English and Chinese datasets show that our method significantly outperforms the state-of-the-art approaches in terms of both automatic and human evaluation.}
 }
 
-@inproceedings{ijcai2020-522,
-abbr={IJCAI},
+@inproceedings{2020-infobox,
   title     = {Infobox-to-text Generation with Tree-like Planning based Attention Network},
   author    = {Bai, Yang and Li, Ziran and Ding, Ning and Shen, Ying and Zheng, Hai-Tao},
-  booktitle = {International Joint Conference on
-               Artificial Intelligence, <br> IJCAI},
+  booktitle = {IJCAI},
+  series = {\newlin IJCAI},
   publisher = {International Joint Conferences on Artificial Intelligence Organization},
   editor    = {Christian Bessiere},
   year      = {2020},
@@ -300,12 +363,11 @@ abbr={IJCAI},
   pdf = {IJCAI2020-infobox.pdf}
 }
 
-@inproceedings{ijcai2020-523,
-abbr={IJCAI},
+@inproceedings{2020:anchor-to-frame,
   title     = {Triple-to-Text Generation with an Anchor-to-Prototype Framework},
   author    = {Li, Ziran and Lin, Zibo and Ding, Ning and Zheng, Hai-Tao and Shen, Ying},
-  booktitle = {International Joint Conference on
-               Artificial Intelligence, <br> IJCAI},
+  booktitle = {IJCAI},
+  series = {\newlin IJCAI},
   publisher = {International Joint Conferences on Artificial Intelligence Organization},
   year      = {2020},
   bibtex_show={true},
@@ -317,17 +379,15 @@ abbr={IJCAI},
 }
 
 
-
-
-@inproceedings{ding-2019-event,
-abbr={EMNLP},
+@inproceedings{2019:tlnn,
  address = {HongKong, China},
  author = {Ding, Ning  and
 Li, Ziran  and
 Liu, Zhiyuan  and
 Zheng, Hai-Tao},
- booktitle = {The Conference on Empirical Methods in Natural Language Processing, <br> EMNLP},
+ booktitle = {EMNLP},
  month = {October},
+ series = {\newlin EMNLP},
  publisher = {Association for Computational Linguistics},
  title = {Event Detection with Trigger-Aware Lattice Neural Network},
  year = {2019},
@@ -338,17 +398,17 @@ Zheng, Hai-Tao},
  code = {https://github.com/thunlp/TLNN},
 }
 
-@inproceedings{li-etal-2019-chinese,
-abbr={ACL},
+@inproceedings{2019:multigrained,
     title = "{C}hinese Relation Extraction with Multi-Grained Information and External Linguistic Knowledge",
     author = "Li, Ziran*  and
       Ding, Ning*  and
       Liu, Zhiyuan  and
       Zheng, Hai-Tao  and
       Shen, Ying",
-    booktitle = "Annual Meeting of the Association for Computational Linguistics, <br> ACL",
+    booktitle = "ACL",
     month = jul,
     year = "2019",
+    series = {\newlin ACL},
     publisher = "Association for Computational Linguistics",
     html = "https://www.aclweb.org/anthology/P19-1430",
     doi = "10.18653/v1/P19-1430",
