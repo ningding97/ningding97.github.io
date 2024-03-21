@@ -15,14 +15,13 @@ layout: default
 
 
 
-
-
 <!-- Panelbear Analytics - We respect your privacy -->
 <script async src="https://cdn.panelbear.com/analytics.js?site=93OoYW0z85N"></script>
 <script>
     window.panelbear = window.panelbear || function() { (window.panelbear.q = window.panelbear.q || []).push(arguments); };
     panelbear('config', { site: '93OoYW0z85N' });
 </script>
+
 
 
 <div class="post">
@@ -35,6 +34,9 @@ layout: default
       <span id="date" style="color: rgb(53, 52, 52); font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"></span>.
 
     </div>
+
+
+
     <script>
       const dateElement = document.getElementById('date');
       const today = new Date();
@@ -103,6 +105,7 @@ layout: default
     </script>
     
    </small>
+
   </header>
 
   <br>
@@ -110,7 +113,7 @@ layout: default
     {% if page.profile %}
     <div class="profile float-right">
       {% if page.profile.image %}
-        <img class="img-fluid rounded profile-image" src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}" style="width:90%; margin-top: 10px; border: none;">
+        <img class="img-fluid rounded profile-image" src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}" style="width:70%; margin-top: 10px; border: none;">
       {% endif %}
     
 
