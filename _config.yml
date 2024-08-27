@@ -6,8 +6,8 @@ title: Ning Ding  # the website title (if blank, full name will be used instead)
 first_name: Ning
 middle_name: 
 last_name: Ding
-email: dingn18@mails.tsinghua.edu.cn
-description: > # the ">" symbol means to ignore newlines until "footer_text:"
+email: ningding.cs@gmail.com
+
 
 
 footer_text: >
@@ -58,7 +58,7 @@ work_url: # work page URL
 keybase_username: # your keybase user name
 wikidata_id: # your wikidata id
 semanticscholar_id: 46649145
-work_url:
+work_url: www.stingning.cn
 
 contact_note: >
 
@@ -173,7 +173,7 @@ enable_mansory:             true   # enables automatic project cards arangement
 enable_math:                true   # enables math typesetting (uses MathJax)
 enable_tooltips:            false  # enables automatic tooltip links generated
                                    # for each section titles on pages and posts
-enable_darkmode:            false   # enables switching between light/dark modes
+enable_darkmode:            true   # enables switching between light/dark modes
 enable_navbar_social:       true  # enables displaying social links in the
                                    # navbar on the about page
 enable_project_categories:  true   # enables categorization of projects into

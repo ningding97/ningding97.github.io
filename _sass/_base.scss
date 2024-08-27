@@ -9,7 +9,6 @@ p, h1, h2, h3, h4, h5, h6, em, div, span, strong {
 }
 
 body {
-  margin-left: 17%;
 }
 
 body.no-margin {
@@ -61,27 +60,27 @@ pp {
   font-family:'Courier New', Courier, monospace;
 }
 
-.sidebar {
-  position: fixed;
-  top: 1rem;
-  margin-left: -21rem;
-  width: 16%;
-  font-family: 'Montserrat', sans-serif;
-  height: 100%;
-  background-color: white;
-  z-index: 1;
-  border-right: 1px solid rgba(0, 0, 0, 0.143);
-  border-radius: 5px;
-  overflow: auto; /* Add this line */
-  animation: fadeIn 0.5s ease-in-out;
-}
+// .sidebar {
+//   position: fixed;
+//   top: 1rem;
+//   margin-left: -21rem;
+//   width: 16%;
+//   font-family: 'Montserrat', sans-serif;
+//   height: 100%;
+//   background-color: white;
+//   z-index: 1;
+//   border-right: 1px solid rgba(0, 0, 0, 0.143);
+//   border-radius: 5px;
+//   overflow: auto; /* Add this line */
+//   animation: fadeIn 0.5s ease-in-out;
+// }
 
-aside.sidebar {
-  //background-color: #f8f9fa;
-  background-color: white;
-  padding: 20px;
+// aside.sidebar {
+//   //background-color: #f8f9fa;
+//   background-color: white;
+//   padding: 20px;
 
-}
+// }
 
 /* To create a list of items in the sidebar, each with a title, content, and date, add the following code: */
 
@@ -184,8 +183,8 @@ a, table.table a {
   color: var(--global-theme-color);
   font-weight: 400;
   &:hover {
-    color: var(--global-theme-color);
-    text-decoration: underline;
+    color: var(--global-hover-color);
+    // text-decoration: underline;
     font-weight: 400;
   }
   &:hover:after {
@@ -279,11 +278,12 @@ a, table.table a {
     color: var(--global-text-color);
     &:hover {
       color: var(--global-hover-color);
-      font-weight: 200;
+      font-weight: 400;
     }
   }
   .navbar-nav .nav-item.active>.nav-link {
       background-color: inherit;
+  
       font-weight: bolder;
       color: var(--global-theme-color);
       &:hover {
@@ -301,7 +301,7 @@ a, table.table a {
       }
       &:hover {
         i::before {
-          color: var(--global-theme-color);
+          color: var(--global-hover-color);
         }
       }
     }
@@ -309,6 +309,7 @@ a, table.table a {
 }
 
 .navbar-toggler {
+
   .icon-bar {
     display: block;
     width: 22px;
@@ -364,15 +365,16 @@ a, table.table a {
   padding-right: 5rem;
   .contact-icons {
     margin-top: -1rem;
-    margin-left: -32px;
+    margin-left: -120px;
     font-size: 1.5rem;
+    color: black;
     a {
       i::before {
         -webkit-transition: all 0.2s ease-in-out;
       }
       &:hover {
         i::before {
-          color: var(--global-theme-color);
+          color: var(--global-hover-color);
         }
       }
     }
@@ -480,7 +482,6 @@ footer.sticky-bottom {
 .profile-text {
   display: flex;
   justify-content: center;
-  border-right: 1px solid rgba(114, 23, 23, 0.483);
 }
 
 .profile-text .clearfix {
@@ -644,7 +645,7 @@ footer.sticky-bottom {
           padding-bottom: 0.05rem;
           margin-left: -0.07rem;
           &:hover {
-            background-color:#BB0A21;
+            
             color: white;
             border-color: var(--global-theme-color);
           }

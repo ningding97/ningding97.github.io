@@ -24,12 +24,13 @@ social: true  # includes social icons at the bottom of the page
 
 ---
 
-### Bio
+#### Bio
 
-I received my Ph.D. at the [Department of Computer Science and Technology](http://www.cs.tsinghua.edu.cn/publish/csen/index.html/),  [Tsinghua Univeristy](https://www.tsinghua.edu.cn/en/) in 2023, advised by Prof. [Hai-Tao Zheng](https://dblp.org/pid/20/134.html) and also co-advised by Prof. [Zhiyuan Liu](http://nlp.csai.tsinghua.edu.cn/~lzy/).
+I am a postdoc researcher at the Department of Electronic Engineering, Tsinghua University, collaborating with Prof. [Bowen Zhou](https://scholar.google.com/citations?user=h3Nsz6YAAAAJ&hl=en).
+I received my Ph.D. at the Department of Computer Science and Technology,  Tsinghua Univeristy in 2023, advised by Prof. Hai-Tao Zheng and also co-advised by Prof. [Zhiyuan Liu](http://nlp.csai.tsinghua.edu.cn/~lzy/).
 
 
-### Research
+#### Research
 My research spans the areas of natural language processing and machine learning. At the current stage, I am particularly interested advanced stimulation of language models. My research aims to develop theory, tools, and algorithms to effectively and efficiently drive language models (especially the large ones), and also establish a deeper understanding by observing the behaviors of models.
 
 

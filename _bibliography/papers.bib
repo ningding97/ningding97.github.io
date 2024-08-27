@@ -32,13 +32,33 @@
   arxiv={2203.06904},
   html={https://www.nature.com/articles/s42256-023-00626-4},
   pdf={https://www.nature.com/articles/s42256-023-00626-4},
-  award={ <br>  <strong> <font color="BB0A21">  Cover Article of Nature Machine Intelligence's March Issue  </font></strong> <br>  <strong> <font color="BB0A21">  World Artificial Intelligence Conference Youth Outstanding Paper Award  </font></strong>},
+  award={ <br> <font color="BB0A21">  Cover Article of Nature Machine Intelligence's March Issue  </font></strong> <br>   <font color="BB0A21">  World Artificial Intelligence Conference Youth Outstanding Paper Award  </font>},
   series = {\newlin Nature Machine Intelligence},
   year={2023}
 }
 
+
+@inproceedings{ding2021openprompt,
+      preview={op.png},
+      bibtex_show={true},
+      title={ OpenPrompt: An Open-source Framework for Prompt-learning}, 
+      author={Ding, Ning and Hu, Shengding and Zhao, Weilin and Chen, Yulin and Liu, Zhiyuan and Zheng, Hai-Tao and Sun, Maosong},
+      year={2022},
+      bibtex_show={true},
+      selected={true},
+      booktitle={ACL System Demonstration},
+      series = {\newlin ACL System Demonstration},
+      html={https://arxiv.org/abs/2111.01998},
+      pdf={https://arxiv.org/pdf/2111.01998.pdf},
+      code={https://github.com/thunlp/OpenPrompt},
+      award={ <br> <img src="/assets/img/award.png" width="15px">   <font color="BB0A21">  Best Demo Paper Award  </font>},
+      abstract={Prompt-learning has become a new paradigm in modern natural language processing, which directly adapts pre-trained language models (PLMs) to cloze-style prediction, autoregressive modeling, or sequence to sequence generation, resulting in promising performances on various tasks. However, no standard implementation framework of prompt-learning is proposed yet, and most existing prompt-learning codebases, often unregulated, only provide limited implementations for specific scenarios. Since there are many details such as templating strategy, initializing strategy, and verbalizing strategy, etc. need to be considered in prompt-learning, practitioners face impediments to quickly adapting the desired prompt learning methods to their applications. In this paper, we present {OpenPrompt}, a unified easy-to-use toolkit to conduct prompt-learning over PLMs. OpenPrompt is a research-friendly framework that is equipped with efficiency, modularity, and extendibility, and its combinability allows the freedom to combine different PLMs, task formats, and prompting modules in a unified paradigm. Users could expediently deploy prompt-learning frameworks and evaluate the generalization of them on different NLP tasks without constraints.}
+}
+
+
 @inproceedings{preprint:ultra,
   title={Enhancing Chat Language Models by Scaling High-quality Instructional Conversations},
+    preview={ultra_logo.png},
   bibtex_show={true},
   author={Ding, Ning and Chen, Yulin and Xu, Bokai and Qin, Yujia and Hu, Shengding and Liu, Zhiyuan and Sun, Maosong and Zhou, Bowen},
   booktitle={EMNLP},
@@ -46,18 +66,42 @@
   pdf={https://arxiv.org/abs/2305.14233},
   code={https://github.com/thunlp/UltraChat},
   series = {\newlin EMNLP},
+  award={ <br> <font color="BB0A21">  The Ultra series solutions also contain other works like UltraFeedback, UltraInteract, UltraMedical, etc.  </font></strong>},
   year={2023}
+}
+
+@inproceedings{Cui2023UltraFeedbackBL,
+  preview={uf.jpg},
+  title={UltraFeedback: Boosting Language Models with Scaled AI Feedback},
+  author={Ganqu Cui and Lifan Yuan and Ning Ding and Guanming Yao and Bingxiang He and Wei Zhu and Yuan Ni and Guotong Xie and Ruobing Xie and Yankai Lin and Zhiyuan Liu and Maosong Sun},
+  selected={true},
+  booktitle={ICML},
+  year={2024},
+    series = {\newlin ICML},
+  url={https://api.semanticscholar.org/CorpusID:271217791}
 }
 
 @inproceedings{preprint:sora,
   title={Sparse Low-rank Adaptation of Pre-trained Language Models},
-  bibtex_show={true},
+  preview={sora.png},
+  selected={true},
   author={Ding, Ning and Chen, Yulin and Xu, Bokai and Qin, Yujia and Hu, Shengding and Liu, Zhiyuan and Sun, Maosong and Zhou, Bowen},
   booktitle={EMNLP},
-  selected={false},
+  selected={true},
   series = {\newlin EMNLP},
   year={2023}
 }
+
+
+@inproceedings{yuan2024advancing,
+  title={Advancing llm reasoning generalists with preference trees},
+  selected={true},
+  preview={ui.jpg},
+  author={Yuan, Lifan and Cui, Ganqu and Wang, Hanbin and Ding, Ning and Wang, Xingyao and Deng, Jia and Shan, Boji and Chen, Huimin and Xie, Ruobing and Lin, Yankai and others},
+  booktitle={Preprint},
+  year={2024}
+}
+
 
 @inproceedings{2023:lottery,
   title={Exploring Lottery Prompts for Pre-trained Language Models},
@@ -111,22 +155,6 @@
 
 
 
-@inproceedings{ding2021openprompt,
-      preview={op.png},
-      bibtex_show={true},
-      title={ OpenPrompt: An Open-source Framework for Prompt-learning}, 
-      author={Ding, Ning and Hu, Shengding and Zhao, Weilin and Chen, Yulin and Liu, Zhiyuan and Zheng, Hai-Tao and Sun, Maosong},
-      year={2022},
-      bibtex_show={true},
-      selected={true},
-      booktitle={ACL System Demonstration},
-      series = {\newlin ACL System Demonstration},
-      html={https://arxiv.org/abs/2111.01998},
-      pdf={https://arxiv.org/pdf/2111.01998.pdf},
-      code={https://github.com/thunlp/OpenPrompt},
-      award={ <br> <img src="/assets/img/award.png" width="15px">  <strong> <font color="BB0A21">  Best Demo Paper Award  </font></strong>},
-      abstract={Prompt-learning has become a new paradigm in modern natural language processing, which directly adapts pre-trained language models (PLMs) to cloze-style prediction, autoregressive modeling, or sequence to sequence generation, resulting in promising performances on various tasks. However, no standard implementation framework of prompt-learning is proposed yet, and most existing prompt-learning codebases, often unregulated, only provide limited implementations for specific scenarios. Since there are many details such as templating strategy, initializing strategy, and verbalizing strategy, etc. need to be considered in prompt-learning, practitioners face impediments to quickly adapting the desired prompt learning methods to their applications. In this paper, we present {OpenPrompt}, a unified easy-to-use toolkit to conduct prompt-learning over PLMs. OpenPrompt is a research-friendly framework that is equipped with efficiency, modularity, and extendibility, and its combinability allows the freedom to combine different PLMs, task formats, and prompting modules in a unified paradigm. Users could expediently deploy prompt-learning frameworks and evaluate the generalization of them on different NLP tasks without constraints.}
-}
 
 
 @inproceedings{ding2021prompt,
@@ -189,7 +217,7 @@
       booktitle={ACL},
       series = {\newlin ACL},
       bibtex_show={true},
-      award={ <br> <strong> <font color="BB0A21">  Oral Presentation  </font></strong>},
+      award={ <br>  <font color="BB0A21">  Oral Presentation  </font>},
       code={https://github.com/thunlp/KnowledgeablePromptTuning},
       html={https://arxiv.org/abs/2108.02035},
       pdf={https://arxiv.org/pdf/2108.02035.pdf},
@@ -241,8 +269,8 @@
   booktitle={ACL},
   series = {\newlin ACL},
   bibtex_show={true},
-  award={ <br>  <strong> <font color="BB0A21">  Oral Presentation  </font></strong>},
-  selected={true},
+  award={ <br>   <font color="BB0A21">  Oral Presentation  </font>},
+  selected={false},
   abstract={Recently, considerable literature has grown up around the theme of few-shot named entity recognition (NER), but little published benchmark data specifically focused on the practical and challenging task. Current approaches collect existing supervised NER datasets and re-organize them to the few-shot setting for empirical study. These strategies conventionally aim to recognize coarse-grained entity types with few examples, while in practice, most unseen entity types are fine-grained. In this paper, we present \textsc{Few-NERD}, a large-scale human-annotated few-shot NER dataset with a hierarchy of 8 coarse-grained and 66 fine-grained entity types. \textsc{Few-NERD} consists of 188,238 sentences from Wikipedia, 4,601,160 words are included and each is annotated as context or a part of a two-level entity type.  To the best of our knowledge, this is the first few-shot NER dataset and the largest human-crafted NER dataset.  We construct benchmark tasks with different emphases to comprehensively assess the generalization capability of models. Extensive empirical results and analysis show that\textsc{Few-NERD} is challenging and the problem requires further research. We make \textsc{Few-NERD} public at https://ningding97.github.io/fewnerd/ },
   html={https://ningding97.github.io/fewnerd/},
   pdf={https://arxiv.org/pdf/2105.07464.pdf},
@@ -256,7 +284,7 @@
   author={Wang, Dong and Ding, Ning* and Li, Piji and Zheng, Hai-Tao},
   booktitle={ ACL},
   series = {\newlin ACL},
-  award={ <br>  <strong> <font color="BB0A21">  Oral Presentation  </font></strong>},
+  award={ <br>   <font color="BB0A21">  Oral Presentation  </font>},
   html={https://arxiv.org/abs/2107.00440},
   pdf={https://arxiv.org/pdf/2107.00440.pdf},
   code={https://github.com/kandorm/CLINE},
@@ -302,7 +330,7 @@
   series = {\newlin ACL},
   year={2020},
   bibtex_show={true},
-  award={ <br>  <strong> <font color="BB0A21">  Oral Presentation  </font></strong>},
+  award={ <br>   <font color="BB0A21">  Oral Presentation  </font>},
   html = {https://www.aclweb.org/anthology/2020.acl-main.595/},
   abstract = {Fully supervised neural approaches have achieved significant progress in the task of Chinese word segmentation (CWS). Nevertheless, the performance of supervised models always drops gravely if the domain shifts due to the distribution gap across domains and the out of vocabulary (OOV) problem. In order to simultaneously alleviate the issues, this paper intuitively couples distant annotation and adversarial training for cross-domain CWS. 1) We rethink the essence of “Chinese words” and design an automatic distant annotation mechanism, which does not need any supervision or pre-defined dictionaries on the target domain. The method could effectively explore domain-specific words and distantly annotate the raw texts for the target domain. 2) We further develop a sentence-level adversarial training procedure to perform noise reduction and maximum utilization of the source domain information. Experiments on multiple real-world datasets across various domains show the superiority and robustness of our model, significantly outperforming previous state-of-the-arts cross-domain CWS methods.},
   code = {https://github.com/Alibaba-NLP/DAAT-CWS},
@@ -431,5 +459,5 @@ Zheng, Hai-Tao},
     data = "https://github.com/thunlp/Chinese_NRE/tree/master/data/FinRE",
     pdf = "https://www.aclweb.org/anthology/P19-1430",
     code = "https://github.com/thunlp/Chinese_NRE",
-    award={ <br>  <strong> <font color="BB0A21">  Oral Presentation  </font></strong>}
+    award={ <br>  <font color="BB0A21">  Oral Presentation  </font>}
 }

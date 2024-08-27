@@ -113,13 +113,12 @@ layout: default
     {% if page.profile %}
     <div class="profile float-right">
       {% if page.profile.image %}
-        <img class="img-fluid rounded profile-image" src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}" style="width:70%; margin-top: 10px; border: none;">
+        <img class="img-fluid rounded profile-image" src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}" style="width:100%; margin-top: 30px; border: none; margin-left: -50px;">
       {% endif %}
     
-
     </div>
     <div class="profile-text">
-      <div class="clearfix" style="width: 100%; max-width: 530px; padding-left: 52px;">
+      <div class="clearfix" style="width: 100%; max-width: 800px; padding-left: 52px;">
         {{ content }}
       </div>
     </div>
@@ -134,7 +133,7 @@ layout: default
       <div class="contact-note">{{ site.contact_note }}</div>
     </div>
     {% endif %} -->
-  
+<!--   
     <aside class="sidebar">
 
       
@@ -145,11 +144,7 @@ layout: default
       <h5>Contact</h5> <br>
       <p class="desc">{{ page.description }}</p>
 
-     
-      
-
-
-      
+    
     <br><br>
       <h5>Updates</h5>
 
@@ -182,21 +177,44 @@ layout: default
           </p>
           <span class="item-date">May 2022</span>
         </li>
-        <!-- <li>
+        <<li>
           <iframe width="80%" height="300" style="margin-left: 20px;" src="https://api.maptiler.com/maps/openstreetmap/?key=2V215Qvhk6kDer0iYTH7#16.4/40.00006/116.31593"></iframe>
           </li> -->
         
         
         <!-- Add more list items as needed -->
-      </ul>
+      <!-- </ul> -->
 
    
-    </aside>
-    
+    <!-- </aside> -->
+     
 
   </article>
 
   <div class="post">
+
+
+    <!-- <div style="background-color: #F9F7FB; padding: 15px; border-radius: 8px; max-width: 730px;">
+      <p style="color: #402F7C; margin: 0;">
+        I will be recruiting.
+      </p>
+    </div> -->
+
+    <!-- <div class="news-infobox" style="border: 2px solid #828282; border-radius: 10px; padding: 10px; background-color: #FAFAF8; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); max-width: 730px; margin-left: -0px;">
+     
+      <ul style="list-style-type: none; padding: 0;">
+        <li style="margin-bottom: 10px;">
+          <h5 style="margin: 0; color: #3E3E3E;">Delta Tuning Paper Published</h5>
+          <p style="margin: 5px 0;">The <a href="https://www.nature.com/articles/s42256-023-00626-4" style="color: #0076df;">delta tuning</a> paper gets published on <a href="https://www.nature.com/natmachintell/" style="color: #0076df;">Nature Machine Intelligence</a>, and it is selected as the cover article of the journal's <a href="https://www.nature.com/natmachintell/volumes/5/issues/3" style="color: #0076df;">March issue</a>.</p>
+          <span style="color: #828282;">April 2023</span>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <h5 style="margin: 0; color: #3E3E3E;">Awarded ACL Best Demo Paper</h5>
+          <p style="margin: 5px 0;"><a href="https://github.com/thunlp/OpenPrompt" style="color: #0076df;">OpenPrompt</a> is awarded as the best demo paper at ACL 2022.</p>
+          <span style="color: #828282;">May 2022</span>
+        </li>
+      </ul>
+    </div> -->
 
 <!-- Add a sidebar with content -->
 
@@ -214,7 +232,49 @@ layout: default
 
 
 
-<br><br><br><br>
+
+<br>
+
+
+
+
+
+<h4>Awards</h4>
+<ul>
+  <li>Yunfan Award of WAIC, 2024.</li>
+  <li>Young Elite Scientists Sponsorship Program by CAST, 2023.</li>
+  <li>World Artificial Intelligence Conference Youth Outstanding Paper Award, 2023.</li>
+  <li>Shuimu Tsinghua Scholar Program, 2023.</li>
+  <li>Zhang Keqian Scholar Program, 2023.</li>
+  <li>Outstanding Doctoral Dissertation of Tsinghua University, 2023.</li>
+  <li>Outstanding Graduate of DCST, Tsinghua University, 2023.</li>
+  <li><a href="https://www.2022.aclweb.org/best-demo-paper-award">ACL Best System Demonstration Paper Award</a>, 2022.</li>
+  <li><a href="http://scholarship.baidu.com/">Baidu Ph.D Fellowship</a> (10 recipients worldwide), 2021.</li>
+  <li>National Scholarship for Ph.D student, 2021.</li>
+  <li>National Scholarship for Ph.D student, 2020.</li>
+  <li>Tsingfeng Scholarship, Tsinghua University, 2019.</li>
+  <li>CACS Scholarship, 2019.</li>
+  <li>Excellent Graduate, 2018.</li>
+  <li>National Scholarship for undergraduate student, 2018.</li>
+  <li>First-class Academic Scholarship, 2017.</li>
+  <li>First-class Academic Scholarship, 2016.</li>
+</ul>
+
+<h4>Service</h4>
+<ul>
+  <li>Nature Machine Intelligence</li>
+  <li>Neural Networks</li>
+  <li>NeurIPS 2020~2024</li>
+  <li>ICML 2021~2024</li>
+  <li>ACL 2020~2024</li>
+  <li>EMNLP 2020~2024</li>
+  <li>COLING 2020, 2022</li>
+  <li>AAAI 2020~2024</li>
+  <li>IJCAI 2020</li>
+</ul>
+
+
+
 
 <div align="center">
 <!-- hitwebcounter Code START -->

@@ -1,4 +1,4 @@
----
+<!-- ---
 layout: page
 permalink: /service/
 title: service
@@ -17,4 +17,4 @@ nav_order: 4
 - Neural Networks
 
 #### Student Committee
-- Chinese Information Processing Society of China, Youth Working Committee
+- Chinese Information Processing Society of China, Youth Working Committee -->
