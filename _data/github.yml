@@ -1,13 +1,24 @@
+- username: PRIME-RL
+  repositories:
+    - PRIME
+
+- username: lifan-yuan
+  repositories:
+    - ImplicitPRM
+
 - username: thunlp
-  username0: ningding97
-  username1: openbmb
   repositories:
     - UltraChat
     - OpenPrompt
     - OpenDelta
-    - PromptPapers
     - Few-NERD
-    - Chinese_NRE
-    - DeltaPapers
-    - TLNN
+
+
+- username: openbmb
+  repositories:
+    - UltraFeedback
+    - Eurus
+- username: TsinghuaC3I
+  repositories:
+    - UltraMedical
 

@@ -272,9 +272,10 @@ a, table.table a {
   }
   .navbar-brand {
     color: var(--global-text-color);
-  }
+    }
   .navbar-nav .nav-item .nav-link {
     font-weight: 200;
+    
     color: var(--global-text-color);
     &:hover {
       color: var(--global-hover-color);
@@ -283,7 +284,7 @@ a, table.table a {
   }
   .navbar-nav .nav-item.active>.nav-link {
       background-color: inherit;
-  
+      
       font-weight: bolder;
       color: var(--global-theme-color);
       &:hover {

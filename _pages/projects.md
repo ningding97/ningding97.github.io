@@ -16,42 +16,34 @@ nav_order: 3
 {% assign border_color = site.data.github_style.theme[themes].border_color %}
 {% assign style = '&title_color=' | append: title_color | append: '&text_color=' | append: text_color | append: '&icon_color=' | append: icon_color | append: '&bg_color=' | append: bg_color | append: '&border_color=' | append: border_color %}
 
-{% for user in site.data.github %}
 
-
-
-
-<!-- <h2>Repositories</h2> -->
-<hr>
-<h2 id="github-repositories">Repositories</h2>
-
+<h3 id="github-repositories">Repositories</h3>
 
 <div class="repocards">
-
-{% for repository in user.repositories %}
-
-<div class="repocard-single">
-
-<a href="https://github.com/{{ user.username }}/{{ repository}}">
-  <img class="repocard-img" alt="{{ user.username }} repository - {{ repository}}" src="https://github-readme-stats-1isq-6joamo805-ningding97.vercel.app/api/pin/?username={{ user.username }}&repo={{ repository}}&hide_border=true&line_height=28&theme=swift">
-</a>
-  
+  {% for user in site.data.github %}
+    {% for repository in user.repositories %}
+      <div class="repocard-single">
+        <a href="https://github.com/{{ user.username }}/{{ repository }}">
+          <img class="repocard-img" alt="{{ user.username }} repository - {{ repository }}" src="https://github-readme-stats-1isq-6joamo805-ningding97.vercel.app/api/pin/?username={{ user.username }}&repo={{ repository }}&hide_border=true&line_height=28&theme=swift">
+        </a>
+      </div>
+    {% endfor %}
+  {% endfor %}
 </div>
 
-{% endfor %}
-
-</div>
-
-{% endfor %}
 
 <br>
-<h2>GitHub</h2>
+<!-- Clearfix to ensure separation -->
+<div style="clear: both;"></div>
 
- <div class="repocards">
-
-<div class="repocard-single">
-<a href="https://github.com/{{ user.username0 }}"><img class="repocard-img" alt="{{ user.username0 }} GitHub Stats" src="https://github-readme-stats-1isq-6joamo805-ningding97.vercel.app/api?username=ningding97&include_orgs=true&include_all_commits=true&show_icons=true&hide_border=true&show_issues=false&theme=swift&hide=prs,issues"></a>
-</div></div>
+<h3>GitHub</h3>
+<div class="repocards">
+  <div class="repocard-single">
+    <a href="https://github.com/{{ site.github_username }}">
+      <img class="repocard-img" alt="{{ site.github_username }} GitHub Stats" src="https://github-readme-stats-1isq-6joamo805-ningding97.vercel.app/api?username={{ site.github_username }}&include_orgs=true&include_all_commits=true&show_icons=true&hide_border=true&show_issues=false&theme=swift&hide=prs,issues">
+    </a>
+  </div>
+</div>
 
 <!-- 
 <br>
