@@ -18,9 +18,19 @@
    padding-bottom: 0;
  }
 
- .container {
-  max-width: 860px; /* Adjust the width as needed */
-  margin: 0 auto; /* Center the container */
+
+.container {
+  max-width: 860px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
 }
 
 // Profile
@@ -45,3 +55,24 @@
 *****************************************************************************/
 
 // TODO: redefine projects layout.
+
+@media screen and (max-width: 768px) {
+  .project-content {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    width: 100%;
+    max-width: 100%;
+    
+    p, div {
+      max-width: 100%;
+      overflow-x: auto;
+      word-break: break-word;
+    }
+    
+    .caption {
+      font-size: 0.8rem;
+      padding: 0 10px;
+    }
+  }
+}

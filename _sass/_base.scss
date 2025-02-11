@@ -646,9 +646,10 @@ footer.sticky-bottom {
           padding-bottom: 0.05rem;
           margin-left: -0.07rem;
           &:hover {
-            
             color: white;
-            border-color: var(--global-theme-color);
+            font-weight: bold;
+            background-color: #423779;
+            border: 1px solid #423779;
           }
         }
       }
@@ -683,6 +684,21 @@ footer.sticky-bottom {
         }
       }
       .btn-html {
+        background-color:rgb(60, 142, 177);
+        color: white;
+        font-weight: bolder;
+        border: 0px solid var(--global-text-color);
+        margin-right: 0.2rem;
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
+        padding-top: 0.1rem;
+        padding-bottom: 0.1rem;
+        &:hover {
+          color: white;
+          border-color: var(--global-theme-color);
+        }
+      }
+      .btn-huggingface {
         background-color:rgb(60, 142, 177);
         color: white;
         font-weight: bolder;
@@ -853,3 +869,57 @@ html.transition *:after {
  .repocard-img {
   max-width: 375px;
  }
+
+// 添加项目卡片的响应式样式
+.card {
+  height: 100%;
+  
+  .card-body {
+    padding: 1rem;
+    
+    .card-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+    
+    .card-text {
+      font-size: 0.9rem;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    margin-bottom: 1rem;
+    
+    .card-body {
+      padding: 0.8rem;
+      
+      .card-title {
+        font-size: 1rem;
+      }
+      
+      .card-text {
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+  
+  .grid-item {
+    width: 100% !important; // 确保在移动端占满宽度
+    padding: 0 10px;
+  }
+  
+  .github-icon {
+    font-size: 0.9rem;
+    
+    .stars {
+      font-size: 0.8rem;
+    }
+  }
+}
