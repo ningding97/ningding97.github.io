@@ -248,7 +248,7 @@ a, table.table a {
     color: inherit;
     &:hover {
       color: var(--global-theme-color);
-      text-decoration: none;
+      text-decoration: underline;
     }
   }
 }
@@ -267,7 +267,7 @@ a, table.table a {
 .navbar.navbar-light {
   a {
     &:hover {
-      text-decoration: none;
+      text-decoration: underline;
     }
   }
   .navbar-brand {
@@ -279,6 +279,7 @@ a, table.table a {
     color: var(--global-text-color);
     &:hover {
       color: var(--global-hover-color);
+      text-decoration: underline;
       font-weight: 400;
     }
   }
