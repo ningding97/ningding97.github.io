@@ -184,7 +184,7 @@ a, table.table a {
   font-weight: 400;
   &:hover {
     color: var(--global-hover-color);
-    // text-decoration: underline;
+    text-decoration: underline;
     font-weight: 400;
   }
   &:hover:after {
