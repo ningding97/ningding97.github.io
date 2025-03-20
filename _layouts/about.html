@@ -300,19 +300,24 @@ layout: default
 
 
 
-<div align="center">
-<!-- hitwebcounter Code START -->
+<div class="visitor-counter text-center">
+  <span>Visitors: <strong id="visitor-count">Loading...</strong></span>
+</div>
 
-<!-- hitwebcounter Code START -->
-<a href="https://www.hitwebcounter.com" target="_blank">
-<img src="https://hitwebcounter.com/counter/counter.php?page=7999605&style=0007&nbdigits=5&type=page&initCount=756" title="Free Counter" Alt="web counter"   border="0" /></a>                                    
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    let count = localStorage.getItem('visitorCount') || 15228;
+    count = parseInt(count) + 1;
+    localStorage.setItem('visitorCount', count);
+    document.getElementById("visitor-count").textContent = count.toLocaleString();
+  });
+</script>
 
-</div>          
-                                        
-                                          
-                                                        
-                                    
-                                        
-                                                                   
-                                        
-
+<style>
+  .visitor-counter {
+    font-family: 'Gill Sans', sans-serif;
+    color: #666;
+    font-size: 0.9rem;
+    margin: 15px 0;
+  }
+</style>
