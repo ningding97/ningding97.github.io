@@ -142,8 +142,8 @@ github: [metadata]
 
 scholar:
 
-  last_name: Ding
-  first_name: [Ning, N., Ning*]
+  last_name: [Ding, Ding†]
+  first_name: [Ning, N., Ning*, Ning†]
 
   style: apa
   locale: en

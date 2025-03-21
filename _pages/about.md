@@ -26,12 +26,15 @@ social: true  # includes social icons at the bottom of the page
 
 #### Bio
 
-I am a postdoc researcher at the Department of Electronic Engineering, Tsinghua University, collaborating with Prof. [Bowen Zhou](https://scholar.google.com/citations?user=h3Nsz6YAAAAJ&hl=en).
-I received my Ph.D. at the Department of Computer Science and Technology,  Tsinghua Univeristy in 2023, advised by Prof. Hai-Tao Zheng and also co-advised by Prof. [Zhiyuan Liu](http://nlp.csai.tsinghua.edu.cn/~lzy/).
+I am an incoming assistant professor and a postdoc researcher at the [Department of Electronic Engineering](https://www.ee.tsinghua.edu.cn/en/), [Tsinghua University](https://www.tsinghua.edu.cn/en/), collaborating with Prof. Bowen Zhou.
+I received my Ph.D. at the Department of Computer Science and Technology,  Tsinghua Univeristy in 2023, advised by Prof. Hai-Tao Zheng and also co-advised by Prof. Zhiyuan Liu.
 
 
 #### Research
-My research spans the areas of natural language processing and machine learning. At the current stage, I am particularly interested advanced stimulation of language models. My research aims to develop theory, tools, and algorithms to effectively and efficiently drive language models (especially the large ones), and also establish a deeper understanding by observing the behaviors of models.
+My research spans the areas of natural language processing and machine learning. 
+Currently I am working on scalable theories and methods for developing reasoning intelligence that balances exploration and learning. I am also interested in how general and specialized reasoners can facilitate scientific innovations.
+
+
 
 
 
