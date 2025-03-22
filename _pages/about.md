@@ -32,10 +32,5 @@ I received my Ph.D. at the Department of Computer Science and Technology,  Tsing
 
 #### Research
 My research spans the areas of natural language processing and machine learning. 
-Currently I am working on scalable theories and methods for developing reasoning intelligence that balances exploration and learning. I am also interested in how general and specialized reasoners can facilitate scientific innovations.
-
-
-
-
-
+Currently I am working on theories and *scalable* methods for developing reasoning intelligence that balances exploration and learning. I am also interested in how specialized general reasoners can facilitate scientific innovations.
 

@@ -111,23 +111,23 @@ layout: default
 
   </header>
 
-
+ 
 
   <br>
   <article style="max-width: 780px">
     {% if page.profile %}
-    <div class="profile float-right">
+    <div class="profile float-right" >
       {% if page.profile.image %}
-        <img class="img-fluid rounded profile-image" src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}" style="width:100%; margin-top: 30px; border: none; margin-left: -50px;">
+        <img class="img-fluid rounded profile-image" src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}" style="width:100%; max-width: 375px; margin-top: 30px; border: none; margin-left: -47px;">
       {% endif %}
-
       
-      <div class="email-container" style="margin-top: 10px; text-align: left; margin-left: -40px;">
+      <div class="email-container" style="margin-top: 10px; text-align: left; margin-left: -47px;">
         <a href="mailto:ningding.cs@gmail.com" style="text-decoration: none; color: #402F7C; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 14px; transition: color 0.3s ease;">
           <i class="fas fa-envelope" style="margin-right: 5px;"></i>
           ningding.cs AT gmail DOT com
         </a>
       </div>
+    </div>
       
 
 

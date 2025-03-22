@@ -27,9 +27,30 @@
 }
 
 @media screen and (max-width: 768px) {
-  .container {
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  // 改为 flex-start 使内容靠左
+
+    img.profile-image {
+      max-width: 250px;
+      width: 100%;
+      margin-left: 0 !important;
+      margin-bottom: 15px;  // 在图片和文字之间添加一些间距
+      align-self: flex-start;  // 图片也靠左对齐
+    }
+
+    .email-container {
+      margin-left: 0 !important;
+      text-align: left;
+      margin-top: 15px;
+    }
+  }
+
+  .profile-text {
     width: 100%;
-    padding: 0 10px;
+    padding-left: 0 !important;
+    text-align: left;
   }
 }
 
