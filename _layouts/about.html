@@ -110,9 +110,6 @@ layout: default
    </small>
 
   </header>
-
- 
-
   <br>
   <article style="max-width: 780px">
     {% if page.profile %}
@@ -140,11 +137,7 @@ layout: default
 
     {% endif %}
 
-    <strong style="color: black;">Our group is looking for highly motivated Ph.D students, please contact me if you are interested.</strong>
-
-    
-
-    
+  
 
     <!-- {% if page.social %}
     <div class="social">
@@ -214,6 +207,87 @@ layout: default
 
 
   
+  <div class="recruitment-infobox" style="width: 88%; background: transparent; margin-top: 5px; margin-bottom: 5px;">
+    <div class="infobox-header" onclick="toggleInfobox()">
+      <i class="fas fa-plus-circle toggle-icon"></i>
+      <h6 style="margin: 0; color: #3E3E3E; font-size: 15px;">Ph.D. Student Recruitment (2026 Fall)</h6>
+    </div>
+    <div class="infobox-content" style="display: none;">
+      <p>Our group is looking for self-motivated Ph.D. students (also including Postdocs and interns) to join us for 2026 Fall. Research topics include but are not limited to scalable reinforcement learning, fundamental theories, scientific applications of reasoning language models.  </p>
+      <p>
+      If you are interested, please drop me an email to <b>ningding.cs@gmail.com</b> or <b>dn97@mail.tsinghua.edu.cn</b> with your CV and research interests.</p>
+    </div>
+  </div>
+  
+  <style>
+    .recruitment-infobox {
+      margin: 25px 0;
+      border-radius: 12px;
+      background-color: rgba(240, 245, 250, 0.5);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .recruitment-infobox:hover {
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
+    .infobox-header {
+      padding: 14px 18px;
+      background: linear-gradient(to right, #f0f4f9, #f5f9fc);
+      font-size: 16px;
+      font-weight: 500;
+      color: #3a4a64;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      transition: all 0.2s;
+    }
+    .infobox-header:hover {
+      background: linear-gradient(to right, #e8f2fa, #edf5fc);
+    }
+    .toggle-icon {
+      margin-right: 12px;
+      color: #4a6fa5;
+      transition: transform 0.3s ease, color 0.2s;
+    }
+    .toggle-icon.open {
+      transform: rotate(45deg);
+      color: #3a5a8c;
+    }
+    .infobox-content {
+      padding: 18px;
+      line-height: 1.6;
+      color: #445566;
+      background-color: rgba(255,255,255,0.8);
+    }
+    .infobox-content p {
+      margin-bottom: 12px;
+    }
+    .infobox-content b {
+      color: #3a4a64;
+      font-weight: 600;
+    }
+  </style>
+  
+  <script>
+    function toggleInfobox() {
+      const content = document.querySelector('.infobox-content');
+      const icon = document.querySelector('.toggle-icon');
+      if (content.style.display === 'none') {
+        content.style.display = 'block';
+        icon.classList.add('open');
+        icon.classList.remove('fa-plus-circle');
+        icon.classList.add('fa-times-circle');
+      } else {
+        content.style.display = 'none';
+        icon.classList.remove('open');
+        icon.classList.remove('fa-times-circle');
+        icon.classList.add('fa-plus-circle');
+      }
+    }
+  </script>
+  
 
   <div class="post">
 
@@ -249,6 +323,10 @@ layout: default
     </div>
 
 <!-- Add a sidebar with content -->
+
+
+
+
 
 </article>
 
