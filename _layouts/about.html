@@ -301,7 +301,23 @@ layout: default
 
     <!-- <div class="news-infobox" style="border: 0px solid #828282; border-radius: 10px; padding: 10px; background-color: #c397ed09; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); max-width: 730px; margin-left: -0px;"> -->
       <br>
-    <div class="news-infobox" style="border: 0px solid #828282; border-radius: 10px; padding: 10px; background-color: #c397ed09; max-width: 730px; margin-left: -0px;">
+
+
+    <div class="news-infobox" style="
+        border: 0px solid #828282; 
+        border-radius: 10px; 
+        padding: 10px; 
+        background-color: #c397ed09; 
+        max-width: 730px; 
+        margin-left: -0px;
+        transition: box-shadow 0.3s ease;
+        overflow-y: auto;
+        max-height: 250px;
+    " 
+    onmouseover="this.style.boxShadow='0 6px 18px rgba(0,0,0,0.08)'" 
+
+
+    onmouseout="this.style.boxShadow='none'">
      
       <ul style="list-style-type: none; padding: 0;">
         <li style="margin-bottom: 10px;">
