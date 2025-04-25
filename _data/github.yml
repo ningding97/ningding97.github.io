@@ -1,10 +1,9 @@
 - username: PRIME-RL
   repositories:
+    - TTRL
     - PRIME
-
-- username: lifan-yuan
-  repositories:
     - ImplicitPRM
+
 
 - username: thunlp
   repositories:
