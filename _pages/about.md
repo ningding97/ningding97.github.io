@@ -27,7 +27,7 @@ social: true  # includes social icons at the bottom of the page
 #### Bio
 
 I am a tenure-track Assistant Professor at the [Department of Electronic Engineering](https://www.ee.tsinghua.edu.cn/en/), [Tsinghua University](https://www.tsinghua.edu.cn/en/).
-I was previsously a postdoc researcher advised by Prof. Bowen Zhou.
+Previously, I was a postdoc researcher in the same department, advised by Prof. Bowen Zhou.
 I received Ph.D. at the Department of Computer Science and Technology,  Tsinghua Univeristy in 2023, advised by Prof. Hai-Tao Zheng and also co-advised by Prof. Zhiyuan Liu.
 
 
