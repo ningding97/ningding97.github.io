@@ -33,9 +33,13 @@ layout: default
      {% if site.title != "blank" %}<span class="font-weight-thin">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }} &nbsp; <span style="font-family: 'PingFang SC', serif; color: #504c4c;">丁宁</span> {% else %}{{ site.title }}
      {% endif %}
     </h3>
+    <!-- <div class="job-info" style="margin-top: 10px; text-align: left;>
+      <p style="color: #402F7C; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 14px;">
+        Assistant Professor @ Tsinghua University<br>
+      </p>
+    </div> -->
     <div>
       <span id="date" style="color: rgb(53, 52, 52); font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"></span>.
-
     </div>
 
 
@@ -117,13 +121,14 @@ layout: default
       {% if page.profile.image %}
         <img class="img-fluid rounded profile-image" src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}" style="width:100%; max-width: 375px; margin-top: 30px; border: none; margin-left: -47px;">
       {% endif %}
-      
-      <div class="email-container" style="margin-top: 10px; text-align: left; margin-left: -47px;">
+      <div class="profile-name" style="margin-top: 10px; text-align: left; margin-left: -40px;">
+        <p style="color: #402F7C; font-size: 15px;">Assistant Professor @ Tsinghua </p>
+      <!-- <div class="email-container" style="margin-top: 10px; text-align: left; margin-left: -47px;">
         <a href="mailto:ningding.cs@gmail.com" style="text-decoration: none; color: #402F7C; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 14px; transition: color 0.3s ease;">
           <i class="fas fa-envelope" style="margin-right: 5px;"></i>
           ningding.cs AT gmail DOT com
         </a>
-      </div>
+      </div> -->
     </div>
       
 
@@ -208,10 +213,10 @@ layout: default
   <div class="recruitment-infobox" style="width: 88%; background: transparent; margin-top: 5px; margin-bottom: 5px;">
     <div class="infobox-header" onclick="toggleInfobox()">
       <i class="fas fa-plus-circle toggle-icon"></i>
-      <h6 style="margin: 0; color: #3E3E3E; font-size: 15px;">Ph.D. Student Recruitment (2026 Fall)</h6>
+      <h6 style="margin: 0; color: #3E3E3E; font-size: 15px;">Lab Information</h6>
     </div>
     <div class="infobox-content" style="display: none;">
-      <p>Our group is looking for self-motivated Ph.D. students (also including Postdocs and interns) to join us for 2026 Fall. Research topics include but are not limited to scalable reinforcement learning, fundamental theories, scientific applications of reasoning language models.  </p>
+      <p>Our group is looking for self-motivated Ph.D. students, Postdocs, and interns. Research topics include but are not limited to scalable reinforcement learning, fundamental theories, scientific applications of reasoning language models.  </p>
       <p>
       If you are interested, please drop me an email to <b>ningding.cs@gmail.com</b> or <b>dingning@mail.tsinghua.edu.cn</b> with your CV and research interests.</p>
     </div>
