@@ -311,26 +311,109 @@ layout: default
     <div class="news-infobox" style="
         border: 0px solid #828282; 
         border-radius: 10px; 
-        padding: 10px; 
-        background-color: #c397ed09; 
+        padding: 11px; 
+        padding-top: 10px;
         max-width: 730px; 
         margin-left: -0px;
         transition: box-shadow 0.3s ease, background-color 0.3s ease;
         overflow-y: auto;
         max-height: 250px;
     " 
-    onmouseover="this.style.boxShadow='0 6px 18px rgba(0,0,0,0.08)'; this.style.backgroundColor='#c397ed14';" 
-    onmouseout="this.style.boxShadow='none'; this.style.backgroundColor='#c397ed09';">
-     
+    onmouseover="this.style.boxShadow='0 7px 26px rgba(58,175,169,0.13)'; this.style.backgroundColor='#fcfefe';"
+    onmouseout="this.style.boxShadow='0 2px 8px rgba(58,175,169,0.06)'; this.style.backgroundColor='#f8fafb';">
+
+    <style>
+      .news-infobox {
+        background: #f8fafb;                  /* 奶白底 */
+        border-radius: 14px;
+        padding: 28px 22px 18px 22px;
+        box-shadow: 0 2px 8px rgba(58,175,169,0.06);
+        transition: box-shadow 0.3s, background 0.3s;
+        max-width: 730px;
+        border: 1px solid #dbecec;
+      }
+      
+      .news-infobox:hover {
+        box-shadow: 0 7px 26px rgba(58,175,169,0.13);
+        background: #f3faf9;
+      }
+      
+      .news-infobox ul {
+        padding: 0;
+        margin: 0;
+        overflow-y: auto;
+      }
+      
+      .news-infobox ul li {
+        margin-bottom: 13px;
+        padding: 12px 12px 4px 10px;
+        border-radius: 7px;
+        background: none;
+      }
+      
+      .news-infobox ul li:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      
+.news-infobox h6 {
+  font-size: 15.5px;
+  margin: 0 0 4px 0;
+  color: #2e3539;      /* 比正文色略深但不刺眼 */
+  font-weight: 450;    /* 稍加粗而已 */
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+}
+      
+      .news-infobox span {
+        display: block;
+        margin-bottom: 4px;
+        color: #5b7b88;
+        font-size: 0.9em;
+      }
+      
+      .news-infobox p {
+        margin: 5px 0 0 0;
+        line-height: 1.7;
+        color: #294550;
+        font-size: 15px;
+      }
+      
+
+.news-infobox a {
+  color: #48656b;
+  
+  text-underline-offset: 1.5px;
+  transition: color 0.18s, background 0.18s;
+  border-radius: 4px;
+  padding: 0 2px;
+  font-weight: 500;
+}
+.news-infobox a:hover,
+.news-infobox a:focus {
+  color: #044068;
+  background: #ebf7fa;
+  text-decoration: underline;
+}
+      </style>
+
+
+
       <ul style="list-style-type: none; padding: 0;">
         <li style="margin-bottom: 10px;">
-          <h6 style="margin: 0; color: #3E3E3E; font-size: 15px;">New Research on Exploration-based Method for Advanced Reasoning Released</h6>
-          <span style="color: #828282; font-size: 0.8em;">January 2025</span>
-          <p style="margin: 5px 0;"> We recently released <a href="https://arxiv.org/abs/2412.01981" style="color: #44377D;">Implicit Process Reward Modeling (ImplicitPRM)</a> and <a href="https://curvy-check-498.notion.site/Process-Reinforcement-through-Implicit-Rewards-15f4fcb9c42180f1b498cc9b2eaf896f" style="color: #44377D;">Process Reinforcement through Implicit Rewards (PRIME)</a>, scalable solutions for using (nearly) pure reinforcement learning to advance the reasoning capability of language models. We basically focus on two problems: (1) how to efficiently generate reliable dense rewards and (2) how to effectively use them.
+          <h6 style="margin: 0;  font-size: 15px;">New Research on self-evolving method and the entropy mechanism of RL</h6>
+          <span style="color: #828282; font-size: 0.8em;">May 2025</span>
+          <p style="margin: 5px 0;"> Introducing <a href="https://arxiv.org/abs/2504.16084">test time reinforcement learning (TTRL) </a> and the <a href="https://arxiv.org/abs/2505.22617"> Entropy Mechanism </a>, two latest research on self-evolving method and the entropy mechanism of reinforcement learning.
           </p>
         </li>
         <li style="margin-bottom: 10px;">
-          <h6 style="margin: 0; color: #3E3E3E; font-size: 15px;">Personal Update</h6> 
+          <h6 style="margin: 0; ; font-size: 15px;">New Research on Exploration-based Method for Advanced Reasoning Released</h6>
+          <span style="color: #828282; font-size: 0.8em;">January 2025</span>
+          <p style="margin: 5px 0;"> We recently released <a href="https://arxiv.org/abs/2412.01981" >Implicit Process Reward Modeling (ImplicitPRM)</a> and <a href="https://curvy-check-498.notion.site/Process-Reinforcement-through-Implicit-Rewards-15f4fcb9c42180f1b498cc9b2eaf896f" >Process Reinforcement through Implicit Rewards (PRIME)</a>, scalable solutions for using (nearly) pure reinforcement learning to advance the reasoning capability of language models. We basically focus on two problems: (1) how to efficiently generate reliable dense rewards and (2) how to effectively use them.
+          </p>
+        </li>
+        <li style="margin-bottom: 10px;">
+          <h6 style="margin: 0;  font-size: 15px;">Personal Update</h6> 
           <span style="color: #828282; font-size: 0.8em;">January 2025</span>
           <p style="margin: 5px 0;"> I will be starting as an assistant professor at the EE department of Tsinghua University in 2025.</p>
         </li>

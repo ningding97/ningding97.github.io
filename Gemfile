@@ -8,5 +8,6 @@ group :jekyll_plugins do
     gem 'jekyll-twitter-plugin'
     gem 'jemoji'
     gem 'unicode_utils'
+    gem 'ffi', '>= 1.15.5'
     gem 'webrick'
 end

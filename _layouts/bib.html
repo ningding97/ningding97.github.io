@@ -45,52 +45,58 @@
          {{entry.title}}  </div>    
       <div class="author" style="font-size: 15px;">
         {% for author in entry.author_array %}
-          {% assign author_is_self = false %}
-          {% if author.last == site.scholar.last_name%}
-            {% if site.scholar.first_name contains author.first%}
-              {% assign author_is_self = true %}
+        {% assign author_is_self = false %}
+        {%- assign symbol = "" -%}
+        {%- assign clean_first = author.first | replace: "*", "" -%}
+        {%- assign clean_last = author.last | replace: "*", "" -%}
+        {%- if author.first contains "*" or author.last contains "*" -%}
+          {%- assign symbol = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" style="vertical-align:-2px;margin-left:2px;fill:#000e19;" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 8.06l7.49 6.22a1 1 0 0 0 1.02 0L20 8.06V18H4V8.06z"/></svg>' -%}
+        {%- endif -%}
+      
+        {% if clean_last == site.scholar.last_name %}
+          {% if site.scholar.first_name contains clean_first %}
+            {% assign author_is_self = true %}
+          {% endif %}
+        {% endif %}
+        {% assign coauthor_url = nil %}
+        {% if site.data.coauthors[clean_last] %}
+          {% for coauthor in site.data.coauthors[clean_last] %}
+            {% if coauthor.firstname contains clean_first %}
+              {% assign coauthor_url = coauthor.url %}
+              {% break %}
             {% endif %}
+          {% endfor %}
+        {% endif %}
+        {% if forloop.length == 1 %}
+          {% if author_is_self %}
+            <u><strong>{{ clean_first }} {{ clean_last }}{{ symbol | raw }}</strong></u>
+          {% else %}
+            {{ clean_first }} {{ clean_last }}{{ symbol | raw }}
           {% endif %}
-          {% assign coauthor_url = nil %}
-          {% if site.data.coauthors[author.last] %}
-            {% for coauthor in site.data.coauthors[author.last] %}
-              {% if coauthor.firstname contains author.first %}
-                {% assign coauthor_url = coauthor.url %}
-                {% break %}
-              {% endif %}
-            {% endfor %}
-          {% endif %}
-          
-          {% if forloop.length == 1 %}
+        {% else %}
+          {% unless forloop.last %}
             {% if author_is_self %}
-              <u>{{author.first}} {{author.last}}</u>
+              <u><strong>{{ clean_first }} {{ clean_last }}{{ symbol | raw }}</strong></u>,
             {% else %}
-              {{author.first}} {{author.last}}
+              {% if coauthor_url %}
+                <a href="{{ coauthor_url }}" target="_blank">{{ clean_first }} {{ clean_last }}{{ symbol | raw }}</a>,
+              {% else %}
+                {{ clean_first }} {{ clean_last }}{{ symbol | raw }},
+              {% endif %}
             {% endif %}
           {% else %}
-            {% unless forloop.last %}
-              {% if author_is_self %}
-                <u>{{author.first}} {{author.last}}</u>,
-              {% else %}
-                {% if coauthor_url %}
-                  <a href="{{coauthor_url}}" target="_blank">{{author.first}} {{author.last}}</a>,
-                {% else %}
-                  {{author.first}} {{author.last}},
-                {% endif %}
-              {% endif %}
+            {% if author_is_self %}
+              and <u><strong>{{ clean_first }} {{ clean_last }}{{ symbol | raw }}</strong></u>
             {% else %}
-              {% if author_is_self %}
-                and <u>{{author.first}} {{author.last}}</u>
+              {% if coauthor_url %}
+                and <a href="{{ coauthor_url }}" target="_blank">{{ clean_first }} {{ clean_last }}{{ symbol | raw }}</a>
               {% else %}
-                {% if coauthor_url %}
-                  and <a href="{{coauthor_url}}" target="_blank">{{author.first}} {{author.last}}</a>
-                {% else %}
-                  and {{author.first}} {{author.last}}
-                {% endif %}
+                and {{ clean_first }} {{ clean_last }}{{ symbol | raw }}
               {% endif %}
-            {% endunless %}
-          {% endif %}
-        {% endfor %}
+            {% endif %}
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
       </div>
 
       <div class="periodical" style="font-size: 15px;">

@@ -2,6 +2,31 @@
 ---
 
 
+@article{preprint:entropy,
+  title={The Entropy Mechanism of Reinforcement Learning for Reasoning Language Models},
+  bibtex_show={true},
+  journal={Preprint},
+  preview={entropy2.png},
+  selected={true},
+  author={Ganqu Cui and Yuchen Zhang and Jiacheng Chen and Lifan Yuan and Zhi Wang and Yuxin Zuo and Haozhan Li and Yuchen Fan and Huayu Chen and Weize Chen and Zhiyuan Liu and Hao Peng and Lei Bai and Wanli Ouyang and Yu Cheng and Bowen Zhou and Ning* Ding},
+  code={https://github.com/PRIME-RL/Entropy-Mechanism-of-RL},
+  pdf={https://arxiv.org/abs/2505.22617},
+  abstract={This paper aims to overcome a major obstacle in scaling RL for reasoning with LLMs, namely the collapse of policy entropy. Such phenomenon is consistently observed across vast RL runs without entropy intervention, where the policy entropy dropped sharply at the early training stage, this diminished exploratory ability is always accompanied with the saturation of policy performance. In practice, we establish a transformation equation R=-a*e^H+b between entropy H and downstream performance R. This empirical law strongly indicates that, the policy performance is traded from policy entropy, thus bottlenecked by its exhaustion, and the ceiling is fully predictable H=0, R=-a+b. Our finding necessitates entropy management for continuous exploration toward scaling compute for RL. To this end, we investigate entropy dynamics both theoretically and empirically. Our derivation highlights that, the change in policy entropy is driven by the covariance between action probability and the change in logits, which is proportional to its advantage when using Policy Gradient-like algorithms. Empirical study shows that, the values of covariance term and entropy differences matched exactly, supporting the theoretical conclusion. Moreover, the covariance term stays mostly positive throughout training, further explaining why policy entropy would decrease monotonically. Through understanding the mechanism behind entropy dynamics, we motivate to control entropy by restricting the update of high-covariance tokens. Specifically, we propose two simple yet effective techniques, namely Clip-Cov and KL-Cov, which clip and apply KL penalty to tokens with high covariances respectively. Experiments show that these methods encourage exploration, thus helping policy escape entropy collapse and achieve better downstream performance.},
+  year={2025}
+}
+
+@article{preprint:ttrl,
+  title={TTRL: Test-time Reinforcement Learning},
+  bibtex_show={true},
+  selected={true},
+  preview={TTRL.png},
+  author={Zuo, Yuxin and Zhang, Kaiyan and Qu, Shang and Sheng, Li and Zhu, Xuekai and Qi, Biqing and Sun, Youbang and Cui, Ganqu and Ding, Ning* and Zhou, Bowen},
+  journal={Preprint},
+  code={https://github.com/PRIME-RL/TTRL},
+  pdf={https://arxiv.org/abs/2504.16084},
+  abstract={This paper investigates Reinforcement Learning (RL) on data without explicit labels for reasoning tasks in Large Language Models (LLMs). The core challenge of the problem is reward estimation during inference while not having access to ground-truth information. While this setting appears elusive, we find that common practices in Test-Time Scaling (TTS), such as majority voting, yield surprisingly effective rewards suitable for driving RL training. In this work, we introduce Test-Time Reinforcement Learning (TTRL), a novel method for training LLMs using RL on unlabeled data. TTRL enables self-evolution of LLMs by utilizing the priors in the pre-trained models. Our experiments demonstrate that TTRL consistently improves performance across a variety of tasks and models. Notably, TTRL boosts the pass@1 performance of Qwen-2.5-Math-7B by approximately 211% on the AIME 2024 with only unlabeled test data. Furthermore, although TTRL is only supervised by the maj@n metric, TTRL has demonstrated performance to consistently surpass the upper limit of the initial model maj@n, and approach the performance of models trained directly on test data with ground-truth labels. Our experimental findings validate the general effectiveness of TTRL across various tasks and highlight TTRL's potential for broader tasks and domains.},
+  year={2025}
+}
 
 
 @article{preprint:prime,
@@ -9,7 +34,7 @@
   bibtex_show={true},
   preview={prime.gif},
   selected={true},
-  author={Ganqu Cui and Lifan Yuan and Zefan Wang and Hanbin Wang and Wendi Li and Bingxiang He and Yuchen Fan and Tianyu Yu and Qixin Xu and Weize Chen and Jiarui Yuan and Huayu Chen and Kaiyan Zhang and Xingtai Lv and Shuo Wang and Yuan Yao and Xu Han and Hao Peng and Yu Cheng and Zhiyuan Liu and Maosong Sun and Bowen Zhou and Ning Ding},
+  author={Ganqu Cui and Lifan Yuan and Zefan Wang and Hanbin Wang and Wendi Li and Bingxiang He and Yuchen Fan and Tianyu Yu and Qixin Xu and Weize Chen and Jiarui Yuan and Huayu Chen and Kaiyan Zhang and Xingtai Lv and Shuo Wang and Yuan Yao and Xu Han and Hao Peng and Yu Cheng and Zhiyuan Liu and Maosong Sun and Bowen Zhou and Ning* Ding},
   journal={Preprint},
   pdf={https://arxiv.org/abs/2502.01456},
   series = {\newlin arXiv},
@@ -25,7 +50,7 @@
   bibtex_show={true},
   preview={implicitPRM.png},
   selected={true},
-  author={Yuan, Lifan and Li, Wendi and Chen, Huayu and Cui, Ganqu and Ding, Ning and Zhang, Kaiyan and Zhou, Bowen and Liu, Zhiyuan and Peng, Hao},
+  author={Yuan, Lifan and Li, Wendi and Chen, Huayu and Cui, Ganqu and Ding, Ning* and Zhang, Kaiyan and Zhou, Bowen and Liu, Zhiyuan and Peng, Hao},
   journal={ICML 2025},
   pdf={https://arxiv.org/abs/2412.01981},
   series = {\newlin ICML 2025},
@@ -346,7 +371,7 @@
   year={2021},
   bibtex_show={true},
   series = {\newlin ICLR},
-  selected={true},
+  selected={false},
   abstract={Recognizing relations between entities is a pivotal task of relational learning. Learning relation representations from distantly-labeled datasets is difficult because of the abundant label noise and complicated expressions in human language. This paper aims to learn predictive, interpretable, and robust relation representations from distantly-labeled data that are effective in different settings, including supervised, distantly supervised, and few-shot learning. Instead of solely relying on the supervision from noisy labels, we propose to learn prototypes for each relation from contextual information to best explore the intrinsic semantics of relations. Prototypes are representations in the feature space abstracting the essential semantics of relations between entities in sentences. We learn prototypes based on objectives with clear geometric interpretation, where the prototypes are unit vectors uniformly dispersed in a unit ball, and statement embeddings are centered at the end of their corresponding prototype vectors on the surface of the ball. This approach allows us to learn meaningful, interpretable prototypes for the final classification. Results on several relation learning tasks show that our model significantly outperforms the previous state-of-the-art models. We further demonstrate the robustness of the encoder and the interpretability of prototypes with extensive experiments.},
   html={https://openreview.net/forum?id=aCgLmfhIy_f},
   pdf={https://openreview.net/forum?id=aCgLmfhIy_f},
