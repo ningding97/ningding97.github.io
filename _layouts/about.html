@@ -143,82 +143,8 @@ layout: default
 
     {% endif %}
 
-  
-
-    <!-- {% if page.social %}
-    <div class="social">
-      <div class="contact-icons">
-        {% include social.html %}
-      </div>
-      <div class="contact-note">{{ site.contact_note }}</div>
-    </div>
-    {% endif %} -->
-<!--   
-    <aside class="sidebar">
-
-      
-      <br><br><br>
-      
-  
-      
-      <h5>Contact</h5> <br>
-      <p class="desc">{{ page.description }}</p>
-
-    
-    <br><br>
-      <h5>Updates</h5>
-
-      <br>
-      <ul>
-
-        <li>
-          <h6 class="item-title">Releasing large chat dataset</h6>
-          <p class="item-content">
-            After witnessing so many open-sourced general chat models, an increasingly clear fact is that diverse and systemic data is one of the most important thing.
-            Building and releasing <a href="https://github.com/thunlp/UltraChat">UltraChat</a>, a large-scale, high-quality and diverse chat data.
-          </p>
-          <span class="item-date">April 2023</span>
-        </li>
 
 
-        <li>
-          <h6 class="item-title">New paper published</h6>
-          <p class="item-content">
-            The <a href="https://www.nature.com/articles/s42256-023-00626-4">delta tuning</a> paper gets published on <a href="https://www.nature.com/natmachintell/">Nature Machine Inteligence</a>, and it is selected as the cover article of the journal's <a href="https://www.nature.com/natmachintell/volumes/5/issues/3"> March issue </a>.
-          </p>
-          <span class="item-date">April 2023</span>
-        </li>
-
-      
-        <li>
-          <h6 class="item-title">awarded ACL best demo paper</h6>
-          <p class="item-content">
-            <a href="https://github.com/thunlp/OpenPrompt">OpenPrompt</a> is awarded as the best demo paper at ACL 2022.
-          </p>
-          <span class="item-date">May 2022</span>
-        </li>
-        <<li>
-          <iframe width="80%" height="300" style="margin-left: 20px;" src="https://api.maptiler.com/maps/openstreetmap/?key=2V215Qvhk6kDer0iYTH7#16.4/40.00006/116.31593"></iframe>
-          </li> -->
-        
-        
-        <!-- Add more list items as needed -->
-      <!-- </ul> -->
-
-   
-    <!-- </aside> -->
-
-     
-    <!-- <div class="lab-links" style="margin: 0px 0 25px 0px;">
-      <a href="https://yourlabwebsite.example.com" target="_blank" class="lab-link">
-        <i class="fab fa-github"></i>
-        Lab Homepage
-      </a>
-      <a href="https://github.com/yourgithub" target="_blank" class="lab-link">
-        <i class="fab fa-github"></i> Github
-      </a>
-    </div>
-     -->
   </article>
 
 
@@ -226,16 +152,27 @@ layout: default
   <div class="recruitment-infobox" style="width: 88%; background: transparent; margin-top: 15px; margin-bottom: 0px;">
     <div class="infobox-header" onclick="toggleInfobox()">
       <i class="fas fa-plus-circle toggle-icon"></i>
-      <h6 style="margin: 0; color: #3E3E3E; font-size: 15px; font-weight: 400; display: flex; align-items: center;">Lab Information  
-        <a href="https://c3i.ee.tsinghua.edu.cn/en/" target="_blank" class="lab-link" style="margin-left: 40px; font-weight: 400;"><i class="fas fas fa-project-diagram" style="font-size: 1em;"></i> Group</a>
-         <a href="https://github.com/PRIME-RL" target="_blank" class="lab-link" style="margin-left: 20px; font-weight: 400;"><i class="fab fa-github"></i> PRIME-RL</a>   <a href="https://github.com/TsinghuaC3I" target="_blank" class="lab-link" style="margin-left: 1px; font-weight: 400;">, C3I</a>   </h6>
+      <h6 style="margin: 0; color: #3E3E3E; font-size: 15px; font-weight: 400; display: flex; align-items: center; width: 100%;">
+        <span>Lab Information</span>
+        <span class="lab-header-links" style="display: flex; margin-left: 60px;">
+          <a href="https://c3i.ee.tsinghua.edu.cn/en/" target="_blank" class="lab-link" style="font-weight: 400; margin-right:20px;">
+            <i class="fas fas fa-project-diagram" style="font-size: 1em;"></i> Group
+          </a>
+          <a href="https://github.com/PRIME-RL" target="_blank" class="lab-link" style="font-weight: 400; margin-right:7px;">
+            <i class="fab fa-github"></i> PRIME-RL,
+          </a>
+          <a href="https://github.com/TsinghuaC3I" target="_blank" class="lab-link" style="font-weight: 400;margin-right:40px;">
+            C3I
+          </a>
+
+        </span>
+      </h6>
     </div>
     <div class="infobox-content" style="display: none;">
       <p>Our group is looking for self-motivated Ph.D. students, Postdocs, and interns. Research topics include but are not limited to scalable reinforcement learning, fundamental theories, scientific applications of reasoning language models.  </p>
       <p>
       If you are interested, please drop me an email to <b>ningding.cs@gmail.com</b> or <b>dingning@mail.tsinghua.edu.cn</b> with your CV and research interests.</p>
     </div>
-
   </div>
   
   <style>
@@ -272,6 +209,8 @@ layout: default
       border-radius: 12px;
       background-color: rgba(240, 245, 250, 0.5);
       overflow: hidden;
+      width: 100%; /* 使用整个宽度 */
+      max-width: none; /* 取消最大宽度限制 */
       transition: all 0.3s ease;
     }
     .recruitment-infobox:hover {
@@ -465,8 +404,6 @@ layout: default
     </div>
 
 <!-- Add a sidebar with content -->
-
-
 
 
 

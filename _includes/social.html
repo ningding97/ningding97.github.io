@@ -1,7 +1,7 @@
 {%- if site.email -%}
 <a href="mailto:{{ site.email | encode_email }}" class="icon-with-tooltip email-icon" title="email">
     <span style="position: relative;">
-        <svg xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 5px" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+       <i class="fa-solid fa-envelope"></i>
         <span class="tooltip-bubble">Email</span>
     </span>
 </a>
@@ -25,7 +25,7 @@
 {%- if site.scholar_userid -%}
 <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}" class="icon-with-tooltip scholar-icon" title="Google Scholar">
     <span style="position: relative;">
-        <i class="fa-brands fa-google" style="font-size: 0.8em; position: relative; top: -2px; -webkit-text-stroke: 0px currentColor;"></i>
+        <i class="fa-brands fa-google"></i>
         <span class="tooltip-bubble">Google Scholar</span>
     </span>
 </a>
@@ -33,7 +33,7 @@
 {%- if site.semanticscholar_id -%}
 <a href="https://www.semanticscholar.org/author/{{ site.semanticscholar_id }}" class="icon-with-tooltip semanticscholar-icon" title="Semantic Scholar">
     <span style="position: relative;">
-        <i class="ai ai-semantic-scholar"></i>
+        <i class="ai ai-semantic-scholar" style="font-size: 1.2em; vertical-align: -2px;"></i>
         <span class="tooltip-bubble">Semantic Scholar</span>
     </span>
 </a>
@@ -65,7 +65,8 @@
 {%- if site.github_username -%}
 <a href="https://github.com/{{ site.github_username }}" class="icon-with-tooltip github-icon" title="GitHub">
     <span style="position: relative;">
-        <svg xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 5px" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 5px" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> -->
+        <i class="fa-brands fa-github"></i>
         <span class="tooltip-bubble">GitHub</span>
     </span>
 </a>
@@ -73,8 +74,8 @@
 {%- if site.twitter_username -%}
 <a href="https://twitter.com/{{ site.twitter_username }}" class="icon-with-tooltip twitter-icon" title="Twitter">
     <span style="position: relative;">
-        <svg xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 5px" width="19px" height="19px" viewBox="0 0 24 24" fill="currentColor" style="enable-background:new 0 0 24 24;" xml:space="preserve"><path d="M14.095479,10.316482L22.286354,1h-1.940718l-7.115352,8.087682L7.551414,1H1l8.589488,12.231093L1,23h1.940717  l7.509372-8.542861L16.448587,23H23L14.095479,10.316482z M11.436522,13.338465l-0.871624-1.218704l-6.924311-9.68815h2.981339  l5.58978,7.82155l0.867949,1.218704l7.26506,10.166271h-2.981339L11.436522,13.338465z"/></svg>
-        <span class="tooltip-bubble">Twitter</span>
+        <i class="fa-brands fa-square-x-twitter"></i>
+        <span class="tooltip-bubble">X</span>
     </span>
 </a>
 {% endif %}
@@ -258,35 +259,50 @@
 <style>
 .icon-with-tooltip span.tooltip-bubble {
     visibility: hidden;
-    width: 110px;
+    min-width: 110px;
     max-width: 230px;
-    background-color: #555;
-    color: #fff;
+    background: #fff;
+    color: #343c4d;
     text-align: center;
     border-radius: 12px;
-    padding: 4px 8px;
+    padding: 6px 14px;
     position: absolute;
-    z-index: 1;
-    bottom: -30px;
+    z-index: 11;
+    bottom: -37px;
     left: 50%;
-    margin-left: -45px;
+    transform: translateX(-50%) translateY(10px) scale(0.98);
     opacity: 0;
-    transition: opacity 0.3s;
-    font-size: 12px;
+    box-shadow: 0 6px 24px 0 rgba(40,60,116,0.13), 0 1.5px 6px 0 rgba(0,0,0,0.08); /* 柔和的双层阴影 */
+    font-size: 14px;
     white-space: nowrap;
+    transition:
+        opacity 0.35s cubic-bezier(.41,.6,.67,1.01),
+        transform 0.32s cubic-bezier(.41,.6,.67,1.01),
+        box-shadow 0.3s;
+    pointer-events: none;
 }
+
 .icon-with-tooltip span.tooltip-bubble::after {
     content: "";
     position: absolute;
     top: -10px;
     left: 50%;
-    margin-left: -5px;
+    transform: translateX(-50%);
     border-width: 5px;
     border-style: solid;
-    border-color: transparent transparent #555 transparent;
+    border-color: transparent transparent #fff transparent;
+    filter: drop-shadow(0 3px 8px rgba(40,60,116,0.12));
 }
-.icon-with-tooltip:hover span.tooltip-bubble {
+
+.icon-with-tooltip:hover span.tooltip-bubble,
+.icon-with-tooltip:focus-within span.tooltip-bubble {
     visibility: visible;
     opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1.03);
+    box-shadow: 0 12px 32px 0 rgba(40,60,116,0.18), 0 2px 8px 0 rgba(0,0,0,0.09);
+    transition:
+        opacity 0.33s cubic-bezier(.31,.86,.44,1.02),
+        transform 0.37s cubic-bezier(.31,.86,.44,1.02),
+        box-shadow 0.3s;
 }
 </style>
