@@ -155,7 +155,7 @@ layout: default
       <h6 style="margin: 0; color: #3E3E3E; font-size: 15px; font-weight: 400; display: flex; align-items: center; width: 100%;">
         <span>Lab Information</span>
         <span class="lab-header-links" style="display: flex; margin-left: 150px;">
-          <a href="https://c3i.ee.tsinghua.edu.cn/en/" target="_blank" class="lab-link" style="font-weight: 400; margin-right:20px;">
+          <a href="https://c3i.ee.tsinghua.edu.cn/en/" target="_blank" class="lab-link" style="font-weight: 400; margin-right:30px;">
             <i class="fas fas fa-project-diagram" style="font-size: 1em;"></i> Group Homepage
           </a>
           <a href="https://github.com/PRIME-RL" target="_blank" class="lab-link" style="font-weight: 400; margin-right:7px;">
@@ -164,7 +164,6 @@ layout: default
           <a href="https://github.com/TsinghuaC3I" target="_blank" class="lab-link" style="font-weight: 400;margin-right:40px;">
             THU-C3I
           </a>
-
         </span>
       </h6>
     </div>
@@ -307,7 +306,7 @@ layout: default
 
     <style>
       .news-infobox {
-        background: #f8fafb;                  /* 奶白底 */
+        background: #f8fafb; 
         border-radius: 14px;
         padding: 28px 22px 18px 22px;
         box-shadow: 0 2px 8px rgba(58,175,169,0.06);
@@ -339,15 +338,15 @@ layout: default
         padding-bottom: 0;
       }
       
-.news-infobox h6 {
-  font-size: 15.5px;
-  margin: 0 0 4px 0;
-  color: #2e3539;      /* 比正文色略深但不刺眼 */
-  font-weight: 450;    /* 稍加粗而已 */
-  letter-spacing: 0.01em;
-  line-height: 1.4;
-}
-      
+      .news-infobox h6 {
+        font-size: 15.5px;
+        margin: 0 0 4px 0;
+        color: #2e3539;      /* 比正文色略深但不刺眼 */
+        font-weight: 450;    /* 稍加粗而已 */
+        letter-spacing: 0.01em;
+        line-height: 1.4;
+      }
+            
       .news-infobox span {
         display: block;
         margin-bottom: 4px;
@@ -379,9 +378,6 @@ layout: default
   text-decoration: underline;
 }
       </style>
-
-
-
       <ul style="list-style-type: none; padding: 0;">
         <li style="margin-bottom: 10px;">
           <h6 style="margin: 0;  font-size: 15px;">New Research on self-evolving method and the entropy mechanism of RL</h6>
@@ -392,7 +388,7 @@ layout: default
         <li style="margin-bottom: 10px;">
           <h6 style="margin: 0; ; font-size: 15px;">New Research on Exploration-based Method for Advanced Reasoning Released</h6>
           <span style="color: #828282; font-size: 0.8em;">January 2025</span>
-          <p style="margin: 5px 0;"> We recently released <a href="https://arxiv.org/abs/2412.01981" >Implicit Process Reward Modeling (ImplicitPRM)</a> and <a href="https://curvy-check-498.notion.site/Process-Reinforcement-through-Implicit-Rewards-15f4fcb9c42180f1b498cc9b2eaf896f" >Process Reinforcement through Implicit Rewards (PRIME)</a>, scalable solutions for using (nearly) pure reinforcement learning to advance the reasoning capability of language models. We basically focus on two problems: (1) how to efficiently generate reliable dense rewards and (2) how to effectively use them.
+          <p style="margin: 5px 0;"> We recently released <a href="https://arxiv.org/abs/2412.01981" >Implicit Process Reward Modeling (ImplicitPRM)</a> and <a href="https://arxiv.org/abs/2502.01456" >Process Reinforcement through Implicit Rewards (PRIME)</a>, scalable solutions for using (nearly) pure reinforcement learning to advance the reasoning capability of language models. We basically focus on two problems: (1) how to efficiently generate reliable dense rewards and (2) how to effectively use them.
           </p>
         </li>
         <li style="margin-bottom: 10px;">
@@ -408,20 +404,12 @@ layout: default
 
 
 </article>
-
-
-
-
     {% if page.selected_papers %}
       {% include selected_papers.html %}
     {% endif %}
     {% if page.news %}
       {% include news.html %}
     {% endif %}
-
-
-
-
 <br>
 
 
