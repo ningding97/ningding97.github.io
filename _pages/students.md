@@ -148,16 +148,7 @@ nav_order: 4
 <br>
 
 <div class="students-grid">
-  <div class="student-card">
-    <img src="/assets/img/junhao.jpg" alt="Student Name" class="student-avatar" onerror="this.outerHTML='<div class=\'student-avatar default-avatar\'>JC</div>'">
-    <div class="student-details">
-      <h5><a href="https://junhaoo-chen.github.io/" target="_blank">Junhao Chen</a></h5>
-      <p> Tsinghua University</p>
-      <p>Ph.D. student</p> 
-      <p>2026 (expected) - </p>
 
-    </div>
-  </div>
 
   <div class="student-card">
     <img src="/assets/img/student1.jpg" alt="Student Name" class="student-avatar" onerror="this.outerHTML='<div class=\'student-avatar default-avatar\'>LS</div>'">
