@@ -3,7 +3,7 @@ layout: page
 permalink: /students/
 title: students
 description: Our lab information is at <a href="https://c3i.ee.tsinghua.edu.cn/en/">TsinghuaC3I</a>. 
-nav: true
+nav: false
 nav_order: 4
 ---
 
