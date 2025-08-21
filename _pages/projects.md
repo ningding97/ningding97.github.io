@@ -3,7 +3,7 @@ layout: page
 permalink: /projects/
 title: projects
 nav: projects
-description: A quick look at the projects I have been working on. I also co-founded OpenBMB, a non-profit organization of techniques and implementations of large language models.
+description: A quick look at the projects I have been working on. 
 nav_order: 3
 ---
 
