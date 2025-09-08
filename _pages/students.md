@@ -57,7 +57,7 @@ nav_order: 4
   border-radius: 12px;
   padding: 1.5rem;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   border: 1px solid transparent;
 }
 
@@ -77,7 +77,12 @@ nav_order: 4
   display: block;
   background-color: #e8ebe9;
   position: relative;
-  transition: transform 0.03s ease; /* match 5x faster tilt */
+  transition: transform 0.03s ease, box-shadow 0.12s ease; /* subtle tilt + smooth shadow */
+}
+
+.student-avatar:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.20);
 }
 
 .default-avatar {

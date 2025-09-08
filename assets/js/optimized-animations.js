@@ -106,16 +106,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
         img.addEventListener('mouseenter', function() {
             if (hoverAnimation) hoverAnimation.kill();
+            const isAvatar = this.classList && this.classList.contains('student-avatar');
+            const isProfile = (this.classList && this.classList.contains('profile-image')) || (this.closest && this.closest('.profile'));
+            if (isAvatar || isProfile) {
+                // Let CSS handle avatar hover (lift + shadow); avoid JS transforms to prevent conflicts
+                return;
+            }
             hoverAnimation = gsap.to(this, {
                 rotation: 1.0,
-                duration: 0.03, // 5x faster than 0.15s
+                duration: 0.03,
                 ease: "power2.out"
             });
         });
 
         img.addEventListener('mouseleave', function() {
             if (hoverAnimation) hoverAnimation.kill();
-            gsap.to(this, { x: 0, rotation: 0, duration: 0.024, ease: "power2.out" }); // 5x faster than 0.12s
+            const isAvatar = this.classList && this.classList.contains('student-avatar');
+            const isProfile = (this.classList && this.classList.contains('profile-image')) || (this.closest && this.closest('.profile'));
+            if (isAvatar || isProfile) return; // CSS will reset; don't override with inline transforms
+            gsap.to(this, { x: 0, rotation: 0, duration: 0.024, ease: "power2.out" });
         });
     });
     
@@ -182,9 +191,9 @@ const optimizedStyles = `
             height: auto;
         }
         
-        /* Smooth base transitions */
-        * {
-            transition: opacity 0.2s ease, transform 0.2s ease;
+        /* Smooth base transitions for common elements (avoid global *) */
+        img, .card, .publications li, h1, h2, h3, h4, h5, p, a, button {
+            transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
         }
         
         /* Navbar always visible */
@@ -196,6 +205,12 @@ const optimizedStyles = `
         /* Loaded state */
         .loaded {
             opacity: 1 !important;
+        }
+        
+        /* Content visibility for long lists */
+        .publications, .news {
+            content-visibility: auto;
+            contain-intrinsic-size: 1px 1000px; /* reserve space to avoid jump */
         }
         
         /* Reduce motion for accessibility */
