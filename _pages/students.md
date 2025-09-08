@@ -77,6 +77,7 @@ nav_order: 4
   display: block;
   background-color: #e8ebe9;
   position: relative;
+  transition: transform 0.03s ease; /* match 5x faster tilt */
 }
 
 .default-avatar {
