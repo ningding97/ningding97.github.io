@@ -1,0 +1,17 @@
+{% assign box_type = include.type | default: 'note' %}
+{% assign infobox_body = include.body | default: include.content %}
+<div class="infobox infobox--{{ box_type }}" role="note">
+  {% if include.title %}
+    <p class="infobox__title">
+      {% if include.icon %}
+        <i class="{{ include.icon }}" aria-hidden="true"></i>
+      {% endif %}
+      {{ include.title }}
+    </p>
+  {% endif %}
+  <div class="infobox__body">
+    {% if infobox_body %}
+      {{ infobox_body | markdownify }}
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,264 @@
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/universal-darwin25/rbconfig.rb:21: warning: Insecure world writable dir /opt/homebrew in PATH, mode 040777
+Running `bundle install --verbose` with bundler 2.2.16
+Found changes from the lockfile, re-resolving dependencies because you added a new platform to your gemfile
+HTTP GET https://index.rubygems.org/versions
+HTTP 206 Partial Content https://index.rubygems.org/versions
+Fetching gem metadata from https://rubygems.org/
+Looking up gems ["jekyll", "jekyll-email-protect", "jekyll-github-metadata", "jekyll-paginate-v2", "jekyll-scholar", "jekyll-twitter-plugin", "jemoji", "unicode_utils", "ffi", "webrick"]
+Looking up gems ["addressable", "gemoji", "html-pipeline", "activesupport", "twitter", "octokit", "classifier", "directory_watcher", "liquid", "maruku", "open4", "RedCloth", "rdiscount", "albino", "kramdown", "pygments.rb", "commander", "safe_yaml", "colorator", "redcarpet", "listen", "toml", "jekyll-coffeescript", "mercenary", "sass", "jekyll-sass-converter", "jekyll-gist", "jekyll-paginate", "jekyll-watch", "classifier-reborn", "rouge", "pathutil", "em-websocket", "i18n", "kramdown-parser-gfm", "terminal-table", "csv", "base64", "json", "bibtex-ruby", "citeproc-ruby", "csl-styles", "rake"]
+Looking up gems ["coffee-script", "coffee-script-source", "sass-listen", "faraday", "faraday_middleware", "hashie", "multi_json", "multi_xml", "rash", "netrc", "sawyer", "highline", "rspec", "public_suffix", "simple_oauth", "buftok", "http", "http_parser.rb", "descendants_tracker", "equalizer", "memoizable", "naught", "http-form_data", "multipart-post", "llhttp-ffi", "escape_utils", "github-linguist", "github-markdown", "nokogiri", "rinku", "sanitize", "selma", "zeitwerk", "stemmer", "fast-stemmer", "mathn", "mutex_m", "posix-spawn", "psych", "hoe", "bigdecimal", "strscan", "rexml", "builder", "memcache-client", "tzinfo", "minitest", "thread_safe", "concurrent-ruby", "method_source", "connection_pool", "drb", "logger", "securerandom", "benchmark", "uri", "rb-fchange", "rb-fsevent", "rb-inotify", "rb-kqueue", "celluloid", "celluloid-io", "ruby_dep", "parslet", "rubypython", "yajl-ruby", "syntax", "matrix", "sassc", "sass-embedded", "eventmachine", "unicode-display_width", "csl", "thor", "racc", "latex-decode", "forwardable-extended", "stringio", "logging", "citeproc", "observer"]
+Looking up gems ["oauth2", "roauth", "rack", "ruby2_keywords", "faraday-net_http", "faraday-excon", "faraday-net_http_persistent", "faraday-em_http", "faraday-em_synchrony", "faraday-httpclient", "faraday-patron", "faraday-rack", "faraday-multipart", "faraday-retry", "termios", "abbrev", "reline", "certified", "form_data", "http-cookie", "http-parser", "llhttp", "execjs", "ffi-compiler", "uri_template", "adamantium", "backports", "rspec-core", "rspec-expectations", "rspec-mocks", "ZenTest", "RubyInline", "charlock_holmes", "mime-types", "rugged", "mini_mime", "cgi", "rb_sys", "cmath", "hpricot", "htmlentities", "crass", "nokogumbo", "weakling", "mini_portile", "mini_portile2", "pkg-config", "jar-dependencies", "date", "rubyforge", "gemcutter", "functional-ruby", "ref", "atomic", "win32-api", "ruby_parser", "timers", "facter", "bundler", "celluloid-essentials", "celluloid-extras", "celluloid-fsm", "celluloid-pool", "celluloid-supervision", "dotenv", "nenv", "rspec-logsplit", "nio4r", "blankslate", "namae", "forwardable", "open-uri", "set", "singleton", "time", "unicode", "google-protobuf", "unicode-emoji", "flexmock", "lockfile", "little-plugger"]
+Looking up gems ["net-http", "em-http-request", "patron", "net-http-persistent", "httpclient", "faraday-middleware", "httpauth", "jwt", "rash_alt", "version_gem", "snaky_hash", "domain_name", "sqlite3", "io-console", "excon", "rspec-support", "ice_nine", "diff-lcs", "mime-types-data", "net-ftp", "ruby-maven", "rake-compiler-dock", "json_pure", "net-scp", "celluloid-gems", "coveralls", "rubocop", "dotenv-deployment", "rubysl", "test-unit", "hitimes", "ParseTree", "sexp_processor", "CFPropertyList", "sys-admin", "win32console", "win32-dir", "windows-api", "windows-pr", "win32-security", "hocon", "sys-filesystem", "unicode-version"]
+Looking up gems ["maven-tools", "ruby-maven-libs", "net-protocol", "em-socksify", "cookiejar", "unf", "spruz", "net-ssh", "colorize", "rest-client", "simplecov", "term-ansicolor", "tins", "SexpProcessor", "configuration", "mkrf", "ffi-win32-extensions", "rainbow", "parser", "powerpack", "ruby-progressbar", "astrolabe", "parallel", "jaro_winkler", "rubocop-ast", "regexp_parser", "language_server-protocol", "lint_roller", "tsort", "libxml-ruby", "nkf", "rubysl-abbrev", "rubysl-base64", "rubysl-benchmark", "rubysl-bigdecimal", "rubysl-cgi", "rubysl-cgi-session", "rubysl-complex", "rubysl-csv", "rubysl-curses", "rubysl-date", "rubysl-delegate", "rubysl-digest", "rubysl-dl", "rubysl-drb", "rubysl-e2mmap", "rubysl-english", "rubysl-enumerator", "rubysl-erb", "rubysl-etc", "rubysl-expect", "rubysl-fcntl", "rubysl-fileutils", "rubysl-find", "rubysl-forwardable", "rubysl-ftools", "rubysl-generator", "rubysl-getoptlong", "rubysl-gserver", "rubysl-iconv", "rubysl-io-wait", "rubysl-ipaddr", "rubysl-irb", "rubysl-jcode", "rubysl-logger", "rubysl-mail", "rubysl-mathn", "rubysl-matrix", "rubysl-mkmf", "rubysl-monitor", "rubysl-mutex", "rubysl-mutex_m", "rubysl-net-ftp", "rubysl-net-http", "rubysl-net-imap", "rubysl-net-pop", "rubysl-net-protocol", "rubysl-net-smtp", "rubysl-net-telnet", "rubysl-nkf", "rubysl-observer", "rubysl-open3", "rubysl-openssl", "rubysl-open-uri", "rubysl-optparse", "rubysl-ostruct", "rubysl-parsedate", "rubysl-pathname", "rubysl-prettyprint", "rubysl-profile", "rubysl-profiler", "rubysl-pstore", "rubysl-pty", "rubysl-rational", "rubysl-readbytes", "rubysl-readline", "rubysl-resolv", "rubysl-rexml", "rubysl-rinda", "rubysl-rss", "rubysl-scanf", "rubysl-set", "rubysl-shellwords", "rubysl-singleton", "rubysl-soap", "rubysl-socket", "rubysl-stringio", "rubysl-strscan", "rubysl-syck", "rubysl-sync", "rubysl-syslog", "rubysl-tempfile", "rubysl-test-unit", "rubysl-thread", "rubysl-thwait", "rubysl-time", "rubysl-timeout", "rubysl-tmpdir", "rubysl-tracer", "rubysl-tsort", "rubysl-un", "rubysl-uri", "rubysl-weakref", "rubysl-webrick", "rubysl-win32api", "rubysl-win32ole", "rubysl-xmlrpc", "rubysl-yaml", "rubysl-zlib", "rubysl-cmath", "rubysl-continuation", "rubysl-coverage", "rubysl-fiber", "rubysl-io-console", "rubysl-io-nonblock", "rubysl-json", "rubysl-prime", "rubysl-ripper", "rubysl-securerandom", "rubysl-unicode_normalize", "power_assert", "mkmf-lite"]
+Looking up gems ["simplecov-html", "docile", "simplecov_json_formatter", "virtus", "unf_ext", "prism", "needle", "jruby-pageant", "bcrypt_pbkdf", "rbnacl", "rbnacl-libsodium", "rdoc", "http-accept", "sync", "mize", "io-wait", "timeout", "ast", "slop", "redcard", "ffi2-generators", "rb-readline", "ptools", "memoist", "pattern-match"]
+Looking up gems ["protocol", "axiom-types", "coercible", "win32-file", "erb"]
+Looking up gems ["win32-file-stat"]
+Resolving dependencies...
+Using concurrent-ruby 1.1.8
+0:  concurrent-ruby (1.1.8) from /Users/dingning/Desktop/ningding97.github.io/vendor/bundle/ruby/2.6.0/specifications/concurrent-ruby-1.1.8.gemspec
+Using i18n 1.8.10
+0:  i18n (1.8.10) from /Users/dingning/Desktop/ningding97.github.io/vendor/bundle/ruby/2.6.0/specifications/i18n-1.8.10.gemspec
+Using minitest 5.14.4
+0:  minitest (5.14.4) from /Users/dingning/Desktop/ningding97.github.io/vendor/bundle/ruby/2.6.0/specifications/minitest-5.14.4.gemspec
+Using tzinfo 2.0.4
+0:  tzinfo (2.0.4) from /Users/dingning/Desktop/ningding97.github.io/vendor/bundle/ruby/2.6.0/specifications/tzinfo-2.0.4.gemspec
+Using zeitwerk 2.4.2
+0:  zeitwerk (2.4.2) from /Users/dingning/Desktop/ningding97.github.io/vendor/bundle/ruby/2.6.0/specifications/zeitwerk-2.4.2.gemspec
+Using activesupport 6.1.3.1
+0:  activesupport (6.1.3.1) from /Users/dingning/Desktop/ningding97.github.io/vendor/bundle/ruby/2.6.0/specifications/activesupport-6.1.3.1.gemspec
+Using public_suffix 4.0.6
+0:  public_suffix (4.0.6) from /Users/dingning/Desktop/ningding97.github.io/vendor/bundle/ruby/2.6.0/specifications/public_suffix-4.0.6.gemspec
+Using addressable 2.7.0
+0:  addressable (2.7.0) from /Users/dingning/Desktop/ningding97.github.io/vendor/bundle/ruby/2.6.0/specifications/addressable-2.7.0.gemspec
+Using latex-decode 0.3.2
+0:  latex-decode (0.3.2) from /Users/dingning/Desktop/ningding97.github.io/vendor/bundle/ruby/2.6.0/specifications/latex-decode-0.3.2.gemspec
+Using bibtex-ruby 6.0.0
+0:  bibtex-ruby (6.0.0) from /Users/dingning/Desktop/ningding97.github.io/vendor/bundle/ruby/2.6.0/specifications/bibtex-ruby-6.0.0.gemspec
+Using bundler 2.2.16
+0:  bundler (2.2.16) from /Library/Ruby/Gems/2.6.0/specifications/bundler-2.2.16.gemspec
+Using namae 1.1.1
+0:  namae (1.1.1) from /Users/dingning/Desktop/ningding97.github.io/vendor/bundle/ruby/2.6.0/specifications/namae-1.1.1.gemspec
+Using citeproc 1.0.10
+0:  citeproc (1.0.10) from /Users/dingning/Desktop/ningding97.github.io/vendor/bundle/ruby/2.6.0/specifications/citeproc-1.0.10.gemspec
+Using csl 1.5.2
+0:  csl (1.5.2) from /Users/dingning/Desktop/ningding97.github.io/vendor/bundle/ruby/2.6.0/specifications/csl-1.5.2.gemspec
+Using citeproc-ruby 1.1.13
+0:  citeproc-ruby (1.1.13) from /Users/dingning/Desktop/ningding97.github.io/vendor/bundle/ruby/2.6.0/specifications/citeproc-ruby-1.1.13.gemspec
+Using colorator 1.1.0
+0:  colorator (1.1.0) from /Users/dingning/Desktop/ningding97.github.io/vendor/bundle/ruby/2.6.0/specifications/colorator-1.1.0.gemspec
+Using csl-styles 1.0.1.10
+0:  csl-styles (1.0.1.10) from /Users/dingning/Desktop/ningding97.github.io/vendor/bundle/ruby/2.6.0/specifications/csl-styles-1.0.1.10.gemspec
+Fetching eventmachine 1.2.7
+Installing eventmachine 1.2.7 with native extensions
+Building native extensions. This could take a while...
+Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+
+current directory:
+/Users/dingning/Desktop/ningding97.github.io/vendor/bundle/ruby/2.6.0/gems/eventmachine-1.2.7/ext
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/bin/ruby -I
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0 -r
+./siteconf20250917-17381-18d5umz.rb extconf.rb
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/universal-darwin25/rbconfig.rb:21:
+warning: Insecure world writable dir /opt/homebrew in PATH, mode 040777
+mkmf.rb can't find header files for ruby at
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/include/ruby.h
+
+You might have to install separate package for the ruby development
+environment, ruby-dev or ruby-devel for example.
+
+extconf failed, exit code 1
+
+Gem files will remain installed in
+/Users/dingning/Desktop/ningding97.github.io/vendor/bundle/ruby/2.6.0/gems/eventmachine-1.2.7
+for inspection.
+Results logged to
+/Users/dingning/Desktop/ningding97.github.io/vendor/bundle/ruby/2.6.0/extensions/universal-darwin-25/2.6.0/eventmachine-1.2.7/gem_make.out
+
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/ext/builder.rb:99:in
+`run'
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/ext/ext_conf_builder.rb:47:in
+`block in build'
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/tempfile.rb:295:in
+`open'
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/ext/ext_conf_builder.rb:29:in
+`build'
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/ext/builder.rb:185:in
+`block in build_extension'
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/monitor.rb:235:in
+`mon_synchronize'
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/ext/builder.rb:181:in
+`build_extension'
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/ext/builder.rb:229:in
+`block in build_extensions'
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/ext/builder.rb:226:in
+`each'
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/ext/builder.rb:226:in
+`build_extensions'
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/installer.rb:830:in
+`build_extensions'
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/rubygems_gem_installer.rb:64:in
+`build_extensions'
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/rubygems_gem_installer.rb:26:in
+`install'
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/source/rubygems.rb:176:in
+`install'
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer/gem_installer.rb:67:in
+`install'
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer/gem_installer.rb:18:in
+`install_from_spec'
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer/parallel_installer.rb:186:in
+`do_install'
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer/parallel_installer.rb:171:in
+`install_serially'
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer/parallel_installer.rb:97:in
+`call'
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer/parallel_installer.rb:71:in
+`call'
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer.rb:270:in
+`install_in_parallel'
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer.rb:210:in
+`install'
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer.rb:90:in
+`block in run'
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/process_lock.rb:12:in
+`block in lock'
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/process_lock.rb:9:in
+`open'
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/process_lock.rb:9:in
+`lock'
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer.rb:72:in
+`run'
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer.rb:24:in
+`install'
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/cli/install.rb:64:in
+`run'
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/cli.rb:259:in `block
+in install'
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/settings.rb:114:in
+`temporary'
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/cli.rb:258:in
+`install'
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/vendor/thor/lib/thor/command.rb:27:in
+`run'
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/vendor/thor/lib/thor/invocation.rb:127:in
+`invoke_command'
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/vendor/thor/lib/thor.rb:392:in
+`dispatch'
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/cli.rb:30:in
+`dispatch'
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/vendor/thor/lib/thor/base.rb:485:in
+`start'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/cli.rb:24:in `start'
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/exe/bundle:49:in `block in <top
+(required)>'
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/friendly_errors.rb:130:in
+`with_friendly_errors'
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/exe/bundle:37:in `<top
+(required)>'
+  /usr/local/bin/bundle:23:in `load'
+  /usr/local/bin/bundle:23:in `<main>'
+
+An error occurred while installing eventmachine (1.2.7), and Bundler cannot
+continue.
+Make sure that `gem install eventmachine -v '1.2.7' --source
+'https://rubygems.org/'` succeeds before bundling.
+
+In Gemfile:
+  jekyll-github-metadata was resolved to 2.13.0, which depends on
+    jekyll was resolved to 4.2.0, which depends on
+      em-websocket was resolved to 0.5.2, which depends on
+        eventmachine
+Bundler::InstallError: Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+
+    current directory: /Users/dingning/Desktop/ningding97.github.io/vendor/bundle/ruby/2.6.0/gems/eventmachine-1.2.7/ext
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/bin/ruby -I /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0 -r ./siteconf20250917-17381-18d5umz.rb extconf.rb
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/universal-darwin25/rbconfig.rb:21: warning: Insecure world writable dir /opt/homebrew in PATH, mode 040777
+mkmf.rb can't find header files for ruby at /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/include/ruby.h
+
+You might have to install separate package for the ruby development
+environment, ruby-dev or ruby-devel for example.
+
+extconf failed, exit code 1
+
+Gem files will remain installed in /Users/dingning/Desktop/ningding97.github.io/vendor/bundle/ruby/2.6.0/gems/eventmachine-1.2.7 for inspection.
+Results logged to /Users/dingning/Desktop/ningding97.github.io/vendor/bundle/ruby/2.6.0/extensions/universal-darwin-25/2.6.0/eventmachine-1.2.7/gem_make.out
+
+  /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/ext/builder.rb:99:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/ext/ext_conf_builder.rb:47:in `block in build'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/tempfile.rb:295:in `open'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/ext/ext_conf_builder.rb:29:in `build'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/ext/builder.rb:185:in `block in build_extension'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/monitor.rb:235:in `mon_synchronize'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/ext/builder.rb:181:in `build_extension'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/ext/builder.rb:229:in `block in build_extensions'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/ext/builder.rb:226:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/ext/builder.rb:226:in `build_extensions'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/installer.rb:830:in `build_extensions'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/rubygems_gem_installer.rb:64:in `build_extensions'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/rubygems_gem_installer.rb:26:in `install'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/source/rubygems.rb:176:in `install'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer/gem_installer.rb:67:in `install'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer/gem_installer.rb:18:in `install_from_spec'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer/parallel_installer.rb:186:in `do_install'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer/parallel_installer.rb:171:in `install_serially'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer/parallel_installer.rb:97:in `call'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer/parallel_installer.rb:71:in `call'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer.rb:270:in `install_in_parallel'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer.rb:210:in `install'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer.rb:90:in `block in run'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/process_lock.rb:12:in `block in lock'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/process_lock.rb:9:in `open'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/process_lock.rb:9:in `lock'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer.rb:72:in `run'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer.rb:24:in `install'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/cli/install.rb:64:in `run'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/cli.rb:259:in `block in install'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/settings.rb:114:in `temporary'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/cli.rb:258:in `install'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/vendor/thor/lib/thor.rb:392:in `dispatch'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/cli.rb:30:in `dispatch'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/vendor/thor/lib/thor/base.rb:485:in `start'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/cli.rb:24:in `start'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/exe/bundle:49:in `block in <top (required)>'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/friendly_errors.rb:130:in `with_friendly_errors'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/exe/bundle:37:in `<top (required)>'
+  /usr/local/bin/bundle:23:in `load'
+  /usr/local/bin/bundle:23:in `<main>'
+
+An error occurred while installing eventmachine (1.2.7), and Bundler cannot continue.
+Make sure that `gem install eventmachine -v '1.2.7' --source 'https://rubygems.org/'` succeeds before bundling.
+
+In Gemfile:
+  jekyll-github-metadata was resolved to 2.13.0, which depends on
+    jekyll was resolved to 4.2.0, which depends on
+      em-websocket was resolved to 0.5.2, which depends on
+        eventmachine
+
+/Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer/parallel_installer.rb:220:in `handle_error'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer/parallel_installer.rb:102:in `call'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer/parallel_installer.rb:71:in `call'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer.rb:270:in `install_in_parallel'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer.rb:210:in `install'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer.rb:90:in `block in run'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/process_lock.rb:12:in `block in lock'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/process_lock.rb:9:in `open'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/process_lock.rb:9:in `lock'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer.rb:72:in `run'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/installer.rb:24:in `install'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/cli/install.rb:64:in `run'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/cli.rb:259:in `block in install'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/settings.rb:114:in `temporary'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/cli.rb:258:in `install'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/vendor/thor/lib/thor.rb:392:in `dispatch'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/cli.rb:30:in `dispatch'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/vendor/thor/lib/thor/base.rb:485:in `start'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/cli.rb:24:in `start'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/exe/bundle:49:in `block in <top (required)>'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/lib/bundler/friendly_errors.rb:130:in `with_friendly_errors'
+  /Library/Ruby/Gems/2.6.0/gems/bundler-2.2.16/exe/bundle:37:in `<top (required)>'
+  /usr/local/bin/bundle:23:in `load'
+  /usr/local/bin/bundle:23:in `<main>'

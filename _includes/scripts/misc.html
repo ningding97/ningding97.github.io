@@ -35,3 +35,449 @@ $(function () {$('[data-toggle="tooltip"]').tooltip()})
   window.addEventListener('wheel', function(){}, { passive: true });
   window.addEventListener('touchstart', function(){}, { passive: true });
 </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!document.body.classList.contains('link-preview-enabled')) { return; }
+
+    var scope = document.querySelector('.post');
+    if (!scope) { return; }
+
+    var anchors = scope.querySelectorAll('a[href]');
+    if (!anchors.length) { return; }
+
+    var preview = document.createElement('div');
+    preview.className = 'link-preview-card link-preview-card--hidden';
+    preview.innerHTML = '' +
+      '<div class="link-preview-header"><span class="link-preview-url"></span></div>' +
+      '<div class="link-preview-body">' +
+        '<iframe class="link-preview-frame" title="Link preview" loading="lazy"></iframe>' +
+        '<div class="link-preview-fallback">Preview unavailable for this site.</div>' +
+      '</div>';
+    document.body.appendChild(preview);
+
+    var urlLabel = preview.querySelector('.link-preview-url');
+    var frame = preview.querySelector('.link-preview-frame');
+    var fallback = preview.querySelector('.link-preview-fallback');
+    var hoverTimer = null;
+    var hideTimer = null;
+    var lastUrl = '';
+    var failSafe = null;
+    var pendingController = null;
+
+    var RELAY_HOSTS = new Set([
+      'github.com', 'gist.github.com', 'gitlab.com', 'bitbucket.org',
+      'twitter.com', 'x.com', 'linkedin.com', 'facebook.com',
+      'instagram.com', 'medium.com', 'docs.google.com', 'arxiv.org'
+    ]);
+    var RELAY_PREFIX = 'https://r.jina.ai/';
+
+    function sanitizeHost(hostname) {
+      return (hostname || '').replace(/^www\./, '').toLowerCase();
+    }
+
+    function buildRelayUrl(url) {
+      if (!/^https?:\/\//i.test(url)) { return null; }
+      if (url.startsWith('https://')) {
+        return 'https://r.jina.ai/https://' + url.slice(8);
+      }
+      if (url.startsWith('http://')) {
+        return 'https://r.jina.ai/http://' + url.slice(7);
+      }
+      return null;
+    }
+
+    function buildCandidates(url) {
+      var list = [];
+      var hostName = '';
+      try {
+        hostName = sanitizeHost(new URL(url).hostname);
+      } catch (e) {
+        hostName = '';
+      }
+      var relayUrl = buildRelayUrl(url);
+      if (RELAY_HOSTS.has(hostName)) {
+        if (relayUrl) { list.push(relayUrl); }
+      } else {
+        list.push(url);
+        if (relayUrl) { list.push(relayUrl); }
+      }
+      return list.filter(Boolean);
+    }
+
+    function isPreviewable(anchor) {
+      var href = anchor.getAttribute('href') || '';
+      if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('javascript:')) {
+        return false;
+      }
+      return true;
+    }
+
+    function positionPreview(event) {
+      var cardWidth = preview.offsetWidth || 320;
+      var cardHeight = preview.offsetHeight || 220;
+      var margin = 18;
+      var x = event.clientX + margin;
+      var y = event.clientY + margin;
+
+      if (x + cardWidth > window.innerWidth - 12) {
+        x = event.clientX - cardWidth - margin;
+      }
+      if (y + cardHeight > window.innerHeight - 12) {
+        y = event.clientY - cardHeight - margin;
+      }
+
+      preview.style.transform = 'translate(' + Math.max(12, x) + 'px,' + Math.max(12, y) + 'px)';
+    }
+
+    function escapeAttr(url) {
+      return (url || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+    }
+
+    function escapeHtml(text) {
+      return (text || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+    }
+
+    function buildRelayHtml(content, originalUrl) {
+      var safeContent = escapeHtml(content || '').split(/\r?\n/)
+        .filter(function (line, idx) {
+          return line.trim().length && idx < 32;
+        })
+        .join('<br>');
+      if (!safeContent) {
+        safeContent = 'Preview unavailable for this site.';
+      }
+      var openLink = '';
+      if (originalUrl) {
+        openLink = '<div class="relay-open"><a href="' + escapeAttr(originalUrl) + '" target="_blank" rel="noopener">Open original</a></div>';
+      }
+      return '<!doctype html><html><head><meta charset="utf-8">' +
+        '<base target="_blank" />' +
+        '<style>body{font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;font-size:14px;line-height:1.45;color:#111827;background:#fff;padding:14px 16px;margin:0;} .relay-open{margin-top:14px;font-size:12px;} a{color:#2563eb;text-decoration:none;} a:hover{text-decoration:underline;} .snippet{max-height:180px;overflow:auto;}</style>' +
+        '</head><body><div class="snippet">' + safeContent + '</div>' + openLink + '</body></html>';
+    }
+
+    function displayFallback(message, url) {
+      fallback.innerHTML = message || 'Preview unavailable for this site.';
+      if (url) {
+        var safeUrl = escapeAttr(url);
+        fallback.innerHTML += ' <a href="' + safeUrl + '" target="_blank" rel="noopener">Open link</a>';
+      }
+      fallback.style.display = 'flex';
+      frame.classList.add('link-preview-frame--error');
+    }
+
+    function showPreview(anchor, event) {
+      clearTimeout(hideTimer);
+      if (pendingController) {
+        pendingController.abort();
+        pendingController = null;
+      }
+      var url = anchor.href;
+      if (!url || url === lastUrl) {
+        positionPreview(event);
+        preview.classList.remove('link-preview-card--hidden');
+        return;
+      }
+
+      lastUrl = url;
+      urlLabel.textContent = url;
+      fallback.style.display = 'none';
+      frame.classList.remove('link-preview-frame--error');
+      frame.src = 'about:blank';
+
+      var candidates = buildCandidates(url);
+      if (!candidates.length) {
+        displayFallback('Preview unavailable for this site.', url);
+        return;
+      }
+
+      var attemptIndex = 0;
+
+      function tryNextSource() {
+        clearTimeout(failSafe);
+        if (pendingController) {
+          pendingController.abort();
+          pendingController = null;
+        }
+        if (attemptIndex >= candidates.length) {
+          displayFallback('Preview unavailable for this site.', url);
+          return;
+        }
+        fallback.style.display = 'none';
+        frame.classList.remove('link-preview-frame--error');
+        var nextSrc = candidates[attemptIndex++];
+        frame.srcdoc = '';
+        frame.removeAttribute('srcdoc');
+        frame.src = 'about:blank';
+        if (nextSrc.indexOf(RELAY_PREFIX) === 0) {
+          fallback.style.display = 'flex';
+          fallback.innerHTML = 'Fetching secure preview... <a href="' + escapeAttr(url) + '" target="_blank" rel="noopener">Open link</a>';
+          var controller = new AbortController();
+          pendingController = controller;
+          failSafe = setTimeout(function () {
+            if (pendingController === controller) {
+              controller.abort();
+            }
+          }, 8000);
+          fetch(nextSrc, { signal: controller.signal })
+            .then(function (response) {
+              if (!response.ok) { throw new Error('Relay fetch failed'); }
+              return response.text();
+            })
+            .then(function (text) {
+              if (pendingController !== controller) { return; }
+              pendingController = null;
+              clearTimeout(failSafe);
+              var trimmed = (text || '').trim();
+              if (trimmed.length > 1800) {
+                trimmed = trimmed.slice(0, 1800) + '…';
+              }
+              frame.classList.remove('link-preview-frame--error');
+              fallback.style.display = 'none';
+              frame.removeAttribute('src');
+              frame.srcdoc = buildRelayHtml(trimmed, url);
+            })
+            .catch(function (error) {
+              if (pendingController !== controller) { return; }
+              pendingController = null;
+              clearTimeout(failSafe);
+              tryNextSource();
+            });
+          return;
+        }
+        setTimeout(function () {
+          frame.src = nextSrc;
+        }, 20);
+        failSafe = setTimeout(function () {
+          tryNextSource();
+        }, 4000);
+      }
+
+      frame.onload = function () {
+        clearTimeout(failSafe);
+        fallback.style.display = 'none';
+        frame.classList.remove('link-preview-frame--error');
+      };
+
+      frame.onerror = function () {
+        tryNextSource();
+      };
+
+      tryNextSource();
+      positionPreview(event);
+      preview.classList.remove('link-preview-card--hidden');
+    }
+
+    function hidePreview() {
+      clearTimeout(hideTimer);
+      hideTimer = setTimeout(function () {
+        preview.classList.add('link-preview-card--hidden');
+        lastUrl = '';
+        clearTimeout(failSafe);
+        if (pendingController) {
+          pendingController.abort();
+          pendingController = null;
+        }
+      }, 120);
+    }
+
+    anchors.forEach(function (anchor) {
+      if (!isPreviewable(anchor)) { return; }
+
+      anchor.addEventListener('mouseenter', function (event) {
+        clearTimeout(hoverTimer);
+        hoverTimer = setTimeout(function () {
+          showPreview(anchor, event);
+        }, 220);
+      });
+
+      anchor.addEventListener('mousemove', function (event) {
+        if (!preview.classList.contains('link-preview-card--hidden')) {
+          positionPreview(event);
+        }
+      });
+
+      anchor.addEventListener('mouseleave', function () {
+        clearTimeout(hoverTimer);
+        hidePreview();
+      });
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var likeButton = document.querySelector('.post-like-button');
+    if (!likeButton) { return; }
+
+    var countElement = likeButton.querySelector('.post-like-count');
+    var likeKey = likeButton.dataset.likeKey;
+    if (!countElement || !likeKey) { return; }
+
+    var initialCount = parseInt(likeButton.dataset.likeInitial, 10);
+    if (!Number.isFinite(initialCount) || initialCount < 0) { initialCount = 0; }
+
+    var namespace = 'ningding-blog-likes';
+    var endpointBase = 'https://api.countapi.xyz';
+    var votedStorageKey = 'post-like-voted-' + likeKey;
+    var cachedCountKey = 'post-like-cache-' + likeKey;
+    var hasLiked = false;
+    var count = initialCount;
+
+    try {
+      hasLiked = window.localStorage.getItem(votedStorageKey) === 'true';
+      var cached = window.localStorage.getItem(cachedCountKey);
+      if (cached !== null) {
+        var parsed = parseInt(cached, 10);
+        if (Number.isFinite(parsed) && parsed >= 0) {
+          count = parsed;
+        }
+      }
+    } catch (error) {
+      hasLiked = false;
+    }
+
+    function updateUI() {
+      countElement.textContent = Number.isFinite(count) ? count : '–';
+      likeButton.classList.toggle('is-liked', hasLiked);
+      likeButton.setAttribute('aria-pressed', hasLiked ? 'true' : 'false');
+      likeButton.disabled = hasLiked;
+    }
+
+    function cacheState() {
+      try {
+        window.localStorage.setItem(votedStorageKey, hasLiked ? 'true' : 'false');
+        if (Number.isFinite(count)) {
+          window.localStorage.setItem(cachedCountKey, String(count));
+        }
+      } catch (error) {
+        // ignore storage issues
+      }
+    }
+
+    function fetchCount() {
+      return fetch(endpointBase + '/get/' + namespace + '/' + likeKey)
+        .then(function (response) {
+          if (response.status === 404) {
+            return fetch(endpointBase + '/create/' + namespace + '/' + likeKey + '?value=' + initialCount);
+          }
+          return response;
+        })
+        .then(function (response) {
+          if (!response.ok) { throw new Error('Failed to load like count'); }
+          return response.json();
+        })
+        .then(function (data) {
+          if (data && typeof data.value === 'number') {
+            count = data.value;
+            cacheState();
+            updateUI();
+          }
+        })
+        .catch(function () {
+          // leave cached/initial value in place
+          count = Number.isFinite(count) ? count : initialCount;
+          updateUI();
+        });
+    }
+
+    function sendLike() {
+      return fetch(endpointBase + '/hit/' + namespace + '/' + likeKey)
+        .then(function (response) {
+          if (!response.ok) { throw new Error('Failed to register like'); }
+          return response.json();
+        })
+        .then(function (data) {
+          if (data && typeof data.value === 'number') {
+            count = data.value;
+          } else {
+            count += 1;
+          }
+          hasLiked = true;
+          cacheState();
+          updateUI();
+        })
+        .catch(function () {
+          // revert interaction on failure
+          hasLiked = false;
+          likeButton.disabled = false;
+        });
+    }
+
+    likeButton.addEventListener('click', function () {
+      if (hasLiked) { return; }
+      likeButton.disabled = true;
+      sendLike();
+    });
+
+    updateUI();
+    fetchCount();
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var toggle = document.querySelector('.post-lang-toggle');
+    if (!toggle) { return; }
+
+    var buttons = Array.prototype.slice.call(toggle.querySelectorAll('.post-lang-button'));
+    var sections = Array.prototype.slice.call(document.querySelectorAll('.post-lang-section'));
+    if (!buttons.length || !sections.length) { return; }
+
+    var storageKey = 'post-language-preference';
+    var preferred = null;
+
+    try {
+      preferred = window.localStorage.getItem(storageKey);
+    } catch (error) {
+      preferred = null;
+    }
+
+    function setLanguage(code) {
+      buttons.forEach(function (btn) {
+        var isActive = btn.dataset.langTarget === code;
+        btn.classList.toggle('is-active', isActive);
+      });
+
+      sections.forEach(function (section) {
+        var shouldShow = section.dataset.lang === code;
+        if (shouldShow) {
+          section.removeAttribute('hidden');
+        } else {
+          section.setAttribute('hidden', '');
+        }
+      });
+    }
+
+    var availableCodes = sections.map(function (section) { return section.dataset.lang; }).filter(Boolean);
+
+    var initial = preferred;
+    if (!initial || availableCodes.indexOf(initial) === -1) {
+      var activeButton = buttons.find(function (btn) { return btn.classList.contains('is-active'); });
+      if (activeButton) {
+        initial = activeButton.dataset.langTarget;
+      } else {
+        initial = availableCodes[0];
+      }
+    }
+
+    setLanguage(initial);
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var code = btn.dataset.langTarget;
+        if (!code) { return; }
+        setLanguage(code);
+        try {
+          window.localStorage.setItem(storageKey, code);
+        } catch (error) {
+          // Ignore storage errors
+        }
+      });
+    });
+  });
+</script>

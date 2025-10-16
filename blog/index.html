@@ -10,26 +10,42 @@ pagination:
   trail:
     before: 1 # The number of links before the current page
     after: 3  # The number of links after the current page
+preview_links: true
 ---
 
 <div class="post">
-
-  <div class="header-bar">
-    <h1>{{ site.blog_name }}</h1>
-    <h2>{{ site.blog_description }}</h2>
-  </div>
-
-
   <ul class="post-list">
     {% for post in paginator.posts %}
-      <li>
+      {% assign lang_attr = '' %}
+      {% assign lang_labels = '' %}
+      {% assign hidden_flag = post.hide_from_blog %}
+      {% if post.lang %}
+        {% if post.lang contains 'en' %}
+          {% assign lang_attr = lang_attr | append: 'en' %}
+          {% assign lang_labels = lang_labels | append: 'English' %}
+        {% endif %}
+        {% if post.lang contains 'zh' %}
+          {% if lang_attr != '' %}
+            {% assign lang_attr = lang_attr | append: ',' %}
+          {% endif %}
+          {% assign lang_attr = lang_attr | append: 'zh' %}
+          {% if lang_labels != '' %}
+            {% assign lang_labels = lang_labels | append: ' / ' %}
+          {% endif %}
+          {% assign lang_labels = lang_labels | append: '中文' %}
+        {% endif %}
+      {% endif %}
+      {% if lang_attr == '' %}
+        {% assign lang_attr = 'en' %}
+        {% assign lang_labels = 'English' %}
+      {% endif %}
+      {% capture hidden_text %}{% if hidden_flag %}true{% else %}false{% endif %}{% endcapture %}
+      <li class="lang-item{% if hidden_flag %} is-hidden{% endif %}" data-langs="{{ lang_attr }}" data-hidden="{{ hidden_text | strip }}"{% if hidden_flag %} style="display:none;"{% endif %}>
         <h3><a class="post-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-        <p class="post-meta">{{ post.date | date: '%B %-d, %Y' }}</p>
+        <p class="post-meta">{{ post.date | date: '%B %-d, %Y' }} · {{ lang_labels }}{% if hidden_flag %} · <span class="badge badge-secondary">Hidden / 隐藏</span>{% endif %}</p>
         <p>{{ post.description }}</p>
       </li>
     {% endfor %}
   </ul>
-
   {% include pagination.html %}
-
 </div>

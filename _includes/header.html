@@ -30,7 +30,7 @@
         <span class="icon-bar bottom-bar"></span>
       </button>
       <div class="collapse navbar-collapse text-right" id="navbarNav">
-        <ul class="navbar-nav ml-auto flex-nowrap" style="margin-left: 250px !important;">
+        <ul class="navbar-nav ml-auto flex-nowrap" style="padding-left: 15%; padding-right: 15%;">
           <!-- About -->
           <li class="nav-item {% if page.title == 'about' %}active{% endif %}">
             <a class="nav-link" href="{{ '/' | relative_url }}">
@@ -40,6 +40,7 @@
               {% endif %}
             </a>
           </li>
+          {% comment %}
           {% if site.blog_name %}
           <!-- Blog -->
           <li class="nav-item {% if page.url contains 'blog' %}active{% endif %}">
@@ -51,6 +52,7 @@
             </a>
           </li>
           {% endif %}
+          {% endcomment %}
           <!-- Other pages -->
           {% assign sorted_pages = site.pages | sort: "nav_order" %}
           {% for p in sorted_pages %}

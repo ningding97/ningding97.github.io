@@ -11,13 +11,62 @@ layout: default
 <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="post-header-top">
+      <h1 class="post-title">{{ page.title }}</h1>
+      <button class="post-like-button" type="button"
+        aria-label="Like this post"
+        data-like-key="{{ page.url | slugify }}"
+        data-like-initial="{{ page.likes | default: 0 }}">
+        <svg class="post-like-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M6.5 21H4a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2h2.5" />
+          <path d="M10 11.5V6.75A2.75 2.75 0 0 1 12.75 4h0A2.75 2.75 0 0 1 15.5 6.75V11h4a2 2 0 0 1 1.97 2.35l-1.1 5.5A2.5 2.5 0 0 1 17.94 21H10a3 3 0 0 1-3-3v-4.5a2 2 0 0 1 2-2Z" />
+        </svg>
+        <span class="post-like-count">0</span>
+      </button>
+    </div>
     <p class="post-meta">{{ page.date | date: "%B %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+
+    {% assign languages = page.lang %}
+    {% if languages and languages.size > 1 %}
+      <div class="post-lang-toggle" role="group" aria-label="Toggle language">
+        {% for code in languages %}
+          {% assign label = code %}
+          {% if code == 'en' %}{% assign label = 'English' %}{% elsif code == 'zh' %}{% assign label = '中文' %}{% endif %}
+          <button type="button" class="post-lang-button{% if forloop.first %} is-active{% endif %}" data-lang-target="{{ code }}">{{ label }}</button>
+        {% endfor %}
+      </div>
+    {% endif %}
   </header>
 
   <article class="post-content">
-    {{ content }}
+    {% if languages and languages.size > 1 %}
+      {% for code in languages %}
+        {% assign marker = '<!--lang:' | append: code | append: '-->' %}
+        {% assign split_content = content | split: marker %}
+        {% if split_content.size > 1 %}
+          {% assign after_marker = split_content[1] %}
+          {% assign section_parts = after_marker | split: '<!--lang:' %}
+          {% capture lang_block %}{{ section_parts[0] | strip }}{% endcapture %}
+          <section class="post-lang-section" data-lang="{{ code }}"{% unless forloop.first %} hidden{% endunless %}>
+            {{ lang_block }}
+          </section>
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      {{ content }}
+    {% endif %}
   </article>
+
+  {% assign show_refs = page.show_references %}
+  {% if show_refs != true and content contains '{% cite ' %}
+    {% assign show_refs = true %}
+  {% endif %}
+  {% if show_refs %}
+    <section class="post-references" id="references">
+      <h2>{{ page.references_title | default: "References / 参考文献" }}</h2>
+      {% bibliography --cited %}
+    </section>
+  {% endif %}
 
   {% if site.disqus_shortname and page.comments %}
     <div id="disqus_thread"></div>

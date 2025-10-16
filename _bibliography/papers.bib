@@ -1,5 +1,6 @@
 ---
 ---
+
 @article{preprint:entropy,
   title={The Entropy Mechanism of Reinforcement Learning for Reasoning Language Models},
   bibtex_show={true},
@@ -13,16 +14,44 @@
   year={2025}
 }
 
+@article{preprint:simplevla,
+  title={SimpleVLA-RL: Scaling VLA Training via Reinforcement Learning},
+  bibtex_show={true},
+  journal={Preprint},
+  preview={simplevla.png},
+  selected={true},
+  author={Haozhan Li and Yuxin Zuo and Jiale Yu and Yuhao Zhang and Zhaohui Yang and Kaiyan Zhang, Xuekai Zhu and Yuchen Zhang and Tianxing Chen, Ganqu Cui and Dehui Wang and Dingxiang Luo and Yuchen Fan and Youbang Sun and Jia Zeng, Jiangmiao Pang and Shanghang Zhang and Yu Wang and Yao Mu and Bowen Zhou and Ning* Ding},
+  code={https://github.com/PRIME-RL/SimpleVLA-RL},
+  pdf={https://arxiv.org/abs/2509.09674},
+  abstract={Vision-Language-Action (VLA) models have recently emerged as a powerful paradigm for robotic manipulation. Despite substantial progress enabled by large-scale pretraining and supervised fine-tuning (SFT), these models face two fundamental challenges: (i) the scarcity and high cost of large-scale human-operated robotic trajectories required for SFT scaling, and (ii) limited generalization to tasks involving distribution shift. Recent breakthroughs in Large Reasoning Models (LRMs) demonstrate that reinforcement learning (RL) can dramatically enhance step-by-step reasoning capabilities, raising a natural question: Can RL similarly improve the long-horizon step-by-step action planning of VLA? In this work, we introduce SimpleVLA-RL, an efficient RL framework tailored for VLA models. Building upon veRL, we introduce VLA-specific trajectory sampling, scalable parallelization, multi-environment rendering, and optimized loss computation. When applied to OpenVLA-OFT, SimpleVLA-RL achieves SoTA performance on LIBERO and even outperforms π0 on RoboTwin 1.0\&2.0 with the exploration-enhancing strategies we introduce. SimpleVLA-RL not only reduces dependence on large-scale data and enables robust generalization, but also remarkably surpasses SFT in real-world tasks. Moreover, we identify a novel phenomenon ``pushcut'' during RL training, wherein the policy discovers previously unseen patterns beyond those seen in the previous training process. },
+  year={2025}
+}
+
+@article{preprint:survey-rl,
+  title={A Survey of Reinforcement Learning for Large Reasoning Models},
+  bibtex_show={true},
+  journal={Preprint},
+  preview={survey-rl.png},
+  selected={true},
+  author={Kaiyan Zhang and Yuxin Zuo and Bingxiang He and Youbang Sun and Runze Liu and Che Jian and Yuchen Fan and Kai Tian and Guoli Jia and Pengfei Li and Yu Fu and Xingtai Lv and Yuchen Zhang and Sihang Zeng and Shang Qu and Haozhan Li and Shijie Wang and Yuru Wang and Xinwei Long and Fangfu Liu and Xiang Xu and Jiaze Ma and Xuekai Zhu and Ermo Hua and Yihao Liu and Zonglin Li and Huayu Chen and Xiaoye Qu and Yafu Li and Weize Chen and Zhenzhao Yuan and Junqi Gao and Dong Li and Zhiyuan Ma, Ganqu Cui and Zhiyuan Liu and Biqing Qi and Ning* Ding and Bowen Zhou},
+  code={https://github.com/TsinghuaC3I/Awesome-RL-for-LRMs},
+  pdf={https://arxiv.org/abs/2509.08827},
+  abstract={In this paper, we survey recent advances in Reinforcement Learning (RL) for reasoning with Large Language Models (LLMs). RL has achieved remarkable success in advancing the frontier of LLM capabilities, particularly in addressing complex logical tasks such as mathematics and coding. As a result, RL has emerged as a foundational methodology for transforming LLMs into LRMs. With the rapid progress of the field, further scaling of RL for LRMs now faces foundational challenges not only in computational resources but also in algorithm design, training data, and infrastructure. To this end, it is timely to revisit the development of this domain, reassess its trajectory, and explore strategies to enhance the scalability of RL toward Artificial SuperIntelligence (ASI). In particular, we examine research applying RL to LLMs and LRMs for reasoning abilities, especially since the release of DeepSeek-R1, including foundational components, core problems, training resources, and downstream applications, to identify future opportunities and directions for this rapidly evolving area. We hope this review will promote future research on RL for broader reasoning models.},
+  year={2025}
+}
+
+
 @article{preprint:ttrl,
   title={TTRL: Test-time Reinforcement Learning},
   bibtex_show={true},
   selected={true},
   preview={TTRL.png},
   author={Zuo, Yuxin and Zhang, Kaiyan and Qu, Shang and Sheng, Li and Zhu, Xuekai and Qi, Biqing and Sun, Youbang and Cui, Ganqu and Ding, Ning* and Zhou, Bowen},
-  journal={Preprint},
+  journal={NeurIPS 2025},
   code={https://github.com/PRIME-RL/TTRL},
   pdf={https://arxiv.org/abs/2504.16084},
   abstract={This paper investigates Reinforcement Learning (RL) on data without explicit labels for reasoning tasks in Large Language Models (LLMs). The core challenge of the problem is reward estimation during inference while not having access to ground-truth information. While this setting appears elusive, we find that common practices in Test-Time Scaling (TTS), such as majority voting, yield surprisingly effective rewards suitable for driving RL training. In this work, we introduce Test-Time Reinforcement Learning (TTRL), a novel method for training LLMs using RL on unlabeled data. TTRL enables self-evolution of LLMs by utilizing the priors in the pre-trained models. Our experiments demonstrate that TTRL consistently improves performance across a variety of tasks and models. Notably, TTRL boosts the pass@1 performance of Qwen-2.5-Math-7B by approximately 211% on the AIME 2024 with only unlabeled test data. Furthermore, although TTRL is only supervised by the maj@n metric, TTRL has demonstrated performance to consistently surpass the upper limit of the initial model maj@n, and approach the performance of models trained directly on test data with ground-truth labels. Our experimental findings validate the general effectiveness of TTRL across various tasks and highlight TTRL's potential for broader tasks and domains.},
+  series = {\newlin NeurIPS 2025},
   year={2025}
 }
 
@@ -522,4 +551,13 @@ Zheng, Hai-Tao},
 }
 
 
-
+@misc{deepseek-r1,
+  title = {DeepSeek R1: Incentivized Reasoning at Scale},
+  author = {DeepSeek-AI},
+  year = {2025},
+  howpublished = {arXiv preprint},
+  eprint = {2501.00000},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.AI},
+  note = {Accessed 2025-02-14}
+}

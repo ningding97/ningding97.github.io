@@ -1,5 +1,7 @@
 - username: PRIME-RL
   repositories:
+    - SimpleVLA-RL
+    - Entropy-Mechanism-of-RL
     - TTRL
     - PRIME
     - ImplicitPRM
