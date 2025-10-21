@@ -832,49 +832,63 @@
     return [...citations];
   }
 
-  function author_string(ent, template, sep, finalSep) {
+  function author_name_strings(ent, template) {
     if (ent.author == null) {
-      return "";
+      return [];
     }
-    var names = ent.author.split(" and ");
-    let name_strings = names.map(name => {
-      name = name.trim();
+    const names = ent.author
+      .split(" and ")
+      .map(name => name.trim())
+      .filter(name => name.length);
+    return names.map(name => {
+      let last;
+      let firsts;
       if (name.indexOf(",") != -1) {
-        var last = name.split(",")[0].trim();
-        var firsts = name.split(",")[1];
+        last = name.split(",")[0].trim();
+        firsts = name.split(",")[1];
       } else if (name.indexOf(" ") != -1) {
-        var last = name
-          .split(" ")
-          .slice(-1)[0]
-          .trim();
-        var firsts = name
-          .split(" ")
-          .slice(0, -1)
-          .join(" ");
+        const parts = name.split(" ");
+        last = parts.slice(-1)[0].trim();
+        firsts = parts.slice(0, -1).join(" ");
       } else {
-        var last = name.trim();
+        last = name.trim();
       }
-      var initials = "";
+      const safeFirsts = firsts != undefined ? firsts : "";
+      let initials = "";
       if (firsts != undefined) {
-        initials = firsts
+        initials = safeFirsts
           .trim()
           .split(" ")
-          .map(s => s.trim()[0]);
-        initials = initials.join(".") + ".";
+          .filter(Boolean)
+          .map(s => s.trim()[0])
+          .join(".");
+        if (initials.length) {
+          initials += ".";
+        }
       }
       return template
-        .replace("${F}", firsts)
+        .replace("${F}", safeFirsts)
         .replace("${L}", last)
         .replace("${I}", initials)
-        .trim(); // in case one of first or last was empty
+        .trim();
     });
-    if (names.length > 1) {
-      var str = name_strings.slice(0, names.length - 1).join(sep);
-      str += (finalSep || sep) + name_strings[names.length - 1];
-      return str;
-    } else {
-      return name_strings[0];
+  }
+
+  function join_author_names(nameStrings, sep, finalSep) {
+    if (!nameStrings.length) {
+      return "";
     }
+    if (nameStrings.length === 1) {
+      return nameStrings[0];
+    }
+    const separatorBeforeLast = finalSep != null ? finalSep : sep;
+    const leading = nameStrings.slice(0, -1).join(sep);
+    return leading + separatorBeforeLast + nameStrings[nameStrings.length - 1];
+  }
+
+  function author_string(ent, template, sep, finalSep) {
+    const nameStrings = author_name_strings(ent, template);
+    return join_author_names(nameStrings, sep, finalSep);
   }
 
   function venue_string(ent) {
@@ -934,7 +948,21 @@
       var cite = title_string(ent);
       cite += link_string(ent) + "<br>";
       if (ent.author) {
-        cite += author_string(ent, "${L}, ${I}", ", ", " and ");
+        const authorNames = author_name_strings(ent, "${L}, ${I}");
+        if (authorNames.length > 10) {
+          const hiddenCount = Math.max(authorNames.length - 10, 1);
+          const placeholder =
+            `<span class="authors-more-placeholder" role="button" tabindex="0" aria-label="Show all authors (${hiddenCount} more)" data-hidden-count="${hiddenCount}"><span class="authors-more-count">+${hiddenCount}</span><span class="authors-more-text">more authors</span></span>`;
+          const truncatedNames = authorNames
+            .slice(0, 7)
+            .concat([placeholder])
+            .concat(authorNames.slice(-3));
+          const truncatedMarkup = join_author_names(truncatedNames, ", ", " and ");
+          const fullMarkup = join_author_names(authorNames, ", ", " and ");
+          cite += `<span class="author-list" data-author-list aria-expanded="false"><span class="author-list__text author-list__text--truncated" aria-hidden="false">${truncatedMarkup}</span><span class="author-list__text author-list__text--full" aria-hidden="true">${fullMarkup}</span></span>`;
+        } else {
+          cite += join_author_names(authorNames, ", ", " and ");
+        }
         if (ent.year || ent.date) {
           cite += ", ";
         }

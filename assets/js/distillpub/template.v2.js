@@ -9159,6 +9159,92 @@ distill-header .nav a {
 
   // Copyright 2018 The Distill Template Authors
 
+  function expandAuthorList(container) {
+    if (container.classList.contains('is-expanded')) {
+      return;
+    }
+    const truncated = container.querySelector('.author-list__text--truncated');
+    const full = container.querySelector('.author-list__text--full');
+    if (!truncated || !full) {
+      return;
+    }
+
+    const startHeight = container.offsetHeight;
+    container.style.height = startHeight + "px";
+    container.classList.add('author-list--animating');
+    container.classList.add('is-expanded');
+
+    truncated.setAttribute('aria-hidden', 'true');
+    full.setAttribute('aria-hidden', 'false');
+
+    const placeholder = container.querySelector('.authors-more-placeholder');
+    if (placeholder) {
+      placeholder.setAttribute('tabindex', '-1');
+      placeholder.setAttribute('aria-hidden', 'true');
+    }
+
+    const endHeight = container.scrollHeight;
+
+    const raf = (typeof window !== 'undefined' && typeof window.requestAnimationFrame === 'function')
+      ? window.requestAnimationFrame.bind(window)
+      : (cb) => setTimeout(cb, 16);
+    raf(() => {
+      container.style.height = endHeight + "px";
+    });
+
+    let fallbackId;
+    const cleanup = (event) => {
+      if (event && event.propertyName && event.propertyName !== 'height') {
+        return;
+      }
+      container.classList.remove('author-list--animating');
+      container.style.height = '';
+      container.removeEventListener('transitionend', cleanup);
+      if (fallbackId) {
+        clearTimeout(fallbackId);
+        fallbackId = null;
+      }
+    };
+
+    container.addEventListener('transitionend', cleanup);
+    fallbackId = setTimeout(() => cleanup({}), 400);
+    container.setAttribute('aria-expanded', 'true');
+  }
+
+  function authorListActivationHandler(event) {
+    if (event.type === 'keydown') {
+      const key = event.key || event.code;
+      if (key !== 'Enter' && key !== ' ' && key !== 'Spacebar' && key !== 'Space') {
+        return;
+      }
+    }
+    const trigger = event.target.closest('.authors-more-placeholder');
+    if (!trigger) {
+      return;
+    }
+    if (event.type === 'keydown') {
+      event.preventDefault();
+    }
+    const container = trigger.closest('[data-author-list]');
+    if (!container) {
+      return;
+    }
+    expandAuthorList(container);
+  }
+
+  function initAuthorListToggles() {
+    document.addEventListener('click', authorListActivationHandler);
+    document.addEventListener('keydown', authorListActivationHandler);
+  }
+
+  if (typeof document !== 'undefined') {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAuthorListToggles, { once: true });
+    } else {
+      initAuthorListToggles();
+    }
+  }
+
   let templateIsLoading = false;
   let runlevel = 0;
   const initialize = function() {

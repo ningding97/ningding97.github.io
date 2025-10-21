@@ -44,59 +44,128 @@
          <!-- <img src="/assets/img/paper.svg" width="15px">   -->
          {{entry.title}}  </div>    
       <div class="author" style="font-size: 15px;">
+        {% assign author_delimiter = '|||AUTHOR_DELIM|||' %}
+        {% assign author_markup_concat = '' %}
         {% for author in entry.author_array %}
-        {% assign author_is_self = false %}
-        {%- assign symbol = "" -%}
-        {%- assign clean_first = author.first | replace: "*", "" -%}
-        {%- assign clean_last = author.last | replace: "*", "" -%}
-        {%- if author.first contains "*" or author.last contains "*" -%}
-          {%- assign symbol = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" style="vertical-align:-2px;margin-left:2px;fill:#000e19;" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 8.06l7.49 6.22a1 1 0 0 0 1.02 0L20 8.06V18H4V8.06z"/></svg>' -%}
-        {%- endif -%}
-      
-        {% if clean_last == site.scholar.last_name %}
-          {% if site.scholar.first_name contains clean_first %}
+          {% assign author_is_self = false %}
+          {%- assign symbol = "" -%}
+          {%- assign clean_first = author.first | replace: "*", "" -%}
+          {%- assign clean_last = author.last | replace: "*", "" -%}
+          {%- if author.first contains "*" or author.last contains "*" -%}
+            {%- assign symbol = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" style="vertical-align:-2px;margin-left:2px;fill:#000e19;" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 8.06l7.49 6.22a1 1 0 0 0 1.02 0L20 8.06V18H4V8.06z"/></svg>' -%}
+          {%- endif -%}
+          {% if clean_last == site.scholar.last_name and site.scholar.first_name contains clean_first %}
             {% assign author_is_self = true %}
           {% endif %}
-        {% endif %}
-        {% assign coauthor_url = nil %}
-        {% if site.data.coauthors[clean_last] %}
-          {% for coauthor in site.data.coauthors[clean_last] %}
-            {% if coauthor.firstname contains clean_first %}
-              {% assign coauthor_url = coauthor.url %}
-              {% break %}
+          {% assign coauthor_url = nil %}
+          {% if site.data.coauthors[clean_last] %}
+            {% for coauthor in site.data.coauthors[clean_last] %}
+              {% if coauthor.firstname contains clean_first %}
+                {% assign coauthor_url = coauthor.url %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          {% capture author_markup %}
+            {% if author_is_self %}
+              <u><strong>{{ clean_first }} {{ clean_last }}{{ symbol | raw }}</strong></u>
+            {% else %}
+              {% if coauthor_url %}
+                <a href="{{ coauthor_url }}" target="_blank">{{ clean_first }} {{ clean_last }}{{ symbol | raw }}</a>
+              {% else %}
+                {{ clean_first }} {{ clean_last }}{{ symbol | raw }}
+              {% endif %}
+            {% endif %}
+          {% endcapture %}
+          {% assign author_markup = author_markup | strip %}
+          {% if author_markup_concat == '' %}
+            {% assign author_markup_concat = author_markup %}
+          {% else %}
+            {% assign author_markup_concat = author_markup_concat | append: author_delimiter | append: author_markup %}
+          {% endif %}
+        {% endfor %}
+        {% assign author_items = author_markup_concat | split: author_delimiter %}
+        {% assign author_count = author_items | size %}
+        {% if author_count > 10 %}
+          {% assign hidden_author_count = author_count | minus: 10 %}
+          {% if hidden_author_count < 1 %}
+            {% assign hidden_author_count = 1 %}
+          {% endif %}
+          {% assign last_three_offset = author_count | minus: 3 %}
+          {% assign truncated_concat = '' %}
+          {% for item in author_items %}
+            {% assign idx = forloop.index0 %}
+            {% if idx < 7 %}
+              {% if truncated_concat == '' %}
+                {% assign truncated_concat = item %}
+              {% else %}
+                {% assign truncated_concat = truncated_concat | append: author_delimiter | append: item %}
+              {% endif %}
             {% endif %}
           {% endfor %}
-        {% endif %}
-        {% if forloop.length == 1 %}
-          {% if author_is_self %}
-            <u><strong>{{ clean_first }} {{ clean_last }}{{ symbol | raw }}</strong></u>
+          {% capture placeholder_markup %}
+            <span class="authors-more-placeholder" role="button" tabindex="0" aria-label="Show all authors ({{ hidden_author_count }} more)" data-hidden-count="{{ hidden_author_count }}">
+              <span class="authors-more-count">+{{ hidden_author_count }}</span>
+              <span class="authors-more-text">more authors</span>
+            </span>
+          {% endcapture %}
+          {% assign placeholder_markup = placeholder_markup | strip | strip_newlines %}
+          {% if truncated_concat == '' %}
+            {% assign truncated_concat = placeholder_markup %}
           {% else %}
-            {{ clean_first }} {{ clean_last }}{{ symbol | raw }}
+            {% assign truncated_concat = truncated_concat | append: author_delimiter | append: placeholder_markup %}
           {% endif %}
+          {% for item in author_items %}
+            {% assign idx = forloop.index0 %}
+            {% if idx >= last_three_offset %}
+              {% assign truncated_concat = truncated_concat | append: author_delimiter | append: item %}
+            {% endif %}
+          {% endfor %}
+          {% assign truncated_items = truncated_concat | split: author_delimiter %}
+          {% capture truncated_html %}
+            {% assign truncated_count = truncated_items | size %}
+            {% if truncated_count == 1 %}
+              {{ truncated_items[0] }}
+            {% else %}
+              {% for item in truncated_items %}
+                {% if forloop.last %}
+                  and {{ item }}
+                {% else %}
+                  {{ item }}, 
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          {% endcapture %}
+          {% capture full_html %}
+            {% if author_count == 1 %}
+              {{ author_items[0] }}
+            {% else %}
+              {% for item in author_items %}
+                {% if forloop.last %}
+                  and {{ item }}
+                {% else %}
+                  {{ item }}, 
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          {% endcapture %}
+          <span class="author-list" data-author-list aria-expanded="false">
+            <span class="author-list__text author-list__text--truncated" aria-hidden="false">{{ truncated_html | strip }}</span>
+            <span class="author-list__text author-list__text--full" aria-hidden="true">{{ full_html | strip }}</span>
+          </span>
         {% else %}
-          {% unless forloop.last %}
-            {% if author_is_self %}
-              <u><strong>{{ clean_first }} {{ clean_last }}{{ symbol | raw }}</strong></u>,
-            {% else %}
-              {% if coauthor_url %}
-                <a href="{{ coauthor_url }}" target="_blank">{{ clean_first }} {{ clean_last }}{{ symbol | raw }}</a>,
-              {% else %}
-                {{ clean_first }} {{ clean_last }}{{ symbol | raw }},
-              {% endif %}
-            {% endif %}
+          {% if author_count == 1 %}
+            {{ author_items[0] }}
           {% else %}
-            {% if author_is_self %}
-              and <u><strong>{{ clean_first }} {{ clean_last }}{{ symbol | raw }}</strong></u>
-            {% else %}
-              {% if coauthor_url %}
-                and <a href="{{ coauthor_url }}" target="_blank">{{ clean_first }} {{ clean_last }}{{ symbol | raw }}</a>
+            {% for item in author_items %}
+              {% if forloop.last %}
+                and {{ item }}
               {% else %}
-                and {{ clean_first }} {{ clean_last }}{{ symbol | raw }}
+                {{ item }}, 
               {% endif %}
-            {% endif %}
-          {% endunless %}
+            {% endfor %}
+          {% endif %}
         {% endif %}
-      {% endfor %}
       </div>
 
       <div class="periodical" style="font-size: 15px;">
