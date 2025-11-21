@@ -147,263 +147,317 @@ layout: default
 
   </article>
 
+<!-- Elegant Unified Infobox v3 START -->
+<style>
+  /* 基础容器 */
+  .unified-infobox {
+    width: 88%;
+    margin: 40px 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: #333;
+    border-top: 1px solid #eaeaea; /* 顶部起始线 */
+    border-bottom: 1px solid #eaeaea; /* 底部结束线 */
+  }
 
-  <div class="recruitment-infobox" style="width: 88%; background: transparent; margin-top: 15px; margin-bottom: 0px;">
-    <div class="infobox-header" onclick="toggleInfobox()">
-      <i class="fas fa-plus-circle toggle-icon"></i>
-      <h6 style="margin: 0; color: #3E3E3E; font-size: 15px; font-weight: 400; display: flex; align-items: center; width: 100%;">
-        <span>Lab Information</span>
-        <span class="lab-header-links" style="display: flex; margin-left: 150px;">
-          <a href="https://c3i.ee.tsinghua.edu.cn/en/" target="_blank" class="lab-link" style="font-weight: 400; margin-right:30px;">
-            <i class="fas fas fa-project-diagram" style="font-size: 1em;"></i> Group Homepage
-          </a>
-          <a href="https://github.com/PRIME-RL" target="_blank" class="lab-link" style="font-weight: 400; margin-right:7px;">
-            <i class="fab fa-github"></i> PRIME-RL,
-          </a>
-          <a href="https://github.com/TsinghuaC3I" target="_blank" class="lab-link" style="font-weight: 400;margin-right:40px;">
-            THU-C3I
-          </a>
-        </span>
-      </h6>
+  /* --- 通用头部样式 (Header) --- */
+  .info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    user-select: none;
+  }
+  .info-header:hover .header-title {
+    color: #000; /* Hover时标题变纯黑 */
+  }
+  .info-header:hover .toggle-icon {
+    color: #000;
+  }
+
+  /* 标题区域 */
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .toggle-icon {
+    font-size: 10px;
+    color: #aaa;
+    transition: transform 0.3s ease, color 0.2s;
+    width: 12px;
+    text-align: center;
+  }
+  .toggle-icon.open {
+    transform: rotate(90deg);
+    color: #444;
+  }
+
+  .header-title {
+    font-size: 14px;
+    font-weight: 400; /* 中等字重，不粗重 */
+    text-transform: uppercase;
+    letter-spacing: 0.05em; /* 增加字间距，显得高级 */
+    color: #555;
+    transition: color 0.2s;
+  }
+
+  /* 头部右侧链接区域 */
+  .header-right-links {
+    display: flex;
+    gap: 18px;
+    font-size: 14px;
+  }
+  .header-right-links a {
+    color: #777;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s;
+    font-weight: 400;
+  }
+  .header-right-links a:hover {
+    color: #000;
+  }
+  .header-right-links i {
+    font-size: 1.1em; /* 图标稍大一点 */
+  }
+
+  /* --- 内容区域通用样式 --- */
+  .info-content {
+    display: none; /* 默认折叠 */
+    padding-bottom: 20px;
+    padding-left: 26px; /* 与标题文字对齐 (Icon宽度+Gap) */
+    animation: slideDown 0.3s ease-out;
+  }
+  
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* --- Lab 内容特定样式 --- */
+  .lab-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #444;
+    max-width: 95%;
+  }
+  .lab-text b {
+    font-weight: 500;
+    color: #000;
+  }
+
+  /* --- News 内容特定样式 --- */
+  .news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-height: 400px;
+    overflow-y: auto;
+    /* 隐藏滚动条 */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .news-list::-webkit-scrollbar { display: none; }
+
+  .news-item {
+    display: grid;
+    grid-template-columns: 80px 1fr; /* 日期固定宽度 */
+    gap: 20px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .news-date {
+    font-family: "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 12px;
+    color: #999;
+    padding-top: 3px; /* 视觉微调 */
+    text-align: right;
+  }
+
+  .news-body {
+    color: #444;
+  }
+
+  /* News 标题微调：不再是粗黑体，而是深灰+略微加权 */
+  .news-highlight {
+    font-weight: 500; /* 优雅的字重 */
+    color: #2c3e50;
+    margin-right: 4px;
+  }
+
+  /* 链接样式统一 */
+  .unified-infobox a.inline-link {
+    color: #444;
+    text-decoration: none;
+    border-bottom: 1px solid #ddd;
+    transition: all 0.2s;
+  }
+  .unified-infobox a.inline-link:hover {
+    border-bottom-color: #000;
+    color: #000;
+    background: rgba(0,0,0,0.03);
+  }
+
+  /* 分割线 (如果两个都展开时，中间加一条极细线，这里用CSS控制) */
+  .divider {
+    height: 1px;
+    background-color: #f0f0f0;
+    margin: 0 0;
+    display: block;
+  }
+
+  /* 移动端适配 */
+  @media (max-width: 600px) {
+    .info-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .header-right-links { width: 100%; justify-content: flex-start; flex-wrap: wrap; gap: 12px; margin-left: 24px;}
+    .info-content { padding-left: 0; }
+    .news-item { display: block; margin-bottom: 15px; }
+    .news-date { text-align: left; margin-bottom: 4px; display: inline-block; background: #f5f5f5; padding: 2px 6px; border-radius: 3px;}
+  }
+</style>
+
+<div class="unified-infobox">
+  
+  <!-- SECTION 1: LAB INFORMATION -->
+  <div class="info-section">
+    <div class="info-header" onclick="toggleSection('lab')">
+      <div class="header-left">
+        <i class="fas fa-chevron-right toggle-icon" id="icon-lab"></i>
+        <span class="header-title">Lab Information</span>
+      </div>
+      <div class="header-right-links">
+        <a href="https://c3i.ee.tsinghua.edu.cn/en/" target="_blank">
+          <i class="fas fa-project-diagram"></i> Homepage
+        </a>
+        <a href="https://github.com/PRIME-RL" target="_blank">
+          <i class="fab fa-github"></i> PRIME-RL
+        </a>
+        <a href="https://github.com/TsinghuaC3I" target="_blank">
+          <i class="fab fa-github"></i> THU-C3I
+        </a>
+      </div>
     </div>
-    <div class="infobox-content" style="display: none;">
-      <p>Our group is looking for self-motivated Ph.D. students, Postdocs, and interns. Research topics include but are not limited to scalable reinforcement learning, fundamental theories, scientific applications of reasoning language models.  </p>
-      <p>
-      If you are interested, please drop me an email to <b>ningding.cs@gmail.com</b> or <b>dingning@mail.tsinghua.edu.cn</b> with your CV and research interests.</p>
+    
+    <div class="info-content" id="content-lab">
+      <div class="lab-text">
+        <p style="margin-bottom: 8px;">Our group is looking for self-motivated Ph.D. students, Postdocs, and interns. Research topics include theories and scalable methods for large language, reasoning, and embodied models.</p>
+        <p>
+          If you are interested, please drop an email to <b>dingning AT mail.tsinghua.edu.cn</b> with your CV.
+        </p>
+      </div>
     </div>
   </div>
-  
-  <style>
-    .lab-links {
-  margin-top: 6px;
-  display: flex;
-  gap: 20px;
-}
-.lab-link {
-  display: flex;
-  align-items: center;
-  font-size: 15px;
-  color: #365485;
-  text-decoration: none;
-  transition: color 0.18s;
-  font-weight: 500;
-}
-.lab-link:hover {
-  color: #1768ac;
-  text-decoration: underline;
-}
-.lab-link i {
-  font-size: 1.13em;
-  margin-right: 7px;
-  color: #5172a1;
-  vertical-align: middle;
-  transition: color 0.15s;
-}
-.lab-link:hover i {
-  color: #1768ac;
-}
-    .recruitment-infobox {
-      margin: 25px 0;
-      border-radius: 12px;
-      background-color: rgba(240, 245, 250, 0.5);
-      overflow: hidden;
-      width: 100%; /* 使用整个宽度 */
-      max-width: none; /* 取消最大宽度限制 */
-      transition: all 0.3s ease;
+
+  <span class="divider"></span>
+
+  <!-- SECTION 2: LATEST NEWS -->
+  <div class="info-section">
+    <div class="info-header" onclick="toggleSection('news')">
+      <div class="header-left">
+        <i class="fas fa-chevron-right toggle-icon" id="icon-news"></i>
+        <span class="header-title">Latest News</span>
+      </div>
+      <!-- News 右侧可以留空，或者放 RSS 图标等，目前留空保持简洁 -->
+      <div class="header-right-links">
+        <!-- Optional: <a href="#"><i class="fas fa-rss"></i> Subscribe</a> -->
+      </div>
+    </div>
+
+    <div class="info-content" id="content-news"> <!-- 默认展开News? 或者都折叠? 这里设为默认展开News方便查看 -->
+      <div class="news-list">
+        
+        <!-- News Item 1 -->
+        <div class="news-item">
+          <div class="news-date">Oct 2025</div>
+          <div class="news-body">
+            <span class="news-highlight">P1 Release.</span>
+            Introducing <a href="https://arxiv.org/abs/2511.13612" class="inline-link">P1</a>, a series of models achieving gold medal-level performance in the Physics Olympiad.
+          </div>
+        </div>
+
+        <!-- News Item 2 -->
+        <div class="news-item">
+          <div class="news-date">May 2025</div>
+          <div class="news-body">
+            <span class="news-highlight">Self-evolving RL.</span>
+            New research on <a href="https://arxiv.org/abs/2504.16084" class="inline-link">Test-Time RL (TTRL)</a> and the <a href="https://arxiv.org/abs/2505.22617" class="inline-link">Entropy Mechanism</a> released.
+          </div>
+        </div>
+
+        <!-- News Item 3 -->
+        <div class="news-item">
+          <div class="news-date">Jan 2025</div>
+          <div class="news-body">
+            <span class="news-highlight">Reasoning.</span>
+            Released <a href="https://arxiv.org/abs/2412.01981" class="inline-link">ImplicitPRM</a> and <a href="https://arxiv.org/abs/2502.01456" class="inline-link">PRIME</a>, scalable solutions for using pure reinforcement learning to advance reasoning capability.
+          </div>
+        </div>
+
+        <!-- News Item 4 -->
+        <div class="news-item">
+          <div class="news-date">Jan 2025</div>
+          <div class="news-body">
+            <span class="news-highlight">Career Update.</span>
+            Starting as an Assistant Professor at the EE department of Tsinghua University.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // 统一的折叠控制函数
+  function toggleSection(id) {
+    const content = document.getElementById('content-' + id);
+    const icon = document.getElementById('icon-' + id);
+    
+    // 检查当前计算后的 display 属性 (为了处理内联样式和CSS类的优先级)
+    const isVisible = content.style.display === 'block' || getComputedStyle(content).display === 'block';
+    
+    if (isVisible) {
+      content.style.display = 'none';
+      icon.classList.remove('open');
+    } else {
+      content.style.display = 'block';
+      icon.classList.add('open');
     }
-    .recruitment-infobox:hover {
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      transform: translateY(-2px);
-    }
-    .infobox-header {
-      padding: 14px 18px;
-      background: linear-gradient(to right, rgba(240, 244, 249, 0.8), rgba(245, 249, 252, 0.8)); /* Increased transparency */
-      font-size: 16px;
-      font-weight: 500;
-      color: #3a4a64;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      transition: all 0.2s;
-    }
-    .infobox-header:hover {
-      background: linear-gradient(to right, #e8f2fa, #edf5fc);
-    }
-    .toggle-icon {
-      margin-right: 12px;
-      color: #4a6fa5;
-      transition: transform 0.3s ease, color 0.2s;
-    }
-    .toggle-icon.open {
-      transform: rotate(45deg);
-      color: #3a5a8c;
-    }
-    .infobox-content {
-      padding: 18px;
-      line-height: 1.6;
-      color: #445566;
-      background-color: rgba(255,255,255,0.8);
-    }
-    .infobox-content p {
-      margin-bottom: 12px;
-    }
-    .infobox-content b {
-      color: #3a4a64;
-      font-weight: 600;
-    }
-  </style>
-  
+  }
+
+
+</script>
+<!-- Elegant Unified Infobox v3 END -->
+ 
+
+ 
   <script>
-    function toggleInfobox() {
-      const content = document.querySelector('.infobox-content');
-      const icon = document.querySelector('.toggle-icon');
-      if (content.style.display === 'none') {
-        content.style.display = 'block';
-        icon.classList.add('open');
-        icon.classList.remove('fa-plus-circle');
-        icon.classList.add('fa-times-circle');
-      } else {
-        content.style.display = 'none';
-        icon.classList.remove('open');
-        icon.classList.remove('fa-times-circle');
-        icon.classList.add('fa-plus-circle');
+    function toggleInfobox(button) {
+      const panel = button.closest('.info-panel');
+      const content = panel.querySelector('.infobox-content');
+      const icon = button.querySelector('.toggle-icon');
+      const isCollapsed = panel.classList.toggle('collapsed');
+  
+      if (content) {
+        content.style.display = isCollapsed ? 'none' : 'block';
       }
+  
+      if (icon) {
+        icon.classList.toggle('fa-minus', !isCollapsed);
+        icon.classList.toggle('fa-plus', isCollapsed);
+      }
+  
+      button.setAttribute('aria-expanded', (!isCollapsed).toString());
     }
   </script>
   
-
-  <div class="post">
-
-
-    <!-- <div style="background-color: #F9F7FB; padding: 15px; border-radius: 8px; max-width: 730px;">
-      <p style="color: #402F7C; margin: 0;">
-        I will be recruiting.
-      </p>
-    </div> -->
-
-
-    <!-- <p style="margin: 5px 0;">The <a href="https://www.nature.com/articles/s42256-023-00626-4" style="color: #0076df;">delta tuning</a> paper gets published on <a href="https://www.nature.com/natmachintell/" style="color: #0076df;">Nature Machine Intelligence</a>, and it is selected as the cover article of the journal's <a href="https://www.nature.com/natmachintell/volumes/5/issues/3" style="color: #0076df;">March issue</a>.</p> -->
-
-
-    <!-- <div class="news-infobox" style="border: 0px solid #828282; border-radius: 10px; padding: 10px; background-color: #c397ed09; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); max-width: 730px; margin-left: -0px;"> -->
-      <br>
-
-
-    <div class="news-infobox" style="
-        border: 0px solid #828282; 
-        border-radius: 10px; 
-        padding: 11px; 
-        padding-top: 10px;
-        max-width: 730px; 
-        margin-left: -0px;
-        transition: box-shadow 0.3s ease, background-color 0.3s ease;
-        overflow-y: auto;
-        max-height: 250px;
-    " 
-    onmouseover="this.style.boxShadow='0 7px 26px rgba(58,175,169,0.13)'; this.style.backgroundColor='#fcfefe';"
-    onmouseout="this.style.boxShadow='0 2px 8px rgba(58,175,169,0.06)'; this.style.backgroundColor='#f8fafb';">
-
-    <style>
-      .news-infobox {
-        background: #f8fafb; 
-        border-radius: 14px;
-        padding: 28px 22px 18px 22px;
-        box-shadow: 0 2px 8px rgba(58,175,169,0.06);
-        transition: box-shadow 0.3s, background 0.3s;
-        max-width: 730px;
-        border: 1px solid #dbecec;
-      }
-      
-      .news-infobox:hover {
-        box-shadow: 0 7px 26px rgba(58,175,169,0.13);
-        background: #f3faf9;
-      }
-      
-      .news-infobox ul {
-        padding: 0;
-        margin: 0;
-        overflow-y: auto;
-      }
-      
-      .news-infobox ul li {
-        margin-bottom: 13px;
-        padding: 12px 12px 4px 10px;
-        border-radius: 7px;
-        background: none;
-      }
-      
-      .news-infobox ul li:last-child {
-        margin-bottom: 0;
-        padding-bottom: 0;
-      }
-      
-      .news-infobox h6 {
-        font-size: 15.5px;
-        margin: 0 0 4px 0;
-        color: #2e3539;      /* 比正文色略深但不刺眼 */
-        font-weight: 450;    /* 稍加粗而已 */
-        letter-spacing: 0.01em;
-        line-height: 1.4;
-      }
-            
-      .news-infobox span {
-        display: block;
-        margin-bottom: 4px;
-        color: #5b7b88;
-        font-size: 0.9em;
-      }
-      
-      .news-infobox p {
-        margin: 5px 0 0 0;
-        line-height: 1.7;
-        color: #294550;
-        font-size: 15px;
-      }
-      
-
-.news-infobox a {
-  color: #48656b;
-  
-  text-underline-offset: 1.5px;
-  transition: color 0.18s, background 0.18s;
-  border-radius: 4px;
-  padding: 0 2px;
-  font-weight: 500;
-}
-.news-infobox a:hover,
-.news-infobox a:focus {
-  color: #044068;
-  background: #ebf7fa;
-  text-decoration: underline;
-}
-      </style>
-      <ul style="list-style-type: none; padding: 0;">
-        <li style="margin-bottom: 10px;">
-          <h6 style="margin: 0; color:#8B0000; font-weight:700; ">P1</h6>
-          <span style="color: #828282; font-size: 0.8em;">October 2025</span>
-          <p style="margin: 5px 0;">
-            <p style="style=margin: 5px 0;">Introducing <a href="https://github.com/PRIME-RL/P1">P1</a>, a series of models that achieved 𝗴𝗼𝗹𝗱 𝗺𝗲𝗱𝗮𝗹-𝗹𝗲𝘃𝗲𝗹 𝗽𝗲𝗿𝗳𝗼𝗿𝗺𝗮𝗻𝗰𝗲 in the Physics Olympiad (IPhO), here is the <a href="https://prime-rl.github.io/P1/">blog</a>.</p>
-          </p>
-        </li>
-        <li style="margin-bottom: 10px;">
-          <h6 style="margin: 0;  font-size: 15px;">New Research on self-evolving method and the entropy mechanism of RL</h6>
-          <span style="color: #828282; font-size: 0.8em;">May 2025</span>
-          <p style="margin: 5px 0;"> Introducing <a href="https://arxiv.org/abs/2504.16084">test time reinforcement learning (TTRL) </a> and the <a href="https://arxiv.org/abs/2505.22617"> Entropy Mechanism </a>, two latest research on self-evolving method and the entropy mechanism of reinforcement learning.
-          </p>
-        </li>
-        <li style="margin-bottom: 10px;">
-          <h6 style="margin: 0; ; font-size: 15px;">New Research on Exploration-based Method for Advanced Reasoning Released</h6>
-          <span style="color: #828282; font-size: 0.8em;">January 2025</span>
-          <p style="margin: 5px 0;"> We recently released <a href="https://arxiv.org/abs/2412.01981" >Implicit Process Reward Modeling (ImplicitPRM)</a> and <a href="https://arxiv.org/abs/2502.01456" >Process Reinforcement through Implicit Rewards (PRIME)</a>, scalable solutions for using (nearly) pure reinforcement learning to advance the reasoning capability of language models. We basically focus on two problems: (1) how to efficiently generate reliable dense rewards and (2) how to effectively use them.
-          </p>
-        </li>
-        <li style="margin-bottom: 10px;">
-          <h6 style="margin: 0;  font-size: 15px;">Personal Update</h6> 
-          <span style="color: #828282; font-size: 0.8em;">January 2025</span>
-          <p style="margin: 5px 0;"> I will be starting as an assistant professor at the EE department of Tsinghua University in 2025.</p>
-        </li>
-      </ul>
-    </div>
 
 <!-- Add a sidebar with content -->
 
